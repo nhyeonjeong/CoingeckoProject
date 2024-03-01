@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChartViewController: UIViewController {
+final class ChartViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

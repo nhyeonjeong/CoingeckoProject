@@ -8,15 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */; };
-		8B544FC52B90E4F90082A502 /* TrendingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC42B90E4F90082A502 /* TrendingUIView.swift */; };
 		8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC62B90E5040082A502 /* SearchViewController.swift */; };
 		8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC82B90E50E0082A502 /* SearchUIView.swift */; };
 		8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */; };
-		8B544FCD2B90E5210082A502 /* FavoriteUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCC2B90E5210082A502 /* FavoriteUIView.swift */; };
 		8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCE2B90E5310082A502 /* ChartViewController.swift */; };
-		8B544FD12B90E53F0082A502 /* ChartUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD02B90E53F0082A502 /* ChartUIView.swift */; };
 		8B544FD42B90E5C00082A502 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD32B90E5C00082A502 /* Constants.swift */; };
 		8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD62B90ED6A0082A502 /* UserViewController.swift */; };
+		8B544FDA2B917A1D0082A502 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD92B917A1D0082A502 /* BaseViewController.swift */; };
+		8B544FDC2B917A270082A502 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FDB2B917A270082A502 /* BaseView.swift */; };
+		8B544FDF2B917BF60082A502 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FDE2B917BF60082A502 /* SnapKit */; };
+		8B544FE22B917C1B0082A502 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE12B917C1B0082A502 /* Realm */; };
+		8B544FE42B917C1B0082A502 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE32B917C1B0082A502 /* RealmSwift */; };
+		8B544FE72B917C240082A502 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE62B917C240082A502 /* Alamofire */; };
+		8B544FEA2B917C6A0082A502 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE92B917C6A0082A502 /* DGCharts */; };
+		8B544FEC2B917C6A0082A502 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FEB2B917C6A0082A502 /* DGChartsDynamic */; };
+		8B544FEF2B919BBD0082A502 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FEE2B919BBD0082A502 /* SearchTableViewCell.swift */; };
+		8B544FF12B919CCF0082A502 /* CointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF02B919CCF0082A502 /* CointView.swift */; };
+		8B544FF52B91A5590082A502 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF42B91A5590082A502 /* UIView+Extension.swift */; };
+		8B544FF82B91C1680082A502 /* CoinAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF72B91C1680082A502 /* CoinAPIManager.swift */; };
+		8B544FFA2B91C2480082A502 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF92B91C2480082A502 /* SearchViewModel.swift */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -27,15 +37,19 @@
 
 /* Begin PBXFileReference section */
 		8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
-		8B544FC42B90E4F90082A502 /* TrendingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingUIView.swift; sourceTree = "<group>"; };
 		8B544FC62B90E5040082A502 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8B544FC82B90E50E0082A502 /* SearchUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUIView.swift; sourceTree = "<group>"; };
 		8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
-		8B544FCC2B90E5210082A502 /* FavoriteUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUIView.swift; sourceTree = "<group>"; };
 		8B544FCE2B90E5310082A502 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
-		8B544FD02B90E53F0082A502 /* ChartUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUIView.swift; sourceTree = "<group>"; };
 		8B544FD32B90E5C00082A502 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8B544FD62B90ED6A0082A502 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		8B544FD92B917A1D0082A502 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8B544FDB2B917A270082A502 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8B544FEE2B919BBD0082A502 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8B544FF02B919CCF0082A502 /* CointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CointView.swift; sourceTree = "<group>"; };
+		8B544FF42B91A5590082A502 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8B544FF72B91C1680082A502 /* CoinAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIManager.swift; sourceTree = "<group>"; };
+		8B544FF92B91C2480082A502 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +65,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B544FE42B917C1B0082A502 /* RealmSwift in Frameworks */,
+				8B544FE72B917C240082A502 /* Alamofire in Frameworks */,
+				8B544FEA2B917C6A0082A502 /* DGCharts in Frameworks */,
+				8B544FE22B917C1B0082A502 /* Realm in Frameworks */,
+				8B544FEC2B917C6A0082A502 /* DGChartsDynamic in Frameworks */,
+				8B544FDF2B917BF60082A502 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */,
-				8B544FC42B90E4F90082A502 /* TrendingUIView.swift */,
 			);
 			path = TrendingView;
 			sourceTree = "<group>";
@@ -71,6 +90,8 @@
 			children = (
 				8B544FC62B90E5040082A502 /* SearchViewController.swift */,
 				8B544FC82B90E50E0082A502 /* SearchUIView.swift */,
+				8B544FEE2B919BBD0082A502 /* SearchTableViewCell.swift */,
+				8B544FF92B91C2480082A502 /* SearchViewModel.swift */,
 			);
 			path = SearchView;
 			sourceTree = "<group>";
@@ -79,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */,
-				8B544FCC2B90E5210082A502 /* FavoriteUIView.swift */,
 			);
 			path = FavoriteView;
 			sourceTree = "<group>";
@@ -88,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				8B544FCE2B90E5310082A502 /* ChartViewController.swift */,
-				8B544FD02B90E53F0082A502 /* ChartUIView.swift */,
 			);
 			path = ChartView;
 			sourceTree = "<group>";
@@ -121,6 +140,39 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		8B544FD82B917A160082A502 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD92B917A1D0082A502 /* BaseViewController.swift */,
+				8B544FDB2B917A270082A502 /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8B544FED2B919B330082A502 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FF02B919CCF0082A502 /* CointView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		8B544FF32B91A5400082A502 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FF42B91A5590082A502 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8B544FF62B91C15C0082A502 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FF72B91C1680082A502 /* CoinAPIManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		8BE362FA2B906A3C00EFC62F = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +192,10 @@
 		8BE363052B906A3C00EFC62F /* SeSAC_CoingeckoProject */ = {
 			isa = PBXGroup;
 			children = (
+				8B544FF62B91C15C0082A502 /* API */,
+				8B544FF32B91A5400082A502 /* Extension */,
+				8B544FED2B919B330082A502 /* CustomView */,
+				8B544FD82B917A160082A502 /* Base */,
 				8B544FD22B90E5B50082A502 /* Enum */,
 				8B544FC12B90E4B10082A502 /* View */,
 				8BE363062B906A3C00EFC62F /* AppDelegate.swift */,
@@ -169,6 +225,14 @@
 			dependencies = (
 			);
 			name = SeSAC_CoingeckoProject;
+			packageProductDependencies = (
+				8B544FDE2B917BF60082A502 /* SnapKit */,
+				8B544FE12B917C1B0082A502 /* Realm */,
+				8B544FE32B917C1B0082A502 /* RealmSwift */,
+				8B544FE62B917C240082A502 /* Alamofire */,
+				8B544FE92B917C6A0082A502 /* DGCharts */,
+				8B544FEB2B917C6A0082A502 /* DGChartsDynamic */,
+			);
 			productName = SeSAC_CoingeckoProject;
 			productReference = 8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +261,12 @@
 				Base,
 			);
 			mainGroup = 8BE362FA2B906A3C00EFC62F;
+			packageReferences = (
+				8B544FDD2B917BF60082A502 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 8BE363042B906A3C00EFC62F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,16 +295,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */,
-				8B544FC52B90E4F90082A502 /* TrendingUIView.swift in Sources */,
+				8B544FF12B919CCF0082A502 /* CointView.swift in Sources */,
 				8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */,
 				8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */,
-				8B544FD12B90E53F0082A502 /* ChartUIView.swift in Sources */,
+				8B544FDC2B917A270082A502 /* BaseView.swift in Sources */,
+				8B544FDA2B917A1D0082A502 /* BaseViewController.swift in Sources */,
 				8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */,
 				8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */,
 				8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */,
 				8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */,
+				8B544FF52B91A5590082A502 /* UIView+Extension.swift in Sources */,
 				8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */,
-				8B544FCD2B90E5210082A502 /* FavoriteUIView.swift in Sources */,
+				8B544FEF2B919BBD0082A502 /* SearchTableViewCell.swift in Sources */,
+				8B544FF82B91C1680082A502 /* CoinAPIManager.swift in Sources */,
+				8B544FFA2B91C2480082A502 /* SearchViewModel.swift in Sources */,
 				8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */,
 				8B544FD42B90E5C00082A502 /* Constants.swift in Sources */,
 			);
@@ -465,6 +539,74 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B544FDD2B917BF60082A502 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.47.0;
+			};
+		};
+		8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B544FDE2B917BF60082A502 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FDD2B917BF60082A502 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		8B544FE12B917C1B0082A502 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		8B544FE32B917C1B0082A502 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		8B544FE62B917C240082A502 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8B544FE92B917C6A0082A502 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		8B544FEB2B917C6A0082A502 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BE362FB2B906A3C00EFC62F /* Project object */;
 }
