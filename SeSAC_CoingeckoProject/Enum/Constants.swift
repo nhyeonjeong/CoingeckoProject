@@ -9,7 +9,7 @@ import UIKit
 
 enum Constants {
     enum Font {
-        static let title = UIFont.boldSystemFont(ofSize: 30)
+        static let title = UIFont.systemFont(ofSize: 34, weight: .bold)
         static let subTitle = UIFont.boldSystemFont(ofSize: 19)
         
         static let boldMain = UIFont.boldSystemFont(ofSize: 17)
@@ -53,6 +53,11 @@ enum Constants {
         static let favInactiveStar = UIImage(named: "btn_star")
         
         static let cointDefaultImage = UIImage(systemName: "circles.hexagonpath.fill")
+        
+    }
+    
+    enum layout {
+        static let areaLayout = CGFloat(10)
         
     }
 }

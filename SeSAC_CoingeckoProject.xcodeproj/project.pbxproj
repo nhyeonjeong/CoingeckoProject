@@ -31,6 +31,10 @@
 		8B544FFE2B91C6BD0082A502 /* Coingecko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FFD2B91C6BD0082A502 /* Coingecko.swift */; };
 		8B5450012B91D7F90082A502 /* CoinAPI_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450002B91D7F90082A502 /* CoinAPI_Request.swift */; };
 		8B5450042B91E4840082A502 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5450032B91E4840082A502 /* Kingfisher */; };
+		8B5450072B91E77D0082A502 /* BigTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450062B91E77D0082A502 /* BigTitleLabel.swift */; };
+		8B5450092B91E9E60082A502 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450082B91E9E60082A502 /* ChartView.swift */; };
+		8B54500B2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */; };
+		8B54500D2B922F5F0082A502 /* DeclarationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -57,6 +61,10 @@
 		8B544FFB2B91C2DE0082A502 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		8B544FFD2B91C6BD0082A502 /* Coingecko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coingecko.swift; sourceTree = "<group>"; };
 		8B5450002B91D7F90082A502 /* CoinAPI_Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPI_Request.swift; sourceTree = "<group>"; };
+		8B5450062B91E77D0082A502 /* BigTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTitleLabel.swift; sourceTree = "<group>"; };
+		8B5450082B91E9E60082A502 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationEnum.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				8B544FCE2B90E5310082A502 /* ChartViewController.swift */,
+				8B5450082B91E9E60082A502 /* ChartView.swift */,
+				8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */,
 			);
 			path = ChartView;
 			sourceTree = "<group>";
@@ -128,6 +138,7 @@
 				8B544FBE2B90E4800082A502 /* SearchView */,
 				8B544FBF2B90E4870082A502 /* FavoriteView */,
 				8B544FC02B90E4900082A502 /* ChartView */,
+				8B544FF62B91C15C0082A502 /* API */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				8B544FD32B90E5C00082A502 /* Constants.swift */,
+				8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -157,12 +169,13 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		8B544FED2B919B330082A502 /* CustomView */ = {
+		8B544FED2B919B330082A502 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
 				8B544FF02B919CCF0082A502 /* CointView.swift */,
+				8B5450062B91E77D0082A502 /* BigTitleLabel.swift */,
 			);
-			path = CustomView;
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		8B544FF32B91A5400082A502 /* Extension */ = {
@@ -210,11 +223,10 @@
 		8BE363052B906A3C00EFC62F /* SeSAC_CoingeckoProject */ = {
 			isa = PBXGroup;
 			children = (
-				8B544FF62B91C15C0082A502 /* API */,
 				8B544FF32B91A5400082A502 /* Extension */,
-				8B544FED2B919B330082A502 /* CustomView */,
-				8B544FD82B917A160082A502 /* Base */,
+				8B544FED2B919B330082A502 /* Custom */,
 				8B544FD22B90E5B50082A502 /* Enum */,
+				8B544FD82B917A160082A502 /* Base */,
 				8B544FC12B90E4B10082A502 /* View */,
 				8BE363062B906A3C00EFC62F /* AppDelegate.swift */,
 				8BE363082B906A3C00EFC62F /* SceneDelegate.swift */,
@@ -316,14 +328,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */,
+				8B54500B2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift in Sources */,
 				8B544FF12B919CCF0082A502 /* CointView.swift in Sources */,
 				8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */,
 				8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */,
 				8B544FFC2B91C2DE0082A502 /* Observable.swift in Sources */,
 				8B544FDC2B917A270082A502 /* BaseView.swift in Sources */,
 				8B5450012B91D7F90082A502 /* CoinAPI_Request.swift in Sources */,
+				8B5450092B91E9E60082A502 /* ChartView.swift in Sources */,
 				8B544FDA2B917A1D0082A502 /* BaseViewController.swift in Sources */,
 				8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */,
+				8B54500D2B922F5F0082A502 /* DeclarationEnum.swift in Sources */,
 				8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */,
 				8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */,
 				8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */,
@@ -335,6 +350,7 @@
 				8B544FFE2B91C6BD0082A502 /* Coingecko.swift in Sources */,
 				8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */,
 				8B544FD42B90E5C00082A502 /* Constants.swift in Sources */,
+				8B5450072B91E77D0082A502 /* BigTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

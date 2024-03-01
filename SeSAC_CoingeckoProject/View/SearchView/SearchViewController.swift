@@ -49,6 +49,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(viewModel.cointDataList.value[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ChartViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {

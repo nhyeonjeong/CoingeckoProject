@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchViewModel {
+final class SearchViewModel {
     // 검색한 문자열
     var inputSearchText: Observable<String?> = Observable("")
     // api로 가져온 Coin리스트

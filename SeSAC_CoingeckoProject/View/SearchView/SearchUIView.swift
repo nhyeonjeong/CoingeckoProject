@@ -10,15 +10,7 @@ import SnapKit
 
 final class SearchUIView: BaseView {
 
-    let titleLabel: UILabel = {
-
-        let view = UILabel()
-        view.textColor = .titleLabel
-        view.font = Constants.Font.title
-        view.text = "Search"
-        return view
-        
-    }()
+    let titleLabel = BigTitleLabel()
     
     let searchBar = UISearchBar()
     
@@ -36,20 +28,23 @@ final class SearchUIView: BaseView {
     
     override func configureConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.leading.top.equalTo(safeAreaLayoutGuide).inset(8) // equalToSuperView()하면 안됨
-            make.height.equalTo(25)
+            make.leading.top.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout) // equalToSuperView()하면 안됨
+//            make.height.equalTo(22)
         }
         
         searchBar.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
-            make.horizontalEdges.equalToSuperview().inset(4)
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.horizontalEdges.equalToSuperview().inset(Constants.layout.areaLayout - 6)
         
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(4)
-            make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(4)
+            make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
+    }
+    override func configureView() {
+        titleLabel.text = "Search"
     }
 
 }
