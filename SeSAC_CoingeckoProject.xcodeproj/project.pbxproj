@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */; };
+		8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC62B90E5040082A502 /* SearchViewController.swift */; };
+		8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC82B90E50E0082A502 /* SearchUIView.swift */; };
+		8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */; };
+		8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCE2B90E5310082A502 /* ChartViewController.swift */; };
+		8B544FD42B90E5C00082A502 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD32B90E5C00082A502 /* Constants.swift */; };
+		8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD62B90ED6A0082A502 /* UserViewController.swift */; };
+		8B544FDA2B917A1D0082A502 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD92B917A1D0082A502 /* BaseViewController.swift */; };
+		8B544FDC2B917A270082A502 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FDB2B917A270082A502 /* BaseView.swift */; };
+		8B544FDF2B917BF60082A502 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FDE2B917BF60082A502 /* SnapKit */; };
+		8B544FE22B917C1B0082A502 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE12B917C1B0082A502 /* Realm */; };
+		8B544FE42B917C1B0082A502 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE32B917C1B0082A502 /* RealmSwift */; };
+		8B544FE72B917C240082A502 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE62B917C240082A502 /* Alamofire */; };
+		8B544FEA2B917C6A0082A502 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE92B917C6A0082A502 /* DGCharts */; };
+		8B544FEC2B917C6A0082A502 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FEB2B917C6A0082A502 /* DGChartsDynamic */; };
+		8B544FEF2B919BBD0082A502 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FEE2B919BBD0082A502 /* SearchTableViewCell.swift */; };
+		8B544FF12B919CCF0082A502 /* CointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF02B919CCF0082A502 /* CointView.swift */; };
+		8B544FF52B91A5590082A502 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF42B91A5590082A502 /* UIView+Extension.swift */; };
+		8B544FF82B91C1680082A502 /* CoinAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF72B91C1680082A502 /* CoinAPIManager.swift */; };
+		8B544FFA2B91C2480082A502 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FF92B91C2480082A502 /* SearchViewModel.swift */; };
+		8B544FFC2B91C2DE0082A502 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FFB2B91C2DE0082A502 /* Observable.swift */; };
+		8B544FFE2B91C6BD0082A502 /* Coingecko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FFD2B91C6BD0082A502 /* Coingecko.swift */; };
+		8B5450012B91D7F90082A502 /* CoinAPI_Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450002B91D7F90082A502 /* CoinAPI_Request.swift */; };
+		8B5450042B91E4840082A502 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5450032B91E4840082A502 /* Kingfisher */; };
+		8B5450072B91E77D0082A502 /* BigTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450062B91E77D0082A502 /* BigTitleLabel.swift */; };
+		8B5450092B91E9E60082A502 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450082B91E9E60082A502 /* ChartView.swift */; };
+		8B54500B2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */; };
+		8B54500D2B922F5F0082A502 /* DeclarationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -16,6 +44,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		8B544FC62B90E5040082A502 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8B544FC82B90E50E0082A502 /* SearchUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUIView.swift; sourceTree = "<group>"; };
+		8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		8B544FCE2B90E5310082A502 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		8B544FD32B90E5C00082A502 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B544FD62B90ED6A0082A502 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		8B544FD92B917A1D0082A502 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8B544FDB2B917A270082A502 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		8B544FEE2B919BBD0082A502 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		8B544FF02B919CCF0082A502 /* CointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CointView.swift; sourceTree = "<group>"; };
+		8B544FF42B91A5590082A502 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		8B544FF72B91C1680082A502 /* CoinAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPIManager.swift; sourceTree = "<group>"; };
+		8B544FF92B91C2480082A502 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		8B544FFB2B91C2DE0082A502 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		8B544FFD2B91C6BD0082A502 /* Coingecko.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coingecko.swift; sourceTree = "<group>"; };
+		8B5450002B91D7F90082A502 /* CoinAPI_Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPI_Request.swift; sourceTree = "<group>"; };
+		8B5450062B91E77D0082A502 /* BigTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTitleLabel.swift; sourceTree = "<group>"; };
+		8B5450082B91E9E60082A502 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationEnum.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +80,130 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B544FE42B917C1B0082A502 /* RealmSwift in Frameworks */,
+				8B544FE72B917C240082A502 /* Alamofire in Frameworks */,
+				8B5450042B91E4840082A502 /* Kingfisher in Frameworks */,
+				8B544FEA2B917C6A0082A502 /* DGCharts in Frameworks */,
+				8B544FE22B917C1B0082A502 /* Realm in Frameworks */,
+				8B544FEC2B917C6A0082A502 /* DGChartsDynamic in Frameworks */,
+				8B544FDF2B917BF60082A502 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B544FBD2B90E47A0082A502 /* TrendingView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */,
+			);
+			path = TrendingView;
+			sourceTree = "<group>";
+		};
+		8B544FBE2B90E4800082A502 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FC62B90E5040082A502 /* SearchViewController.swift */,
+				8B544FC82B90E50E0082A502 /* SearchUIView.swift */,
+				8B544FF92B91C2480082A502 /* SearchViewModel.swift */,
+				8B544FEE2B919BBD0082A502 /* SearchTableViewCell.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		8B544FBF2B90E4870082A502 /* FavoriteView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */,
+			);
+			path = FavoriteView;
+			sourceTree = "<group>";
+		};
+		8B544FC02B90E4900082A502 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FCE2B90E5310082A502 /* ChartViewController.swift */,
+				8B5450082B91E9E60082A502 /* ChartView.swift */,
+				8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
+		8B544FC12B90E4B10082A502 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD52B90ED5A0082A502 /* User */,
+				8B544FBD2B90E47A0082A502 /* TrendingView */,
+				8B544FBE2B90E4800082A502 /* SearchView */,
+				8B544FBF2B90E4870082A502 /* FavoriteView */,
+				8B544FC02B90E4900082A502 /* ChartView */,
+				8B544FF62B91C15C0082A502 /* API */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B544FD22B90E5B50082A502 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD32B90E5C00082A502 /* Constants.swift */,
+				8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		8B544FD52B90ED5A0082A502 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD62B90ED6A0082A502 /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		8B544FD82B917A160082A502 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD92B917A1D0082A502 /* BaseViewController.swift */,
+				8B544FDB2B917A270082A502 /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8B544FED2B919B330082A502 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FF02B919CCF0082A502 /* CointView.swift */,
+				8B5450062B91E77D0082A502 /* BigTitleLabel.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		8B544FF32B91A5400082A502 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FF42B91A5590082A502 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8B544FF62B91C15C0082A502 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FFF2B91C6C50082A502 /* Model */,
+				8B544FF72B91C1680082A502 /* CoinAPIManager.swift */,
+				8B5450002B91D7F90082A502 /* CoinAPI_Request.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		8B544FFF2B91C6C50082A502 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FFD2B91C6BD0082A502 /* Coingecko.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8BE362FA2B906A3C00EFC62F = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +223,11 @@
 		8BE363052B906A3C00EFC62F /* SeSAC_CoingeckoProject */ = {
 			isa = PBXGroup;
 			children = (
+				8B544FF32B91A5400082A502 /* Extension */,
+				8B544FED2B919B330082A502 /* Custom */,
+				8B544FD22B90E5B50082A502 /* Enum */,
+				8B544FD82B917A160082A502 /* Base */,
+				8B544FC12B90E4B10082A502 /* View */,
 				8BE363062B906A3C00EFC62F /* AppDelegate.swift */,
 				8BE363082B906A3C00EFC62F /* SceneDelegate.swift */,
 				8BE3630A2B906A3C00EFC62F /* ViewController.swift */,
@@ -63,6 +235,7 @@
 				8BE3630F2B906A3D00EFC62F /* Assets.xcassets */,
 				8BE363112B906A3D00EFC62F /* LaunchScreen.storyboard */,
 				8BE363142B906A3D00EFC62F /* Info.plist */,
+				8B544FFB2B91C2DE0082A502 /* Observable.swift */,
 			);
 			path = SeSAC_CoingeckoProject;
 			sourceTree = "<group>";
@@ -83,6 +256,15 @@
 			dependencies = (
 			);
 			name = SeSAC_CoingeckoProject;
+			packageProductDependencies = (
+				8B544FDE2B917BF60082A502 /* SnapKit */,
+				8B544FE12B917C1B0082A502 /* Realm */,
+				8B544FE32B917C1B0082A502 /* RealmSwift */,
+				8B544FE62B917C240082A502 /* Alamofire */,
+				8B544FE92B917C6A0082A502 /* DGCharts */,
+				8B544FEB2B917C6A0082A502 /* DGChartsDynamic */,
+				8B5450032B91E4840082A502 /* Kingfisher */,
+			);
 			productName = SeSAC_CoingeckoProject;
 			productReference = 8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +293,13 @@
 				Base,
 			);
 			mainGroup = 8BE362FA2B906A3C00EFC62F;
+			packageReferences = (
+				8B544FDD2B917BF60082A502 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */,
+				8B5450022B91E4840082A502 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8BE363042B906A3C00EFC62F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +327,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */,
+				8B54500B2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift in Sources */,
+				8B544FF12B919CCF0082A502 /* CointView.swift in Sources */,
+				8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */,
 				8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */,
+				8B544FFC2B91C2DE0082A502 /* Observable.swift in Sources */,
+				8B544FDC2B917A270082A502 /* BaseView.swift in Sources */,
+				8B5450012B91D7F90082A502 /* CoinAPI_Request.swift in Sources */,
+				8B5450092B91E9E60082A502 /* ChartView.swift in Sources */,
+				8B544FDA2B917A1D0082A502 /* BaseViewController.swift in Sources */,
+				8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */,
+				8B54500D2B922F5F0082A502 /* DeclarationEnum.swift in Sources */,
 				8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */,
 				8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */,
+				8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */,
+				8B544FF52B91A5590082A502 /* UIView+Extension.swift in Sources */,
+				8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */,
+				8B544FEF2B919BBD0082A502 /* SearchTableViewCell.swift in Sources */,
+				8B544FF82B91C1680082A502 /* CoinAPIManager.swift in Sources */,
+				8B544FFA2B91C2480082A502 /* SearchViewModel.swift in Sources */,
+				8B544FFE2B91C6BD0082A502 /* Coingecko.swift in Sources */,
+				8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */,
+				8B544FD42B90E5C00082A502 /* Constants.swift in Sources */,
+				8B5450072B91E77D0082A502 /* BigTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +507,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +517,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohddang.SeSAC-CoingeckoProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,8 +538,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +548,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohddang.SeSAC-CoingeckoProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -361,6 +579,87 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B544FDD2B917BF60082A502 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.47.0;
+			};
+		};
+		8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		8B5450022B91E4840082A502 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B544FDE2B917BF60082A502 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FDD2B917BF60082A502 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		8B544FE12B917C1B0082A502 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		8B544FE32B917C1B0082A502 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		8B544FE62B917C240082A502 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8B544FE92B917C6A0082A502 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
+		8B544FEB2B917C6A0082A502 /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
+		};
+		8B5450032B91E4840082A502 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B5450022B91E4840082A502 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8BE362FB2B906A3C00EFC62F /* Project object */;
 }
