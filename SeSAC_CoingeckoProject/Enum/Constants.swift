@@ -49,8 +49,8 @@ enum Constants {
         static let tabFavoriteInactiveImage = UIImage(named: "tab_portfolio_inactive")
         static let tabUserInactiveImage = UIImage(named: "tab_user_inactive")
         
-        static let favStar = UIImage(named: "btn_star")
-        static let favInactiveStar = UIImage(named: "btn_star_fill")
+        static let favStar = UIImage(named: "btn_star_fill")
+        static let favInactiveStar = UIImage(named: "btn_star")
         
         static let cointDefaultImage = UIImage(systemName: "circles.hexagonpath.fill")
         

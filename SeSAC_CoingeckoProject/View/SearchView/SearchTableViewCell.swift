@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class SearchTableViewCell: UITableViewCell {
 
@@ -44,6 +45,12 @@ class SearchTableViewCell: UITableViewCell {
             make.centerY.equalTo(contentView)
             make.trailing.equalTo(contentView).inset(10)
         }
+    }
+    
+    func configureCell(_ coinData: Coin) {
+        coinView.coinTitleLabel.text = coinData.name
+        coinView.coinSymbolLabel.text = coinData.symbol
+        coinView.coinImage.kf.setImage(with: URL(string: coinData.thumbImage))
     }
 
 }

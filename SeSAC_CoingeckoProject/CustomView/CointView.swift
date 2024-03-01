@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 
 class CoinView: BaseView {
-    
     let coinImage: UIImageView = {
         let view = UIImageView(frame: .zero)
         view.layer.cornerRadius = 15
         view.image = Constants.Image.cointDefaultImage
+        view.contentMode = .scaleAspectFill
         return view
     }()
     let coinTitleLabel: UILabel = {
@@ -24,7 +24,7 @@ class CoinView: BaseView {
         return view
     }()
     
-    let coinSubTitleLabel: UILabel = {
+    let coinSymbolLabel: UILabel = {
         let view = UILabel()
         view.textColor = Constants.Color.smallLabel
         view.font = Constants.Font.main
@@ -35,7 +35,7 @@ class CoinView: BaseView {
     override func configureHierarchy() {
         addSubview(coinImage)
         addSubview(coinTitleLabel)
-        addSubview(coinSubTitleLabel)
+        addSubview(coinSymbolLabel)
     }
     
     override func configureConstraints() {
@@ -50,7 +50,7 @@ class CoinView: BaseView {
             make.height.equalTo(22)
             
         }
-        coinSubTitleLabel.snp.makeConstraints { make in
+        coinSymbolLabel.snp.makeConstraints { make in
             make.top.equalTo(coinTitleLabel.snp.bottom).offset(5)
             make.leading.equalTo(coinTitleLabel.snp.leading)
             make.height.equalTo(22)
