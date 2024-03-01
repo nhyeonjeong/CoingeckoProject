@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */; };
+		8B544FC52B90E4F90082A502 /* TrendingUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC42B90E4F90082A502 /* TrendingUIView.swift */; };
+		8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC62B90E5040082A502 /* SearchViewController.swift */; };
+		8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FC82B90E50E0082A502 /* SearchUIView.swift */; };
+		8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */; };
+		8B544FCD2B90E5210082A502 /* FavoriteUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCC2B90E5210082A502 /* FavoriteUIView.swift */; };
+		8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FCE2B90E5310082A502 /* ChartViewController.swift */; };
+		8B544FD12B90E53F0082A502 /* ChartUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD02B90E53F0082A502 /* ChartUIView.swift */; };
+		8B544FD42B90E5C00082A502 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD32B90E5C00082A502 /* Constants.swift */; };
+		8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FD62B90ED6A0082A502 /* UserViewController.swift */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -16,6 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		8B544FC42B90E4F90082A502 /* TrendingUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingUIView.swift; sourceTree = "<group>"; };
+		8B544FC62B90E5040082A502 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8B544FC82B90E50E0082A502 /* SearchUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUIView.swift; sourceTree = "<group>"; };
+		8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		8B544FCC2B90E5210082A502 /* FavoriteUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUIView.swift; sourceTree = "<group>"; };
+		8B544FCE2B90E5310082A502 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		8B544FD02B90E53F0082A502 /* ChartUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUIView.swift; sourceTree = "<group>"; };
+		8B544FD32B90E5C00082A502 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B544FD62B90ED6A0082A502 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +57,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B544FBD2B90E47A0082A502 /* TrendingView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */,
+				8B544FC42B90E4F90082A502 /* TrendingUIView.swift */,
+			);
+			path = TrendingView;
+			sourceTree = "<group>";
+		};
+		8B544FBE2B90E4800082A502 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FC62B90E5040082A502 /* SearchViewController.swift */,
+				8B544FC82B90E50E0082A502 /* SearchUIView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		8B544FBF2B90E4870082A502 /* FavoriteView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */,
+				8B544FCC2B90E5210082A502 /* FavoriteUIView.swift */,
+			);
+			path = FavoriteView;
+			sourceTree = "<group>";
+		};
+		8B544FC02B90E4900082A502 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FCE2B90E5310082A502 /* ChartViewController.swift */,
+				8B544FD02B90E53F0082A502 /* ChartUIView.swift */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
+		8B544FC12B90E4B10082A502 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD52B90ED5A0082A502 /* User */,
+				8B544FBD2B90E47A0082A502 /* TrendingView */,
+				8B544FBE2B90E4800082A502 /* SearchView */,
+				8B544FBF2B90E4870082A502 /* FavoriteView */,
+				8B544FC02B90E4900082A502 /* ChartView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B544FD22B90E5B50082A502 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD32B90E5C00082A502 /* Constants.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		8B544FD52B90ED5A0082A502 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8B544FD62B90ED6A0082A502 /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		8BE362FA2B906A3C00EFC62F = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +140,8 @@
 		8BE363052B906A3C00EFC62F /* SeSAC_CoingeckoProject */ = {
 			isa = PBXGroup;
 			children = (
+				8B544FD22B90E5B50082A502 /* Enum */,
+				8B544FC12B90E4B10082A502 /* View */,
 				8BE363062B906A3C00EFC62F /* AppDelegate.swift */,
 				8BE363082B906A3C00EFC62F /* SceneDelegate.swift */,
 				8BE3630A2B906A3C00EFC62F /* ViewController.swift */,
@@ -138,9 +224,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */,
+				8B544FC52B90E4F90082A502 /* TrendingUIView.swift in Sources */,
+				8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */,
 				8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */,
+				8B544FD12B90E53F0082A502 /* ChartUIView.swift in Sources */,
+				8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */,
 				8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */,
 				8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */,
+				8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */,
+				8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */,
+				8B544FCD2B90E5210082A502 /* FavoriteUIView.swift in Sources */,
+				8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */,
+				8B544FD42B90E5C00082A502 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +393,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +403,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohddang.SeSAC-CoingeckoProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,8 +424,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +434,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ohddang.SeSAC-CoingeckoProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
