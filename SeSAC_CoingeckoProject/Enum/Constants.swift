@@ -15,6 +15,7 @@ enum Constants {
         static let boldMain = UIFont.boldSystemFont(ofSize: 17)
         static let main = UIFont.systemFont(ofSize: 17)
         static let subMain = UIFont.systemFont(ofSize: 14)
+        static let small = UIFont.systemFont(ofSize: 12)
         
         static let favNumber = UIFont.boldSystemFont(ofSize: 17)
         static let favMediumNumber = UIFont.systemFont(ofSize: 15)

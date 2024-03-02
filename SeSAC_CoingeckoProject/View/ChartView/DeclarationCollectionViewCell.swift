@@ -43,12 +43,12 @@ final class DeclarationCollectionViewCell: UICollectionViewCell {
     
     func configureView() {
         titleLabel.font = Constants.Font.boldMain
-        declarationLabel.font = Constants.Font.boldMain
+        declarationLabel.font = Constants.Font.main
     }
     
-    func configureCell(title: String, price: String) {
-        titleLabel.text = title
-        declarationLabel.text = price
+    func configureCell(_ data: (title: String, price: Int)) {
+        titleLabel.text = data.title
+        declarationLabel.text = "\(data.price)"   
     }
     
     // 스토리보드로 할 때 실행되는 구문

@@ -52,6 +52,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ChartViewController()
+        vc.coinDataId = viewModel.cointDataList.value[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
 }

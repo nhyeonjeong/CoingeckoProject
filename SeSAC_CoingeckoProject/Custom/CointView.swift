@@ -11,6 +11,7 @@ import SnapKit
 class CoinView: BaseView {
     let coinImage: UIImageView = {
         let view = UIImageView(frame: .zero)
+        view.clipsToBounds = true
         view.layer.cornerRadius = 15
         view.image = Constants.Image.cointDefaultImage
         view.contentMode = .scaleAspectFill
