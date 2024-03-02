@@ -35,6 +35,9 @@
 		8B5450092B91E9E60082A502 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450082B91E9E60082A502 /* ChartView.swift */; };
 		8B54500B2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */; };
 		8B54500D2B922F5F0082A502 /* DeclarationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */; };
+		8B54500F2B923BEE0082A502 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500E2B923BEE0082A502 /* ChartViewModel.swift */; };
+		8B5450112B923E870082A502 /* CoinDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450102B923E870082A502 /* CoinDetail.swift */; };
+		8B5450142B9240280082A502 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5450132B9240280082A502 /* Toast */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -65,6 +68,8 @@
 		8B5450082B91E9E60082A502 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationCollectionViewCell.swift; sourceTree = "<group>"; };
 		8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationEnum.swift; sourceTree = "<group>"; };
+		8B54500E2B923BEE0082A502 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		8B5450102B923E870082A502 /* CoinDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetail.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B5450142B9240280082A502 /* Toast in Frameworks */,
 				8B544FE42B917C1B0082A502 /* RealmSwift in Frameworks */,
 				8B544FE72B917C240082A502 /* Alamofire in Frameworks */,
 				8B5450042B91E4840082A502 /* Kingfisher in Frameworks */,
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				8B544FCE2B90E5310082A502 /* ChartViewController.swift */,
+				8B54500E2B923BEE0082A502 /* ChartViewModel.swift */,
 				8B5450082B91E9E60082A502 /* ChartView.swift */,
 				8B54500A2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift */,
 			);
@@ -200,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				8B544FFD2B91C6BD0082A502 /* Coingecko.swift */,
+				8B5450102B923E870082A502 /* CoinDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 				8B544FE92B917C6A0082A502 /* DGCharts */,
 				8B544FEB2B917C6A0082A502 /* DGChartsDynamic */,
 				8B5450032B91E4840082A502 /* Kingfisher */,
+				8B5450132B9240280082A502 /* Toast */,
 			);
 			productName = SeSAC_CoingeckoProject;
 			productReference = 8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */;
@@ -299,6 +308,7 @@
 				8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */,
 				8B5450022B91E4840082A502 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8B5450122B9240280082A502 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 8BE363042B906A3C00EFC62F /* Products */;
 			projectDirPath = "";
@@ -344,9 +354,11 @@
 				8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */,
 				8B544FF52B91A5590082A502 /* UIView+Extension.swift in Sources */,
 				8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */,
+				8B5450112B923E870082A502 /* CoinDetail.swift in Sources */,
 				8B544FEF2B919BBD0082A502 /* SearchTableViewCell.swift in Sources */,
 				8B544FF82B91C1680082A502 /* CoinAPIManager.swift in Sources */,
 				8B544FFA2B91C2480082A502 /* SearchViewModel.swift in Sources */,
+				8B54500F2B923BEE0082A502 /* ChartViewModel.swift in Sources */,
 				8B544FFE2B91C6BD0082A502 /* Coingecko.swift in Sources */,
 				8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */,
 				8B544FD42B90E5C00082A502 /* Constants.swift in Sources */,
@@ -621,6 +633,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		8B5450122B9240280082A502 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -658,6 +678,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B5450022B91E4840082A502 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		8B5450132B9240280082A502 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B5450122B9240280082A502 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

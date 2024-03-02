@@ -10,7 +10,7 @@ import DGCharts
 
 final class ChartView: BaseView {
     
-    let symbolImage: UIImageView = {
+    let thumbImage: UIImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 20
         view.contentMode = .scaleAspectFill
@@ -37,53 +37,76 @@ final class ChartView: BaseView {
         view.backgroundColor = .clear
         return view
     }()
-    
+    let updateDate: UILabel = {
+        let view = UILabel()
+        view.textColor = Constants.Color.smallLabel
+        view.font = Constants.Font.small
+        return view
+    }()
     let chartView = LineChartView()
     
     override func configureHierarchy() {
-        addSubview(symbolImage)
+        addSubview(thumbImage)
         addSubview(titleLabel)
         addSubview(priceLabel)
         addSubview(todayPercent)
         addSubview(collectionView)
+        addSubview(updateDate)
         addSubview(chartView)
     }
     
     override func configureConstraints() {
-        symbolImage.snp.makeConstraints { make in
+        thumbImage.snp.makeConstraints { make in
             make.leading.top.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
             make.size.equalTo(40)
             
         }
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(symbolImage.snp.trailing)
+            make.leading.equalTo(thumbImage.snp.trailing).offset(4)
             make.trailing.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
-            make.centerY.equalTo(symbolImage)
+            make.centerY.equalTo(thumbImage)
         }
         priceLabel.snp.makeConstraints { make in
-            make.top.equalTo(symbolImage.snp.bottom).offset(10)
+            make.top.equalTo(thumbImage.snp.bottom).offset(10)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
             
         }
         todayPercent.snp.makeConstraints { make in
-            make.leading.equalTo(symbolImage.snp.leading)
+            make.leading.equalTo(thumbImage.snp.leading)
             make.top.equalTo(priceLabel.snp.bottom).offset(8)
             
         }
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(todayPercent.snp.bottom).offset(16)
+            make.top.equalTo(todayPercent.snp.bottom).offset(20)
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
             make.height.equalTo(110) // 없으면 안됨
         }
+        updateDate.snp.makeConstraints { make in
+            make.height.equalTo(20)
+            make.trailing.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(15)
+        }
         
         chartView.snp.makeConstraints { make in
-            make.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide)
+            make.horizontalEdges.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(updateDate.snp.top).inset(8)
         }
     }
-    override func configureView() {
-        titleLabel.text = "Solana"
-        priceLabel.text = "7999900"
-        todayPercent.text = "+3.22% Today"
+    // 다시 하기
+    func settingChartView() {
+        chartView.backgroundColor = Constants.Color.lightBackground
+        let entry = [ChartDataEntry(x: 1, y: 80),
+                     ChartDataEntry(x: 2, y: 45),
+                      ChartDataEntry(x: 3, y: 180),
+                     ]
+        let dataset = LineChartDataSet(entries: entry, label: "datasetLabel")
+//        dataset.drawCircleHoleEnabled = false // 점 없도록
+//        dataset.circleRadius = 5
+//        dataset.circleHoleColor = Constants.Color.pointColor
+//        dataset.lineWidth = 10
+        
+        chartView.data = LineChartData(dataSet: dataset)
+        
     }
 }
 
