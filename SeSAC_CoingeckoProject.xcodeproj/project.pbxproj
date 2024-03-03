@@ -52,6 +52,7 @@
 		8B5450322B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450312B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift */; };
 		8B5450342B94E1010082A502 /* TrendingNFTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450332B94E1010082A502 /* TrendingNFTCollectionViewCell.swift */; };
 		8B5E4A272B95092500315480 /* CoinNFTTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E4A262B95092500315480 /* CoinNFTTrending.swift */; };
+		8B5E4A2D2B951E2C00315480 /* NumberFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E4A2C2B951E2C00315480 /* NumberFormatManager.swift */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -98,6 +99,7 @@
 		8B5450312B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCoinCollectionViewCell.swift; sourceTree = "<group>"; };
 		8B5450332B94E1010082A502 /* TrendingNFTCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingNFTCollectionViewCell.swift; sourceTree = "<group>"; };
 		8B5E4A262B95092500315480 /* CoinNFTTrending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNFTTrending.swift; sourceTree = "<group>"; };
+		8B5E4A2C2B951E2C00315480 /* NumberFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatManager.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				8BE363112B906A3D00EFC62F /* LaunchScreen.storyboard */,
 				8BE363142B906A3D00EFC62F /* Info.plist */,
 				8B544FFB2B91C2DE0082A502 /* Observable.swift */,
+				8B5E4A2C2B951E2C00315480 /* NumberFormatManager.swift */,
 			);
 			path = SeSAC_CoingeckoProject;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				8B54501D2B939ED10082A502 /* CoinFavorite.swift in Sources */,
 				8B5450292B94D03F0082A502 /* TrendingCoinTableViewCell.swift in Sources */,
 				8B544FDC2B917A270082A502 /* BaseView.swift in Sources */,
+				8B5E4A2D2B951E2C00315480 /* NumberFormatManager.swift in Sources */,
 				8B5450012B91D7F90082A502 /* CoinAPI_Request.swift in Sources */,
 				8B5450092B91E9E60082A502 /* ChartView.swift in Sources */,
 				8B544FDA2B917A1D0082A502 /* BaseViewController.swift in Sources */,

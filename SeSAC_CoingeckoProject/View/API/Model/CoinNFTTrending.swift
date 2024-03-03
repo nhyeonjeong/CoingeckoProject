@@ -13,7 +13,7 @@ struct CoinNFTTrending: Decodable {
 }
 
 struct CoinItem: Decodable {
-    let item: [Item]
+    let item: Item
 }
 
 struct Item: Decodable {
@@ -22,6 +22,14 @@ struct Item: Decodable {
     let symbol: String
     let small: String // 코인 아이콘 리소스
     let data: Price
+    
+    enum CodingKeys: String, CodingKey {
+        case idString = "id"
+        case name
+        case symbol
+        case small
+        case data
+    }
 }
 
 struct Price: Decodable {

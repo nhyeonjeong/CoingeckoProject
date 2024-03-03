@@ -11,7 +11,6 @@ class TrendingCoinTableViewCell: UITableViewCell {
     let collectionTitleLabel: UILabel = {
         let view = UILabel()
         view.textColor = Constants.Color.titleLabel
-        view.text = "My Favorite"
         view.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return view
     }()
@@ -27,12 +26,12 @@ class TrendingCoinTableViewCell: UITableViewCell {
         contentView.addSubview(collectionView)
         collectionTitleLabel.snp.makeConstraints { make in
             make.top.leading.equalTo(contentView).inset(Constants.layout.areaLayout)
-            make.height.equalTo(40)
+            make.height.equalTo(60)
         }
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(collectionTitleLabel.snp.bottom)
             make.horizontalEdges.bottom.equalTo(contentView)
-            make.height.equalTo(150)
+            make.height.equalTo(180)
         }
         
     }
@@ -45,9 +44,9 @@ class TrendingCoinTableViewCell: UITableViewCell {
 extension TrendingCoinTableViewCell {
     func collectionViewLayout() -> UICollectionViewLayout {
         let inset: CGFloat = Constants.layout.areaLayout
-        let lineSpacing: CGFloat = 15
+        let lineSpacing: CGFloat = 10
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 150) // 없으면 안됨
+        layout.itemSize = CGSize(width: 330, height: 60) // 없으면 안됨
         layout.minimumLineSpacing = lineSpacing // 가로
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)

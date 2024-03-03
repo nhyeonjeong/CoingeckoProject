@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class TrendingCoinCollectionViewCell: UICollectionViewCell {
     
@@ -19,15 +20,19 @@ class TrendingCoinCollectionViewCell: UICollectionViewCell {
     
     let coinView = CoinView()
     
+    let numberBackView = UIView()
+    
     let priceLabel: UILabel = {
         let view = UILabel()
         view.textColor = Constants.Color.subLabel
         view.font = Constants.Font.subMain
+        view.textAlignment = .right
         return view
     }()
     let percentLabel: UILabel = {
         let view = UILabel()
         view.font = Constants.Font.small
+        view.textAlignment = .right
         return view
     }()
     
@@ -35,16 +40,14 @@ class TrendingCoinCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configureHierarchy()
         configureConstraints()
-        configureView()
-        
-        print("textfield override init")
     }
     
     func configureHierarchy() {
         contentView.addSubview(numberLabel)
         contentView.addSubview(coinView)
-        contentView.addSubview(priceLabel)
-        contentView.addSubview(percentLabel)
+        contentView.addSubview(numberBackView)
+        numberBackView.addSubview(priceLabel)
+        numberBackView.addSubview(percentLabel)
     }
     
     func configureConstraints() {
@@ -54,12 +57,30 @@ class TrendingCoinCollectionViewCell: UICollectionViewCell {
             
         }
         coinView.snp.makeConstraints { make in
-            make.leading.equalTo(numberLabel.snp.)
+            make.leading.equalTo(numberLabel.snp.trailing).offset(15)
+            make.centerY.equalTo(contentView)
+            
+        }
+        priceLabel.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(numberBackView)
+        }
+        percentLabel.snp.makeConstraints { make in
+            make.horizontalEdges.bottom.equalTo(numberBackView)
+            make.top.equalTo(priceLabel.snp.bottom)
+        }
+        numberBackView.snp.makeConstraints { make in
+            make.centerY.equalTo(contentView)
+            make.trailing.equalTo(contentView).inset(20)
         }
     }
     
-    func configureView() {
+    func configureCell(row: Int, data: CoinItem) {
+        numberLabel.text = "\(row+1)"
+        coinView.coinImage.kf.setImage(with: URL(string: data.item.small))
+        coinView.coinTitleLabel.text = data.item.name
+        coinView.coinSymbolLabel.text = data.item.symbol
         
+        priceLabel.text = data.item.data.price
     }
     
     // 스토리보드로 할 때 실행되는 구문

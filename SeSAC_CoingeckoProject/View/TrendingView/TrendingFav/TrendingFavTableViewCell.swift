@@ -11,7 +11,6 @@ class TrendingFavTableViewCell: UITableViewCell {
     let collectionTitleLabel: UILabel = {
         let view = UILabel()
         view.textColor = Constants.Color.titleLabel
-        view.text = "My Favorite"
         view.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return view
     }()

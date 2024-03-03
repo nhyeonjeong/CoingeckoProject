@@ -49,7 +49,7 @@ class TrendingViewModel {
             }
         }
     }
-    
+
     func numberOfRow() -> Int {
         return rowList.count
     }
