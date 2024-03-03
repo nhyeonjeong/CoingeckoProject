@@ -43,6 +43,15 @@
 		8B54501D2B939ED10082A502 /* CoinFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54501C2B939ED10082A502 /* CoinFavorite.swift */; };
 		8B54501F2B93A0670082A502 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54501E2B93A0670082A502 /* RealmRepository.swift */; };
 		8B5450212B93A1FF0082A502 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450202B93A1FF0082A502 /* FavoriteViewModel.swift */; };
+		8B5450232B94CBC60082A502 /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450222B94CBC60082A502 /* TrendingView.swift */; };
+		8B5450252B94CBD20082A502 /* TrendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450242B94CBD20082A502 /* TrendingViewModel.swift */; };
+		8B5450272B94D0340082A502 /* TrendingFavTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450262B94D0340082A502 /* TrendingFavTableViewCell.swift */; };
+		8B5450292B94D03F0082A502 /* TrendingCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450282B94D03F0082A502 /* TrendingCoinTableViewCell.swift */; };
+		8B54502B2B94D0470082A502 /* TrendingNFTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54502A2B94D0470082A502 /* TrendingNFTTableViewCell.swift */; };
+		8B5450302B94E0EC0082A502 /* TrendingFavCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54502F2B94E0EC0082A502 /* TrendingFavCollectionViewCell.swift */; };
+		8B5450322B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450312B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift */; };
+		8B5450342B94E1010082A502 /* TrendingNFTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450332B94E1010082A502 /* TrendingNFTCollectionViewCell.swift */; };
+		8B5E4A272B95092500315480 /* CoinNFTTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E4A262B95092500315480 /* CoinNFTTrending.swift */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -80,6 +89,15 @@
 		8B54501C2B939ED10082A502 /* CoinFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFavorite.swift; sourceTree = "<group>"; };
 		8B54501E2B93A0670082A502 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 		8B5450202B93A1FF0082A502 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		8B5450222B94CBC60082A502 /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
+		8B5450242B94CBD20082A502 /* TrendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingViewModel.swift; sourceTree = "<group>"; };
+		8B5450262B94D0340082A502 /* TrendingFavTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingFavTableViewCell.swift; sourceTree = "<group>"; };
+		8B5450282B94D03F0082A502 /* TrendingCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCoinTableViewCell.swift; sourceTree = "<group>"; };
+		8B54502A2B94D0470082A502 /* TrendingNFTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingNFTTableViewCell.swift; sourceTree = "<group>"; };
+		8B54502F2B94E0EC0082A502 /* TrendingFavCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingFavCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B5450312B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCoinCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B5450332B94E1010082A502 /* TrendingNFTCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingNFTCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B5E4A262B95092500315480 /* CoinNFTTrending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNFTTrending.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +131,11 @@
 			isa = PBXGroup;
 			children = (
 				8B544FC22B90E4EC0082A502 /* TrendingViewController.swift */,
+				8B5450222B94CBC60082A502 /* TrendingView.swift */,
+				8B5450242B94CBD20082A502 /* TrendingViewModel.swift */,
+				8B54502C2B94E0A30082A502 /* TrendingFav */,
+				8B54502D2B94E0A80082A502 /* TrendingCoin */,
+				8B54502E2B94E0AE0082A502 /* TrendingNFT */,
 			);
 			path = TrendingView;
 			sourceTree = "<group>";
@@ -221,6 +244,7 @@
 			children = (
 				8B544FFD2B91C6BD0082A502 /* Coingecko.swift */,
 				8B5450102B923E870082A502 /* CoinDetail.swift */,
+				8B5E4A262B95092500315480 /* CoinNFTTrending.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +256,33 @@
 				8B54501E2B93A0670082A502 /* RealmRepository.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		8B54502C2B94E0A30082A502 /* TrendingFav */ = {
+			isa = PBXGroup;
+			children = (
+				8B5450262B94D0340082A502 /* TrendingFavTableViewCell.swift */,
+				8B54502F2B94E0EC0082A502 /* TrendingFavCollectionViewCell.swift */,
+			);
+			path = TrendingFav;
+			sourceTree = "<group>";
+		};
+		8B54502D2B94E0A80082A502 /* TrendingCoin */ = {
+			isa = PBXGroup;
+			children = (
+				8B5450282B94D03F0082A502 /* TrendingCoinTableViewCell.swift */,
+				8B5450312B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift */,
+			);
+			path = TrendingCoin;
+			sourceTree = "<group>";
+		};
+		8B54502E2B94E0AE0082A502 /* TrendingNFT */ = {
+			isa = PBXGroup;
+			children = (
+				8B54502A2B94D0470082A502 /* TrendingNFTTableViewCell.swift */,
+				8B5450332B94E1010082A502 /* TrendingNFTCollectionViewCell.swift */,
+			);
+			path = TrendingNFT;
 			sourceTree = "<group>";
 		};
 		8BE362FA2B906A3C00EFC62F = {
@@ -361,24 +412,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B544FC72B90E5040082A502 /* SearchViewController.swift in Sources */,
+				8B5E4A272B95092500315480 /* CoinNFTTrending.swift in Sources */,
 				8B54500B2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift in Sources */,
 				8B544FF12B919CCF0082A502 /* CointView.swift in Sources */,
+				8B5450232B94CBC60082A502 /* TrendingView.swift in Sources */,
 				8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */,
 				8B54501A2B9372590082A502 /* FavoriteCollectionViewCell.swift in Sources */,
 				8B54501F2B93A0670082A502 /* RealmRepository.swift in Sources */,
 				8B5450212B93A1FF0082A502 /* FavoriteViewModel.swift in Sources */,
 				8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */,
 				8B544FFC2B91C2DE0082A502 /* Observable.swift in Sources */,
+				8B5450252B94CBD20082A502 /* TrendingViewModel.swift in Sources */,
 				8B54501D2B939ED10082A502 /* CoinFavorite.swift in Sources */,
+				8B5450292B94D03F0082A502 /* TrendingCoinTableViewCell.swift in Sources */,
 				8B544FDC2B917A270082A502 /* BaseView.swift in Sources */,
 				8B5450012B91D7F90082A502 /* CoinAPI_Request.swift in Sources */,
 				8B5450092B91E9E60082A502 /* ChartView.swift in Sources */,
 				8B544FDA2B917A1D0082A502 /* BaseViewController.swift in Sources */,
+				8B5450272B94D0340082A502 /* TrendingFavTableViewCell.swift in Sources */,
 				8B544FC32B90E4EC0082A502 /* TrendingViewController.swift in Sources */,
 				8B54500D2B922F5F0082A502 /* DeclarationEnum.swift in Sources */,
 				8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */,
+				8B5450302B94E0EC0082A502 /* TrendingFavCollectionViewCell.swift in Sources */,
 				8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */,
 				8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */,
+				8B54502B2B94D0470082A502 /* TrendingNFTTableViewCell.swift in Sources */,
+				8B5450342B94E1010082A502 /* TrendingNFTCollectionViewCell.swift in Sources */,
 				8B544FF52B91A5590082A502 /* UIView+Extension.swift in Sources */,
 				8B5450182B9371670082A502 /* FavoriteView.swift in Sources */,
 				8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */,
@@ -390,6 +449,7 @@
 				8B544FFE2B91C6BD0082A502 /* Coingecko.swift in Sources */,
 				8B544FCF2B90E5310082A502 /* ChartViewController.swift in Sources */,
 				8B544FD42B90E5C00082A502 /* Constants.swift in Sources */,
+				8B5450322B94E0F90082A502 /* TrendingCoinCollectionViewCell.swift in Sources */,
 				8B5450072B91E77D0082A502 /* BigTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

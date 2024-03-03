@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>74</string>
+					<string>71</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>73</string>
+					<string>71</string>
 					<key>Timestamp</key>
-					<string>731161330.553755</string>
+					<string>731171594.69447</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,16 +34,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>        
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>        // 해결법 )
-        viewModel.inputFetchFavoriteTrigger.value = ()
+				<string>        cell.configureCell(coinData: data, row: indexPath.row)
+        
 </string>
 				<key>trailing</key>
-				<string>        // 즐겨찾기 유무 확인해서 Image넣기
-        let favStarImage = viewModel.isFavoriteItem(tag: indexPath.row) ? Constants.Image.favStar : Constants.Image.favInactiveStar
-        cell.favStar.setImage(favStarImage, for: .normal)
+				<string>        // 해결법 )
+        viewModel.inputFetchFavoriteTrigger.value = ()
+        
 </string>
 			</dict>
 			<key>type</key>
@@ -57,13 +56,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>64</string>
+					<string>31</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>63</string>
+					<string>31</string>
 					<key>Timestamp</key>
-					<string>731161296.4260499</string>
+					<string>731171594.861499</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -79,16 +78,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>        inputFetchFavoriteTrigger.value = ()
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>    func toggleFavStar(tag: Int) {
-        // 해결법)
+				<string>            if let text = searchText {
+                CoinAPIManager.shared.fetchCoinData(type: Coingecko.self, api: .search(query: text), completionHandler: { value in
 </string>
 				<key>trailing</key>
-				<string>        
-        if isFavoriteItem(tag: tag) { // 즐겨찾기에 있는 코인이면 삭제
-            RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
+				<string>                    self.oupPutSearchCoinData.value = value.coins
+                    print("oupPutSearchCoinData value", value)
+                })
 </string>
 			</dict>
 			<key>type</key>
@@ -189,15 +187,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>52</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>32</string>
+					<string>33</string>
 					<key>StartingColumnNumber</key>
-					<string>51</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
 					<string>32</string>
 					<key>Timestamp</key>
-					<string>731170858.210379</string>
+					<string>731178667.215747</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -213,15 +211,61 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string> </string>
+				<string>    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -&gt; Void) {
+</string>
 				<key>leading</key>
 				<string>        }
     }
-    func fetchCoinItem(row: Int, completionHandler:</string>
+</string>
 				<key>trailing</key>
-				<string>@escaping (Int?, Double?) -&gt; Void) {
-        var data: CoinDetail? = nil
+				<string>        var data: CoinDetail? = nil
         CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value in
+            data = value[0]
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>49</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>48</string>
+					<key>Timestamp</key>
+					<string>731188266.898929</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            cell.collectionView.register(TrendingFavCollectionViewCell.self, forCellWithReuseIdentifier: TrendingFavCollectionViewCell.identifier)
+</string>
+				<key>leading</key>
+				<string>                return UITableViewCell()
+            }
+</string>
+				<key>trailing</key>
+				<string>            cell.collectionView.delegate = self
+            cell.collectionView.dataSource = self
+            cell.collectionView.tag = indexPath.row
 </string>
 			</dict>
 			<key>type</key>

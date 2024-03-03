@@ -89,11 +89,6 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
         coinView.coinImage.kf.setImage(with: URL(string: data.thumbImageString))
         coinView.coinTitleLabel.text = data.name
         coinView.coinSymbolLabel.text = data.symbolName
-        // 다시 api통신해야됨ㅋ
-//        currentPrice.text = "\(data.currentPrice)"
-//        percentLabel.text = "\(data.percent)%"
-        
-        // percent가 양수인지 음수인지
-//        viewModel.checkPercent(data.percent)
+
     }
 }
