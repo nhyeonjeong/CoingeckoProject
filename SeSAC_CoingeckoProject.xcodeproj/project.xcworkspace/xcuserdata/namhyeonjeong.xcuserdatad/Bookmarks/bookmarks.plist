@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>top-level-items</key>
+	<array>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>74</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>73</string>
+					<key>Timestamp</key>
+					<string>731161330.553755</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        
+</string>
+				<key>leading</key>
+				<string>        // 해결법 )
+        viewModel.inputFetchFavoriteTrigger.value = ()
+</string>
+				<key>trailing</key>
+				<string>        // 즐겨찾기 유무 확인해서 Image넣기
+        let favStarImage = viewModel.isFavoriteItem(tag: indexPath.row) ? Constants.Image.favStar : Constants.Image.favInactiveStar
+        cell.favStar.setImage(favStarImage, for: .normal)
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>64</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>63</string>
+					<key>Timestamp</key>
+					<string>731161296.4260499</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        inputFetchFavoriteTrigger.value = ()
+</string>
+				<key>leading</key>
+				<string>    func toggleFavStar(tag: Int) {
+        // 해결법)
+</string>
+				<key>trailing</key>
+				<string>        
+        if isFavoriteItem(tag: tag) { // 즐겨찾기에 있는 코인이면 삭제
+            RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>31</string>
+					<key>StartingColumnNumber</key>
+					<string>58</string>
+					<key>StartingLineNumber</key>
+					<string>30</string>
+					<key>Timestamp</key>
+					<string>731161395.863845</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string> 어떻ㄱ게,,?
+</string>
+				<key>leading</key>
+				<string>        super.viewWillAppear(animated)
+        viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기목록 패치
+        self.mainView.tableView.reloadData() // MVVM으로 하려면</string>
+				<key>trailing</key>
+				<string>    }
+    
+    func bindData() {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>42</string>
+					<key>EndingLineNumber</key>
+					<string>32</string>
+					<key>StartingColumnNumber</key>
+					<string>37</string>
+					<key>StartingLineNumber</key>
+					<string>32</string>
+					<key>Timestamp</key>
+					<string>731167069.643657</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/ChartView/ChartViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>value</string>
+				<key>leading</key>
+				<string>        viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기 다시 가져오기
+        //만약 다시 들어왔는데 즐겨찾기에서 해제되어있다면 화면 나가기
+        if !viewModel.outPutFetchFav.</string>
+				<key>trailing</key>
+				<string> { // 왜 작동안됨!?!
+            dismiss(animated: true)
+        }
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>52</string>
+					<key>EndingLineNumber</key>
+					<string>32</string>
+					<key>StartingColumnNumber</key>
+					<string>51</string>
+					<key>StartingLineNumber</key>
+					<string>32</string>
+					<key>Timestamp</key>
+					<string>731170858.210379</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/FavoriteView/FavoriteViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string> </string>
+				<key>leading</key>
+				<string>        }
+    }
+    func fetchCoinItem(row: Int, completionHandler:</string>
+				<key>trailing</key>
+				<string>@escaping (Int?, Double?) -&gt; Void) {
+        var data: CoinDetail? = nil
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value in
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+	</array>
+</dict>
+</plist>

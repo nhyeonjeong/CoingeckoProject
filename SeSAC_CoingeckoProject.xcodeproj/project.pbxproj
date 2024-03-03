@@ -38,6 +38,11 @@
 		8B54500F2B923BEE0082A502 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54500E2B923BEE0082A502 /* ChartViewModel.swift */; };
 		8B5450112B923E870082A502 /* CoinDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450102B923E870082A502 /* CoinDetail.swift */; };
 		8B5450142B9240280082A502 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5450132B9240280082A502 /* Toast */; };
+		8B5450182B9371670082A502 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450172B9371670082A502 /* FavoriteView.swift */; };
+		8B54501A2B9372590082A502 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450192B9372590082A502 /* FavoriteCollectionViewCell.swift */; };
+		8B54501D2B939ED10082A502 /* CoinFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54501C2B939ED10082A502 /* CoinFavorite.swift */; };
+		8B54501F2B93A0670082A502 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54501E2B93A0670082A502 /* RealmRepository.swift */; };
+		8B5450212B93A1FF0082A502 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450202B93A1FF0082A502 /* FavoriteViewModel.swift */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -70,6 +75,11 @@
 		8B54500C2B922F5F0082A502 /* DeclarationEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarationEnum.swift; sourceTree = "<group>"; };
 		8B54500E2B923BEE0082A502 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		8B5450102B923E870082A502 /* CoinDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetail.swift; sourceTree = "<group>"; };
+		8B5450172B9371670082A502 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
+		8B5450192B9372590082A502 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		8B54501C2B939ED10082A502 /* CoinFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFavorite.swift; sourceTree = "<group>"; };
+		8B54501E2B93A0670082A502 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		8B5450202B93A1FF0082A502 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_CoingeckoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE363062B906A3C00EFC62F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE363082B906A3C00EFC62F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				8B544FCA2B90E5180082A502 /* FavoriteViewController.swift */,
+				8B5450172B9371670082A502 /* FavoriteView.swift */,
+				8B5450202B93A1FF0082A502 /* FavoriteViewModel.swift */,
+				8B5450192B9372590082A502 /* FavoriteCollectionViewCell.swift */,
 			);
 			path = FavoriteView;
 			sourceTree = "<group>";
@@ -212,6 +225,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8B54501B2B939EBE0082A502 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				8B54501C2B939ED10082A502 /* CoinFavorite.swift */,
+				8B54501E2B93A0670082A502 /* RealmRepository.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		8BE362FA2B906A3C00EFC62F = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +253,7 @@
 		8BE363052B906A3C00EFC62F /* SeSAC_CoingeckoProject */ = {
 			isa = PBXGroup;
 			children = (
+				8B54501B2B939EBE0082A502 /* Realm */,
 				8B544FF32B91A5400082A502 /* Extension */,
 				8B544FED2B919B330082A502 /* Custom */,
 				8B544FD22B90E5B50082A502 /* Enum */,
@@ -341,8 +364,12 @@
 				8B54500B2B91EDBD0082A502 /* DeclarationCollectionViewCell.swift in Sources */,
 				8B544FF12B919CCF0082A502 /* CointView.swift in Sources */,
 				8B544FD72B90ED6A0082A502 /* UserViewController.swift in Sources */,
+				8B54501A2B9372590082A502 /* FavoriteCollectionViewCell.swift in Sources */,
+				8B54501F2B93A0670082A502 /* RealmRepository.swift in Sources */,
+				8B5450212B93A1FF0082A502 /* FavoriteViewModel.swift in Sources */,
 				8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */,
 				8B544FFC2B91C2DE0082A502 /* Observable.swift in Sources */,
+				8B54501D2B939ED10082A502 /* CoinFavorite.swift in Sources */,
 				8B544FDC2B917A270082A502 /* BaseView.swift in Sources */,
 				8B5450012B91D7F90082A502 /* CoinAPI_Request.swift in Sources */,
 				8B5450092B91E9E60082A502 /* ChartView.swift in Sources */,
@@ -353,6 +380,7 @@
 				8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */,
 				8B544FCB2B90E5180082A502 /* FavoriteViewController.swift in Sources */,
 				8B544FF52B91A5590082A502 /* UIView+Extension.swift in Sources */,
+				8B5450182B9371670082A502 /* FavoriteView.swift in Sources */,
 				8B544FC92B90E50E0082A502 /* SearchUIView.swift in Sources */,
 				8B5450112B923E870082A502 /* CoinDetail.swift in Sources */,
 				8B544FEF2B919BBD0082A502 /* SearchTableViewCell.swift in Sources */,

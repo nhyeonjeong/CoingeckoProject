@@ -31,7 +31,7 @@ final class ChartView: BaseView {
         return view
     }()
     
-    let collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(DeclarationCollectionViewCell.self, forCellWithReuseIdentifier: DeclarationCollectionViewCell.identifier)
         view.backgroundColor = .clear
@@ -112,7 +112,7 @@ final class ChartView: BaseView {
 
 extension ChartView {
     
-    static func collectionViewLayout() -> UICollectionViewLayout {
+    func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         let screenWidth: CGFloat = UIScreen.main.bounds.width
         let inset: CGFloat = 0

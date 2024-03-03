@@ -17,9 +17,9 @@ enum Constants {
         static let subMain = UIFont.systemFont(ofSize: 14)
         static let small = UIFont.systemFont(ofSize: 12)
         
-        static let favNumber = UIFont.boldSystemFont(ofSize: 17)
+        static let favBoldNumber = UIFont.boldSystemFont(ofSize: 17)
         static let favMediumNumber = UIFont.systemFont(ofSize: 15)
-        static let favSmallNumber = UIFont.boldSystemFont(ofSize: 13)
+        static let favBoldSmallNumber = UIFont.boldSystemFont(ofSize: 14)
     }
     
     enum Color {
@@ -32,7 +32,7 @@ enum Constants {
         static let smallLabel = UIColor(named: "smallLabel") // 진회색
 
         static let upParcentLabel = UIColor(named: "upLabel")
-        static let upPercentBackground = UIColor(named: "upPercentBackground")
+        static let upPercentBackground = UIColor(named: "upBackground")
         
         static let downPercentLabel = UIColor(named: "downLabel")
         static let downPercentBackground = UIColor(named: "downBackground")

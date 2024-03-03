@@ -29,9 +29,16 @@ class ChartViewModel {
     }
     let declaration = DeclarationEnum.allCases
     
+    var inputFetchFavoriteTrigger: Observable<Void?> = Observable(nil) // 즐겨찾기 가져오기
+    var outPutFetchFav: Observable<Bool> = Observable(false)
+    var favoriteList: Observable<[CoinFavorite]> = Observable([])
+    
     var inputCoinId: Observable<String> = Observable("") // 받아온 코인 id
-    var coinData: Observable<CoinDetail> = Observable(CoinDetail(id: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: ""))
+    var coinData: Observable<CoinDetail> = Observable(CoinDetail(idString: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: ""))
     var outPutCurrentPricePositive: Observable<Bool> = Observable(false)
+    
+    var deleteItemIdx = 0 // 즐겨찾기에서 살젝해야ㅎㄹ 인덱스
+    
     init() {
         bindData()
     }
@@ -44,7 +51,14 @@ class ChartViewModel {
                 print(data)
                 self.coinData.value = data
                 self.checkUpdown(data)
+                self.isFavoriteItem()
             }
+        }
+        // 즐겨찾기목록 가져오기
+        inputFetchFavoriteTrigger.bind { _ in
+            print("inputFetchFavoriteTrigger.bind")
+            self.favoriteList.value = RealmRepository.shared.fetchItem()
+            self.isFavoriteItem() // 즐겨찾기에 해당 coinData가 들어잇는지
         }
     }
     
@@ -78,4 +92,41 @@ class ChartViewModel {
         return declaration.count
     }
     
+    // 즐겨찾기 유무에 대한 별 바꾸기
+    func isFavoriteItem() {
+        print("isFavoriteItem")
+        var isFavorite: Bool = false
+        // 즐겨찾기에 있는지 확인 후 유무에 따라 별 바꾸기
+        for i in 0..<favoriteList.value.count {
+            print("\(favoriteList.value[i].idString) == \(coinData.value.idString)")
+            if favoriteList.value[i].idString == coinData.value.idString {
+                print("즐겨찾기에 있대!!")
+                deleteItemIdx = i
+                isFavorite = true //
+            }
+        }
+        outPutFetchFav.value = isFavorite
+    }
+    
+    func toggleFavStar() {
+        // 해결법)
+        inputFetchFavoriteTrigger.value = ()
+        
+        if outPutFetchFav.value { // 즐겨찾기에 있는 코인이면 삭제
+            RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
+                self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
+                self.outPutFetchFav.value = false // 즐겨찾기 이미지 다시 그리기
+            }
+        } else {
+            // 즐겨찾기 목록이 9개 이하일떄만 추가
+            if favoriteList.value.count < 10 {
+                print("즐겨찾기에 없으니까 추가")
+                RealmRepository.shared.createItem(itemId: coinData.value.idString) {
+                    self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
+                    self.outPutFetchFav.value = true
+                }
+            }
+        }
+        print("favoriteList : ", favoriteList.value)
+    }
 }
