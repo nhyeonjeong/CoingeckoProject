@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 final class SearchViewController: BaseViewController {
 
@@ -40,6 +41,13 @@ final class SearchViewController: BaseViewController {
             print("oupPutTableReloadRow-------------")
             self.mainView.tableView.reloadRows(at: [IndexPath(row: value, section: 0)], with: .fade)
 
+        }
+        viewModel.outputStarClicked.bind { value in
+            if value {
+                self.mainView.makeToast("즐겨찾기에 추가되었습니다", duration: 1.0, position: .top)
+            } else {
+                self.mainView.makeToast("즐겨찾기에서 해제되었습니다", duration: 1.0, position: .top)
+            }
         }
     }
     

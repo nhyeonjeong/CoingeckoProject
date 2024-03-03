@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>71</string>
+					<string>80</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>71</string>
+					<string>79</string>
 					<key>Timestamp</key>
-					<string>731171594.69447</string>
+					<string>731195527.626366</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,15 +34,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>        // 해결법 )
+</string>
 				<key>leading</key>
 				<string>        cell.configureCell(coinData: data, row: indexPath.row)
         
 </string>
 				<key>trailing</key>
-				<string>        // 해결법 )
-        viewModel.inputFetchFavoriteTrigger.value = ()
+				<string>        viewModel.inputFetchFavoriteTrigger.value = ()
         
+        // 즐겨찾기 유무 확인해서 Image넣기
 </string>
 			</dict>
 			<key>type</key>
@@ -56,13 +57,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>31</string>
+					<string>33</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>31</string>
+					<string>32</string>
 					<key>Timestamp</key>
-					<string>731171594.861499</string>
+					<string>731194394.6734411</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -78,15 +79,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>                    self.oupPutSearchCoinData.value = value.coins
+</string>
 				<key>leading</key>
-				<string>            if let text = searchText {
-                CoinAPIManager.shared.fetchCoinData(type: Coingecko.self, api: .search(query: text), completionHandler: { value in
+				<string>                CoinAPIManager.shared.fetchCoinData(type: Coingecko.self, api: .search(query: text), completionHandler: { value, error in
+                    guard let value else { return }
 </string>
 				<key>trailing</key>
-				<string>                    self.oupPutSearchCoinData.value = value.coins
-                    print("oupPutSearchCoinData value", value)
+				<string>                    print("oupPutSearchCoinData value", value)
                 })
+            }
 </string>
 			</dict>
 			<key>type</key>
@@ -100,13 +102,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>31</string>
+					<string>32</string>
 					<key>StartingColumnNumber</key>
-					<string>58</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>30</string>
+					<string>31</string>
 					<key>Timestamp</key>
-					<string>731161395.863845</string>
+					<string>731195527.626344</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -122,12 +124,12 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string> 어떻ㄱ게,,?
+				<string>        self.mainView.tableView.reloadData() // MVVM으로 하려면 어떻ㄱ게,,?
 </string>
 				<key>leading</key>
 				<string>        super.viewWillAppear(animated)
         viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기목록 패치
-        self.mainView.tableView.reloadData() // MVVM으로 하려면</string>
+</string>
 				<key>trailing</key>
 				<string>    }
     
@@ -143,15 +145,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>42</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>32</string>
+					<string>34</string>
 					<key>StartingColumnNumber</key>
-					<string>37</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>32</string>
+					<string>33</string>
 					<key>Timestamp</key>
-					<string>731167069.643657</string>
+					<string>731196648.5290819</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -167,15 +169,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>value</string>
+				<string>//        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
+</string>
 				<key>leading</key>
 				<string>        viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기 다시 가져오기
         //만약 다시 들어왔는데 즐겨찾기에서 해제되어있다면 화면 나가기
-        if !viewModel.outPutFetchFav.</string>
+</string>
 				<key>trailing</key>
-				<string> { // 왜 작동안됨!?!
-            dismiss(animated: true)
-        }
+				<string>//            navigationController?.popViewController(animated: true)
+//        }
+    }
 </string>
 			</dict>
 			<key>type</key>
@@ -219,8 +222,8 @@
 </string>
 				<key>trailing</key>
 				<string>        var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value in
-            data = value[0]
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value, error in
+            guard let value else { return }
 </string>
 			</dict>
 			<key>type</key>
@@ -234,13 +237,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>49</string>
+					<string>48</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>48</string>
+					<string>47</string>
 					<key>Timestamp</key>
-					<string>731190050.405647</string>
+					<string>731195046.852547</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -266,6 +269,50 @@
 				<string>            cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
             cell.collectionView.tag = indexPath.row
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>38</string>
+					<key>EndingLineNumber</key>
+					<string>70</string>
+					<key>StartingColumnNumber</key>
+					<string>21</string>
+					<key>StartingLineNumber</key>
+					<string>70</string>
+					<key>Timestamp</key>
+					<string>731195569.404865</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>outputStarClicked</string>
+				<key>leading</key>
+				<string>                self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
+                self.outPutTableReloadRow.value = tag
+                self.</string>
+				<key>trailing</key>
+				<string>.value = false
+            }
+        } else {
 </string>
 			</dict>
 			<key>type</key>

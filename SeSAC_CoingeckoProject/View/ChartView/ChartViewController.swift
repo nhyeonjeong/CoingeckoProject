@@ -21,6 +21,7 @@ final class ChartViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.inputCoinId.value = coinDataId
+        viewModel.bindDataLater()
         settingBarButton()
         bindData()
         configureCollectionView()
@@ -30,9 +31,9 @@ final class ChartViewController: BaseViewController {
 //        viewModel.inputCoinId.value = coinDataId // 다시 데이터 가져오기
         viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기 다시 가져오기
         //만약 다시 들어왔는데 즐겨찾기에서 해제되어있다면 화면 나가기
-        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
-            dismiss(animated: true)
-        }
+//        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
+//            navigationController?.popViewController(animated: true)
+//        }
     }
     
     func bindData() {
@@ -44,13 +45,29 @@ final class ChartViewController: BaseViewController {
             print("outputfetchfav.bind", value)
             let starImage = value ? Constants.Image.favStar : Constants.Image.favInactiveStar
             self.navigationItem.rightBarButtonItem?.image = starImage
+
         }
         viewModel.outPutCurrentPricePositive.bind { value in
             print("oupPutcurrnetPricePositive bind")
             // 코인변동폭 양/음에 따른 색, text
             self.mainView.todayPercent.textColor = value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
             let number = self.viewModel.coinData.value.price_change_percentage_24h
-            self.mainView.todayPercent.text = number > 0 ? "+\(number)% Today" : "\(number)% Today"
+            let numberString = String(format: "%.2f", number)
+            self.mainView.todayPercent.text = number > 0 ? "+\(numberString)% Today" : "\(numberString)% Today"
+        }
+        viewModel.outputFetchError.bind { value in
+            print("outputFetchError", value)
+            if value {
+                print("pop")
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        viewModel.outputStarClicked.bind { value in
+            if value {
+                self.mainView.makeToast("즐겨찾기에 추가되었습니다", duration: 1.0, position: .top)
+            } else {
+                self.mainView.makeToast("즐겨찾기에서 해제되었습니다", duration: 1.0, position: .top)
+            }
         }
     }
     
@@ -63,13 +80,6 @@ final class ChartViewController: BaseViewController {
         // 차트도 그리기
         mainView.settingChartView()
     }
-    
-    func noDataToast() {
-        view.makeToast("정보를 찾을 수 없습니다.", duration: 1.0, position: .top)
-        dismiss(animated: true)
-    }
-    
-    
 }
 
 extension ChartViewController: UICollectionViewDelegate, UICollectionViewDataSource {

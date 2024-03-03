@@ -32,7 +32,9 @@ class FavoriteViewModel {
     }
     func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
         var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value in
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value, error in
+            guard let value else { return }
+            
             data = value[0]
             guard let data else {
                 completionHandler(nil, nil)

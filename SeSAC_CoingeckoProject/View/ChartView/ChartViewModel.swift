@@ -36,7 +36,8 @@ class ChartViewModel {
     var inputCoinId: Observable<String> = Observable("") // 받아온 코인 id
     var coinData: Observable<CoinDetail> = Observable(CoinDetail(idString: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: ""))
     var outPutCurrentPricePositive: Observable<Bool> = Observable(false)
-    
+    var outputFetchError: Observable<Bool> = Observable(false)
+    var outputStarClicked: Observable<Bool> = Observable(false)
     var deleteItemIdx = 0 // 즐겨찾기에서 살젝해야ㅎㄹ 인덱스
     
     init() {
@@ -44,21 +45,30 @@ class ChartViewModel {
     }
     
     private func bindData() {
-        inputCoinId.bind { id in
-            print("inputcoinId bind")
-            CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: id)) { coinData in
-                let data = coinData[0]
-                print(data)
-                self.coinData.value = data
-                self.checkUpdown(data)
-                self.isFavoriteItem()
-            }
-        }
+        
         // 즐겨찾기목록 가져오기
         inputFetchFavoriteTrigger.bind { _ in
             print("inputFetchFavoriteTrigger.bind")
             self.favoriteList.value = RealmRepository.shared.fetchItem()
             self.isFavoriteItem() // 즐겨찾기에 해당 coinData가 들어잇는지
+        }
+    }
+    // 처음부터 api통신하지 말고 VC에서 coinDataId를 받아왔을 떄 api통신
+    func bindDataLater() {
+        inputCoinId.bind { id in
+            print("inputcoinId bind")
+            CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: id)) { coinData, error in
+                guard let coinData else {
+                    self.outputFetchError.value = true // api통신 오류 발생
+                    return
+                }
+                let data = coinData[0]
+                print(data)
+                self.coinData.value = data
+                self.checkUpdown(data)
+                self.isFavoriteItem()
+                self.outputFetchError.value = false
+            }
         }
     }
     
@@ -116,6 +126,7 @@ class ChartViewModel {
             RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
                 self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
                 self.outPutFetchFav.value = false // 즐겨찾기 이미지 다시 그리기
+                self.outputStarClicked.value = false
             }
         } else {
             // 즐겨찾기 목록이 9개 이하일떄만 추가
@@ -124,6 +135,7 @@ class ChartViewModel {
                 RealmRepository.shared.createItem(itemId: coinData.value.idString) {
                     self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
                     self.outPutFetchFav.value = true
+                    self.outputStarClicked.value = true
                 }
             }
         }

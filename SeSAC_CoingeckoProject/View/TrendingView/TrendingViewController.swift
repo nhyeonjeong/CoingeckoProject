@@ -42,7 +42,6 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = viewModel.rowList[indexPath.row]
         if section == .favorite {
-            print("favorite")
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendingFavTableViewCell.identifier, for: indexPath) as? TrendingFavTableViewCell else {
                 return UITableViewCell()
             }
@@ -89,13 +88,10 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let row = viewModel.rowList[collectionView.tag]
         if row == .favorite {
-            print("collection row count : ", viewModel.favoriteList.value.count)
             return viewModel.favoriteList.value.count
         } else if row == .coin {
-            print("collection row count : ", viewModel.coinTrendingList.value.count)
             return viewModel.coinTrendingList.value.count
         } else {
-            print("collection nfs count : ", viewModel.nftTrendingList.value.count)
             return viewModel.nftTrendingList.value.count
         }
     }
@@ -103,14 +99,13 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let row = viewModel.rowList[collectionView.tag]
         if row == .favorite {
-            print("favorite")
+
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingFavCollectionViewCell.identifier, for: indexPath) as? TrendingFavCollectionViewCell else {
                 return UICollectionViewCell()
             }
             cell.configureCell(viewModel.favoriteList.value[indexPath.row])
             viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
                 if let currentPrice, let percent {
-                    
                     cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
                     cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
                     cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
@@ -122,7 +117,6 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             }
             return cell
         } else if row == .coin {
-            print("coin")
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
                 return UICollectionViewCell()
             }
@@ -135,7 +129,6 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
             return cell
         } else {
-            print("nft")
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingNFTCollectionViewCell.identifier, for: indexPath) as? TrendingNFTCollectionViewCell else {
                 return UICollectionViewCell()
             }

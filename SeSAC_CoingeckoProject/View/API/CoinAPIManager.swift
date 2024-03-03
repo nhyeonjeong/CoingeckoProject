@@ -12,7 +12,7 @@ class CoinAPIManager {
     
     static let shared = CoinAPIManager()
     
-    func fetchCoinData<T: Decodable>(type: T.Type, api: CoinAPi_Request, completionHandler: @escaping (T) -> Void) {
+    func fetchCoinData<T: Decodable>(type: T.Type, api: CoinAPi_Request, completionHandler: @escaping (T?, Error?) -> Void) {
 
 //        AF.request(api.url).responseString { value in
 //            print("responseString: \(value)")
@@ -23,10 +23,11 @@ class CoinAPIManager {
             switch response.result {
             case .success(let success):
 //                print(success)
-                completionHandler(success)
+                completionHandler(success, nil)
             case .failure(let failure):
-//                print(fail/*u*/re)
                 print("alamofire failure")
+                completionHandler(nil, failure)
+                
             }
         }
     }

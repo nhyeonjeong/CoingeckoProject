@@ -42,7 +42,8 @@ class TrendingViewModel {
             print("즐겨찾기 패치 트리거")
             // 즐겨찾기
             self.favoriteList.value = RealmRepository.shared.fetchItem()
-            CoinAPIManager.shared.fetchCoinData(type: CoinNFTTrending.self, api: .trending) { data in
+            CoinAPIManager.shared.fetchCoinData(type: CoinNFTTrending.self, api: .trending) { data, error in
+                guard let data else { return }
                 self.coinTrendingList.value = data.coins
                 self.nftTrendingList.value = data.nfts
                 self.outputFetchTrigger.value = ()
@@ -63,7 +64,8 @@ class TrendingViewModel {
     }
     func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
         var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value in
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value, error in
+            guard let value else { return }
             data = value[0]
             guard let data else {
                 completionHandler(nil, nil)
