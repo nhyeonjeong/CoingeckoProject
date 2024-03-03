@@ -79,11 +79,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         // 해결법 )
         viewModel.inputFetchFavoriteTrigger.value = ()
+        // 검색한 단어는 보라색으로
+        let attribtuedString = NSMutableAttributedString(string: data.name)
+        let range = (data.name as NSString).range(of: mainView.searchBar.text!)
+        attribtuedString.addAttribute(.foregroundColor, value: Constants.Color.pointColor, range: range)
+        cell.coinView.coinTitleLabel.attributedText = attribtuedString
         
         // 즐겨찾기 유무 확인해서 Image넣기
         let favStarImage = viewModel.isFavoriteItem(tag: indexPath.row) ? Constants.Image.favStar : Constants.Image.favInactiveStar
         cell.favStar.setImage(favStarImage, for: .normal)
-
+        
         // 즐겨찾기 버튼 눌렀을 대
         cell.favStar.tag = indexPath.row
         cell.favStar.addTarget(self, action: #selector(favStarClicked), for: .touchUpInside)

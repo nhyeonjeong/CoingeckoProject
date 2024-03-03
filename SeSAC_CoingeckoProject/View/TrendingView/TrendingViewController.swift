@@ -153,12 +153,15 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         if row == .favorite {
             let vc = ChartViewController()
             vc.coinDataId = viewModel.favoriteList.value[indexPath.row].idString
+            vc.popClosure = {
+                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top) // 여긴 왜 갑자기 ㅇ안돼,,?
+            }
             navigationController?.pushViewController(vc, animated: true)
         } else if row == .coin {
             let vc = ChartViewController()
             vc.coinDataId = viewModel.coinTrendingList.value[indexPath.row].item.idString
             vc.popClosure = {
-                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top) // 여긴 왜 갑자기 ㅇ안돼,,?
             }
             navigationController?.pushViewController(vc, animated: true)
         }
