@@ -59,6 +59,8 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
             } else {
                 cell.currentPrice.text = "통신 실패"
                 cell.percentLabel.text = "통신 실패"
+                cell.percentLabel.textColor = Constants.Color.titleLabel
+                cell.percentLabel.backgroundColor = Constants.Color.lightBackground
             }
         }
         // 색
