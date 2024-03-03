@@ -45,4 +45,10 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
         cell.configureCell(viewModel.favoriteList.value[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ChartViewController()
+        vc.coinDataId = viewModel.favoriteList.value[indexPath.row].idString
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
