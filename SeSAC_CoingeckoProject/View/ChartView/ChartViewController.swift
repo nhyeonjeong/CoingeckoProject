@@ -21,20 +21,30 @@ final class ChartViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.inputCoinId.value = coinDataId
+        settingBarButton()
         bindData()
         configureCollectionView()
     }
-    // 왜 안뜨지,,?
-//    deinit {
-//        print("ChartVC deinit")
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        viewModel.inputCoinId.value = coinDataId // 다시 데이터 가져오기
+        viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기 다시 가져오기
+        //만약 다시 들어왔는데 즐겨찾기에서 해제되어있다면 화면 나가기
+        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
+            dismiss(animated: true)
+        }
+    }
     
     func bindData() {
         viewModel.coinData.bind { data in
             // UI그리기
             self.reloadView(data)
         }
-        
+        viewModel.outPutFetchFav.bind { value in
+            print("outputfetchfav.bind", value)
+            let starImage = value ? Constants.Image.favStar : Constants.Image.favInactiveStar
+            self.navigationItem.rightBarButtonItem?.image = starImage
+        }
         viewModel.outPutCurrentPricePositive.bind { value in
             print("oupPutcurrnetPricePositive bind")
             // 코인변동폭 양/음에 따른 색, text
@@ -58,6 +68,8 @@ final class ChartViewController: BaseViewController {
         view.makeToast("정보를 찾을 수 없습니다.", duration: 1.0, position: .top)
         dismiss(animated: true)
     }
+    
+    
 }
 
 extension ChartViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -85,5 +97,22 @@ extension ChartViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
         cell.configureCell(cellData)
         return cell
+    }
+}
+
+extension ChartViewController {
+    func settingBarButton() {
+        print(#function)
+        let button = UIBarButtonItem(image: Constants.Image.favInactiveStar, style: .plain, target: self, action: #selector(rightBarButtonItemClicked))
+//        viewModel.isFavoriteItem() // 즐겨찾기에 들어있는지 확인
+        button.tintColor = Constants.Color.pointColor
+        navigationItem.rightBarButtonItem = button
+        
+    }
+    
+    @objc
+    func rightBarButtonItemClicked() {
+        print(#function)
+        viewModel.toggleFavStar()
     }
 }

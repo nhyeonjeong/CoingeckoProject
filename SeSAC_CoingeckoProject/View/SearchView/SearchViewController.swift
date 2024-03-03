@@ -25,6 +25,12 @@ final class SearchViewController: BaseViewController {
         configureSearchBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기목록 패치
+        self.mainView.tableView.reloadData() // MVVM으로 하려면 어떻ㄱ게,,?
+    }
+    
     func bindData() {
         viewModel.oupPutSearchCoinData.bind { _ in
             print("coindatalist bind")

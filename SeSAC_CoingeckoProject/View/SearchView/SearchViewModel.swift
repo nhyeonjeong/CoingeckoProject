@@ -38,6 +38,7 @@ final class SearchViewModel {
         inputFetchFavoriteTrigger.bind { _ in
             print("inputFetchFavoriteTrigger.bind")
             self.favoriteList.value = RealmRepository.shared.fetchItem()
+            
         }
     }
     

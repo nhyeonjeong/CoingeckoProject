@@ -22,6 +22,7 @@ final class FavoriteViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         print(#function)
         viewModel.inputFetchFavTrigger.value = ()
     }
