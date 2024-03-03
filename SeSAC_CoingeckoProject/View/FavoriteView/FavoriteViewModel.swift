@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class FavoriteViewModel {
-    var inputTrigger: Observable<Void?> = Observable(nil)
+    var inputFetchFavTrigger: Observable<Void?> = Observable(nil)
     var favoriteList: Observable<[CoinFavorite]> = Observable([])
     var isUpPercent: Observable<Bool> = Observable(false)
     
@@ -18,7 +18,7 @@ class FavoriteViewModel {
     }
     
     private func bindData() {
-        inputTrigger.bind { _ in
+        inputFetchFavTrigger.bind { _ in
             self.favoriteList.value = RealmRepository.shared.fetchItem()
         }
     }

@@ -17,9 +17,13 @@ final class FavoriteViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.inputTrigger.value = () // 트리거로 즐겨찾기 목록 가져오기
-        bindData()
+        bindData() // 즐겨찾기는 알아서 가져옴
         configureCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(#function)
+        viewModel.inputFetchFavTrigger.value = ()
     }
 
     func bindData() {
@@ -43,6 +47,8 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         cell.configureCell(viewModel.favoriteList.value[indexPath.row])
+        // 셀마다 api통신해서 실시간 가격, 퍼센트 가져오기
+        viewModel
         return cell
     }
     
