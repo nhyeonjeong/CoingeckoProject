@@ -24,7 +24,7 @@ class TrendingViewModel {
             }
         }
     }
-    let rowList = RowEnum.allCases
+    var rowList = RowEnum.allCases
     
     var inputFetchTrigger: Observable<Void?> = Observable(nil)
     var outputFetchTrigger: Observable<Void?> = Observable(nil)
@@ -73,6 +73,15 @@ class TrendingViewModel {
             }
             self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
             completionHandler(data.current_price, data.price_change_percentage_24h)
+        }
+    }
+    
+    func checkFavListCount() {
+        let favListCount = favoriteList.value.count
+        if favListCount >= 0 && favListCount < 2 {
+            rowList = [.coin, .nft]
+        } else {
+            rowList = RowEnum.allCases
         }
     }
 }

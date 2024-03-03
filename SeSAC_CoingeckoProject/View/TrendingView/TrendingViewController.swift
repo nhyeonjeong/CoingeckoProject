@@ -36,6 +36,9 @@ final class TrendingViewController: BaseViewController {
 extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // 즐겨찾기의 갯수가 0이나 1개라면 숨기기
+        viewModel.checkFavListCount()
+
         return viewModel.numberOfRow()
     }
     
@@ -99,10 +102,10 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let row = viewModel.rowList[collectionView.tag]
         if row == .favorite {
-
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingFavCollectionViewCell.identifier, for: indexPath) as? TrendingFavCollectionViewCell else {
                 return UICollectionViewCell()
             }
+            
             cell.configureCell(viewModel.favoriteList.value[indexPath.row])
             viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
                 if let currentPrice, let percent {
