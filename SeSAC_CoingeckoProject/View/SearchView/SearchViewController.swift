@@ -93,6 +93,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ChartViewController()
         vc.coinDataId = viewModel.oupPutSearchCoinData.value[indexPath.row].idString
+        vc.popClosure = {
+            self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
 }

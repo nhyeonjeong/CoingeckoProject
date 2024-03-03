@@ -157,6 +157,9 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         } else if row == .coin {
             let vc = ChartViewController()
             vc.coinDataId = viewModel.coinTrendingList.value[indexPath.row].item.idString
+            vc.popClosure = {
+                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+            }
             navigationController?.pushViewController(vc, animated: true)
         }
     }

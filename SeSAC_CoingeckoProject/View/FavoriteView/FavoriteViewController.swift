@@ -71,6 +71,9 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ChartViewController()
         vc.coinDataId = viewModel.favoriteList.value[indexPath.row].idString
+        vc.popClosure = {
+            self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
 }

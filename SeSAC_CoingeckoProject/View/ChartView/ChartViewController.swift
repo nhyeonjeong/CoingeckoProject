@@ -10,6 +10,9 @@ import Toast
 import Kingfisher
 
 final class ChartViewController: BaseViewController {
+    
+    var popClosure: (() -> Void)? // api통신 실패하면 뒤로가서 toast띄우기
+    
     var coinDataId: String = "" // 받아온 코인 id
     
     let viewModel = ChartViewModel()
@@ -60,6 +63,7 @@ final class ChartViewController: BaseViewController {
             if value {
                 print("pop")
                 self.navigationController?.popViewController(animated: true)
+                self.popClosure?() // 뒤로가서 toast띄우기
             }
         }
         viewModel.outputStarClicked.bind { value in
