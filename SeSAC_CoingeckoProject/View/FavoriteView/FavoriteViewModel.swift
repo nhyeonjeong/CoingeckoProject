@@ -30,4 +30,16 @@ class FavoriteViewModel {
             isUpPercent.value = false
         }
     }
+    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
+        var data: CoinDetail? = nil
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value in
+            data = value[0]
+            guard let data else {
+                completionHandler(nil, nil)
+                return
+            }
+            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
+            completionHandler(data.current_price, data.price_change_percentage_24h)
+        }
+    }
 }

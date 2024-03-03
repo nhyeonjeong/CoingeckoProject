@@ -32,7 +32,7 @@ enum Constants {
         static let smallLabel = UIColor(named: "smallLabel") // 진회색
 
         static let upParcentLabel = UIColor(named: "upLabel")
-        static let upPercentBackground = UIColor(named: "upPercentBackground")
+        static let upPercentBackground = UIColor(named: "upBackground")
         
         static let downPercentLabel = UIColor(named: "downLabel")
         static let downPercentBackground = UIColor(named: "downBackground")

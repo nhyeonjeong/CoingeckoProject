@@ -49,7 +49,20 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
         }
         cell.configureCell(viewModel.favoriteList.value[indexPath.row])
         // 셀마다 api통신해서 실시간 가격, 퍼센트 가져오기
-        viewModel
+        viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+            if let currentPrice, let percent {
+                
+                cell.currentPrice.text = "\(currentPrice)"
+                cell.percentLabel.text = self.viewModel.isUpPercent.value ? "  +\(percent)%  " : "  \(percent)%  "
+                cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
+                cell.percentLabel.backgroundColor = self.viewModel.isUpPercent.value ? Constants.Color.upPercentBackground : Constants.Color.downPercentBackground
+            } else {
+                cell.currentPrice.text = "통신 실패"
+                cell.percentLabel.text = "통신 실패"
+            }
+        }
+        // 색
+        
         return cell
     }
     
