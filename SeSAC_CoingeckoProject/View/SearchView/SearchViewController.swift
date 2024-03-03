@@ -26,10 +26,23 @@ final class SearchViewController: BaseViewController {
     }
     
     func bindData() {
-        viewModel.cointDataList.bind { _ in
+        viewModel.oupPutSearchCoinData.bind { _ in
             print("coindatalist bind")
             self.mainView.tableView.reloadData()
         }
+        viewModel.outPutTableReloadRow.bind { value in
+            print("oupPutTableReloadRow-------------")
+            self.mainView.tableView.reloadRows(at: [IndexPath(row: value, section: 0)], with: .fade)
+
+        }
+    }
+    
+    // 즐겨찾기 버튼 눌렀을 때
+    @objc
+    func favStarClicked(_ sender: UIButton) {
+        print(#function)
+        let cellData = viewModel.oupPutSearchCoinData.value[sender.tag]
+        viewModel.toggleFavStar(tag: sender.tag)
     }
 }
 
@@ -39,20 +52,33 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         mainView.tableView.dataSource = self
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.cointDataList.value.count
+        return viewModel.oupPutSearchCoinData.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(viewModel.cointDataList.value[indexPath.row])
+        cell.favStar.tag = indexPath.row // 가지고 온 검색결과에서 몇 번째인지 지정 -> 버튼 눌렀을 떄 어떤 검색결과를 눌렀는지 알 수 있다.
+        let data = viewModel.oupPutSearchCoinData.value[indexPath.row]
+        cell.configureCell(coinData: data, row: indexPath.row)
+        
+        // 해결법 )
+        viewModel.inputFetchFavoriteTrigger.value = ()
+        
+        // 즐겨찾기 유무 확인해서 Image넣기
+        let favStarImage = viewModel.isFavoriteItem(tag: indexPath.row) ? Constants.Image.favStar : Constants.Image.favInactiveStar
+        cell.favStar.setImage(favStarImage, for: .normal)
+
+        // 즐겨찾기 버튼 눌렀을 대
+        cell.favStar.tag = indexPath.row
+        cell.favStar.addTarget(self, action: #selector(favStarClicked), for: .touchUpInside)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ChartViewController()
-        vc.coinDataId = viewModel.cointDataList.value[indexPath.row].id
+        vc.coinDataId = viewModel.oupPutSearchCoinData.value[indexPath.row].idString
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -64,8 +90,6 @@ extension SearchViewController: UISearchBarDelegate {
     
     // return을 누르면
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
         viewModel.inputSearchText.value = searchBar.text
-
     }
 }

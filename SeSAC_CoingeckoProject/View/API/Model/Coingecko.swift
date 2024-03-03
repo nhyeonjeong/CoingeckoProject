@@ -11,14 +11,15 @@ struct Coingecko: Decodable {
     let coins: [Coin]
 }
 
+// 즐겨찾기가 저장되는 형태일 것.
 struct Coin: Decodable {
-    let id: String
+    let idString: String
     let thumbImage: String
     let name: String
     let symbol: String
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case idString = "id"
         case thumbImage = "thumb"
         case name
         case symbol

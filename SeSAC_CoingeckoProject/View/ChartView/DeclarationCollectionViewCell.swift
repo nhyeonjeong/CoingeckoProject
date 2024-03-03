@@ -43,7 +43,10 @@ final class DeclarationCollectionViewCell: UICollectionViewCell {
     
     func configureView() {
         titleLabel.font = Constants.Font.boldMain
+        titleLabel.textColor = Constants.Color.titleLabel
+        
         declarationLabel.font = Constants.Font.main
+        declarationLabel.textColor = Constants.Color.subLabel
     }
     
     func configureCell(_ data: (title: String, price: Int)) {
