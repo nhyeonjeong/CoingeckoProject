@@ -113,5 +113,6 @@ extension SearchViewController: UISearchBarDelegate {
     // return을 누르면
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.inputSearchText.value = searchBar.text
+        view.endEditing(true) // 키보드 내리기
     }
 }

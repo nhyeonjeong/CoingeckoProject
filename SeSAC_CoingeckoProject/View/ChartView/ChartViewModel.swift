@@ -34,7 +34,7 @@ class ChartViewModel {
     var favoriteList: Observable<[CoinFavorite]> = Observable([])
     
     var inputCoinId: Observable<String> = Observable("") // 받아온 코인 id
-    var coinData: Observable<CoinDetail> = Observable(CoinDetail(idString: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: ""))
+    var coinData: Observable<CoinDetail> = Observable(CoinDetail(idString: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: "", sparkline_in_7d: []))
     var outPutCurrentPricePositive: Observable<Bool> = Observable(false)
     var outputFetchError: Observable<Bool> = Observable(false)
     var outputStarClicked: Observable<Bool> = Observable(false)
