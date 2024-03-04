@@ -39,7 +39,6 @@ final class TrendingViewController: BaseViewController {
                 self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
             }
             self.navigationController?.pushViewController(vc, animated: true)
-
         }
     }
 }

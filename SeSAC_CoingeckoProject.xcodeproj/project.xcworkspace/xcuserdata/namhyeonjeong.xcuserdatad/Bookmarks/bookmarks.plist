@@ -147,13 +147,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>33</string>
+					<string>31</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>32</string>
+					<string>30</string>
 					<key>Timestamp</key>
-					<string>731178667.215747</string>
+					<string>731243203.8243279</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -172,12 +172,12 @@
 				<string>    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -&gt; Void) {
 </string>
 				<key>leading</key>
-				<string>        }
-    }
+				<string>    }
+    
 </string>
 				<key>trailing</key>
 				<string>        var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value, error in
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
             guard let value else { return }
 </string>
 			</dict>
@@ -192,13 +192,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>61</string>
+					<string>60</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>60</string>
+					<string>59</string>
 					<key>Timestamp</key>
-					<string>731236346.29483</string>
+					<string>731243511.698653</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -237,13 +237,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>126</string>
+					<string>125</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>125</string>
+					<string>124</string>
 					<key>Timestamp</key>
-					<string>731236346.294773</string>
+					<string>731243511.6986901</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -282,13 +282,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>123</string>
+					<string>122</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>122</string>
+					<string>121</string>
 					<key>Timestamp</key>
-					<string>731236346.294801</string>
+					<string>731243511.698684</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -327,13 +327,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>130</string>
+					<string>129</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>129</string>
+					<string>128</string>
 					<key>Timestamp</key>
-					<string>731236346.294744</string>
+					<string>731243511.6986769</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>

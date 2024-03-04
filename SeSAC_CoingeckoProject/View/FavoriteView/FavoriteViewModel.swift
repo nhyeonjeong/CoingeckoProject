@@ -9,34 +9,33 @@ import Foundation
 import RealmSwift
 
 class FavoriteViewModel {
-    var inputFetchFavTrigger: Observable<Void?> = Observable(nil)
-    var favoriteList: Observable<[CoinFavorite]> = Observable([])
+    var inputReadFavTrigger: Observable<Void?> = Observable(nil) // 즐겨찾기 realm에서 가져오기
+    var outputFavoriteList: Observable<[CoinFavorite]> = Observable([]) // 즐겨찾기 목록
     var isUpPercent: Observable<Bool> = Observable(false)
+    var transitionWithId: Observable<String?> = Observable(nil)
     
     init() {
         bindData()
     }
     
     private func bindData() {
-        inputFetchFavTrigger.bind { _ in
-            self.favoriteList.value = RealmRepository.shared.fetchItem()
+        inputReadFavTrigger.bind { _ in
+            self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
         }
     }
     
     func checkPercent(_ percent: Double) {
-        if percent > 0 {
-            isUpPercent.value = true
-        } else {
-            isUpPercent.value = false
-        }
+        isUpPercent.value = percent > 0 ? true : false
     }
+    
     func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
         var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value, error in
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
             guard let value else { return }
             
             data = value[0]
             guard let data else {
+                print(#function, "nil, nil")
                 completionHandler(nil, nil)
                 return
             }

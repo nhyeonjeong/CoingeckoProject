@@ -65,7 +65,7 @@ class TrendingViewModel {
     func numberOfTableRow() -> Int {
         let favListCount = outputFavoriteList.value.count
         if favListCount >= 0 && favListCount < 2 {
-            rowList = [.coin, .nft]
+            rowList = favListCount >= 0 && favListCount < 2 ? [.coin, .nft] : RowEnum.allCases
         } else {
             rowList = RowEnum.allCases
         }
@@ -81,10 +81,11 @@ class TrendingViewModel {
             return outputNftTrendingList.value.count
         }
     }
+    
     func checkPercent(_ percent: Double) {
         isUpPercent.value = percent > 0 ? true : false
-
     }
+    
     func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
         var data: CoinDetail? = nil
         CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
@@ -98,13 +99,4 @@ class TrendingViewModel {
             completionHandler(data.current_price, data.price_change_percentage_24h)
         }
     }
-    
-//    func checkFavListCount() {
-//        let favListCount = outputFavoriteList.value.count
-//        if favListCount >= 0 && favListCount < 2 {
-//            rowList = [.coin, .nft]
-//        } else {
-//            rowList = RowEnum.allCases
-//        }
-//    }
 }
