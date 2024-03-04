@@ -16,13 +16,15 @@ class RealmRepository {
     func createItem(itemId: String, completionHandler: @escaping () -> Void) {
         print(self.realm.configuration.fileURL)
         // api통신으로 정보 가져오기
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: itemId)) { coinData in
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: itemId)) { coinData, error in
             print(#function)
+            guard let coinData else { return }
+            
             let data = coinData[0]
-            let coinData = CoinFavorite(idString: data.idString, name: data.name, symbolName: data.symbol, thumbImageString: data.image)
+            let coin = CoinFavorite(idString: data.idString, name: data.name, symbolName: data.symbol, thumbImageString: data.image)
             do {
                 try self.realm.write {
-                    self.realm.add(coinData)
+                    self.realm.add(coin)
                     print("Realm Create")
                     completionHandler()
                 }

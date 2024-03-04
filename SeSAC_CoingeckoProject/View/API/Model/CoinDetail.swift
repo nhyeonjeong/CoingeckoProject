@@ -24,7 +24,7 @@ struct CoinDetail: Decodable {
     let ath: Int
     let atl: Int
     let last_updated: String
-//    let sparkline_in_7d: String
+    let sparkline_in_7d: [Spark]
     enum CodingKeys: String, CodingKey {
         case idString = "id"
         case symbol
@@ -37,6 +37,11 @@ struct CoinDetail: Decodable {
         case ath
         case atl
         case last_updated
+        case sparkline_in_7d
     }
     
+}
+
+struct Spark: Decodable {
+    let sparkNumber: Double
 }

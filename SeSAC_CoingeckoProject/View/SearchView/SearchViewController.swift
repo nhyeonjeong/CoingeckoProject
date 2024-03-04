@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 final class SearchViewController: BaseViewController {
 
@@ -41,6 +42,13 @@ final class SearchViewController: BaseViewController {
             self.mainView.tableView.reloadRows(at: [IndexPath(row: value, section: 0)], with: .fade)
 
         }
+        viewModel.outputStarClicked.bind { value in
+            if value {
+                self.mainView.makeToast("즐겨찾기에 추가되었습니다", duration: 1.0, position: .top)
+            } else {
+                self.mainView.makeToast("즐겨찾기에서 해제되었습니다", duration: 1.0, position: .top)
+            }
+        }
     }
     
     // 즐겨찾기 버튼 눌렀을 때
@@ -71,11 +79,16 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         // 해결법 )
         viewModel.inputFetchFavoriteTrigger.value = ()
+        // 검색한 단어는 보라색으로
+        let attribtuedString = NSMutableAttributedString(string: data.name)
+        let range = (data.name as NSString).range(of: mainView.searchBar.text!)
+        attribtuedString.addAttribute(.foregroundColor, value: Constants.Color.pointColor, range: range)
+        cell.coinView.coinTitleLabel.attributedText = attribtuedString
         
         // 즐겨찾기 유무 확인해서 Image넣기
         let favStarImage = viewModel.isFavoriteItem(tag: indexPath.row) ? Constants.Image.favStar : Constants.Image.favInactiveStar
         cell.favStar.setImage(favStarImage, for: .normal)
-
+        
         // 즐겨찾기 버튼 눌렀을 대
         cell.favStar.tag = indexPath.row
         cell.favStar.addTarget(self, action: #selector(favStarClicked), for: .touchUpInside)
@@ -85,6 +98,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ChartViewController()
         vc.coinDataId = viewModel.oupPutSearchCoinData.value[indexPath.row].idString
+        vc.popClosure = {
+            self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -97,5 +113,6 @@ extension SearchViewController: UISearchBarDelegate {
     // return을 누르면
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.inputSearchText.value = searchBar.text
+        view.endEditing(true) // 키보드 내리기
     }
 }

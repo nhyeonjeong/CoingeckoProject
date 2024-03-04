@@ -10,6 +10,9 @@ import Toast
 import Kingfisher
 
 final class ChartViewController: BaseViewController {
+    
+    var popClosure: (() -> Void)? // api통신 실패하면 뒤로가서 toast띄우기
+    
     var coinDataId: String = "" // 받아온 코인 id
     
     let viewModel = ChartViewModel()
@@ -21,6 +24,7 @@ final class ChartViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.inputCoinId.value = coinDataId
+        viewModel.bindDataLater()
         settingBarButton()
         bindData()
         configureCollectionView()
@@ -30,9 +34,9 @@ final class ChartViewController: BaseViewController {
 //        viewModel.inputCoinId.value = coinDataId // 다시 데이터 가져오기
         viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기 다시 가져오기
         //만약 다시 들어왔는데 즐겨찾기에서 해제되어있다면 화면 나가기
-        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
-            dismiss(animated: true)
-        }
+//        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
+//            navigationController?.popViewController(animated: true)
+//        }
     }
     
     func bindData() {
@@ -44,13 +48,30 @@ final class ChartViewController: BaseViewController {
             print("outputfetchfav.bind", value)
             let starImage = value ? Constants.Image.favStar : Constants.Image.favInactiveStar
             self.navigationItem.rightBarButtonItem?.image = starImage
+
         }
         viewModel.outPutCurrentPricePositive.bind { value in
             print("oupPutcurrnetPricePositive bind")
             // 코인변동폭 양/음에 따른 색, text
             self.mainView.todayPercent.textColor = value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
             let number = self.viewModel.coinData.value.price_change_percentage_24h
-            self.mainView.todayPercent.text = number > 0 ? "+\(number)% Today" : "\(number)% Today"
+            let numberString = String(format: "%.2f", number)
+            self.mainView.todayPercent.text = number > 0 ? "+\(numberString)% Today" : "\(numberString)% Today"
+        }
+        viewModel.outputFetchError.bind { value in
+            print("outputFetchError", value)
+            if value {
+                print("pop")
+                self.navigationController?.popViewController(animated: true)
+                self.popClosure?() // 뒤로가서 toast띄우기
+            }
+        }
+        viewModel.outputStarClicked.bind { value in
+            if value {
+                self.mainView.makeToast("즐겨찾기에 추가되었습니다", duration: 1.0, position: .top)
+            } else {
+                self.mainView.makeToast("즐겨찾기에서 해제되었습니다", duration: 1.0, position: .top)
+            }
         }
     }
     
@@ -58,18 +79,11 @@ final class ChartViewController: BaseViewController {
         mainView.collectionView.reloadData()
         mainView.titleLabel.text = data.name
         mainView.thumbImage.kf.setImage(with: URL(string: data.image))
-        mainView.priceLabel.text = "\(data.current_price)"
+        mainView.priceLabel.text = "₩\(NumberFormatManager.shared.calculator(data.current_price))"
         mainView.updateDate.text = "\(data.last_updated) 업데이트"
         // 차트도 그리기
-        mainView.settingChartView()
+        mainView.settingChartView(data.sparkline_in_7d)
     }
-    
-    func noDataToast() {
-        view.makeToast("정보를 찾을 수 없습니다.", duration: 1.0, position: .top)
-        dismiss(animated: true)
-    }
-    
-    
 }
 
 extension ChartViewController: UICollectionViewDelegate, UICollectionViewDataSource {

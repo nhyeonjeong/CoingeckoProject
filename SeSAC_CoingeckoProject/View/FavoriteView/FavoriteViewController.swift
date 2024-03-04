@@ -52,7 +52,7 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
         viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
             if let currentPrice, let percent {
                 
-                cell.currentPrice.text = "\(currentPrice)"
+                cell.currentPrice.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
                 cell.percentLabel.text = self.viewModel.isUpPercent.value ? "  +\(percent)%  " : "  \(percent)%  "
                 cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
                 cell.percentLabel.backgroundColor = self.viewModel.isUpPercent.value ? Constants.Color.upPercentBackground : Constants.Color.downPercentBackground
@@ -71,6 +71,9 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ChartViewController()
         vc.coinDataId = viewModel.favoriteList.value[indexPath.row].idString
+        vc.popClosure = {
+            self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
 }

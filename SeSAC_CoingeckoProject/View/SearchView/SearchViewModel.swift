@@ -17,7 +17,7 @@ final class SearchViewModel {
     var oupPutSearchCoinData: Observable<[Coin]> = Observable([])
     // 테이블 특정 행 리로드
     var outPutTableReloadRow: Observable<Int> = Observable(0)
-    
+    var outputStarClicked: Observable<Bool> = Observable(false)
     var deleteItemIdx = 0 // 즐겨찾기목록에서 지워질 인덱스
     init() {
         bindData()
@@ -28,7 +28,8 @@ final class SearchViewModel {
             // searchText로 api통신 후 oupPutSearchCoinData에 넣기
             print("inputSearchText bind")
             if let text = searchText {
-                CoinAPIManager.shared.fetchCoinData(type: Coingecko.self, api: .search(query: text), completionHandler: { value in
+                CoinAPIManager.shared.fetchCoinData(type: Coingecko.self, api: .search(query: text), completionHandler: { value, error in
+                    guard let value else { return }
                     self.oupPutSearchCoinData.value = value.coins
                     print("oupPutSearchCoinData value", value)
                 })
@@ -67,6 +68,7 @@ final class SearchViewModel {
             RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
                 self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
                 self.outPutTableReloadRow.value = tag
+                self.outputStarClicked.value = false
             }
         } else {
             // 즐겨찾기 목록이 9개 이하일떄만 추가
@@ -76,6 +78,7 @@ final class SearchViewModel {
                 RealmRepository.shared.createItem(itemId: oupPutSearchCoinData.value[tag].idString) {
                     self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
                     self.outPutTableReloadRow.value = tag
+                    self.outputStarClicked.value = true
                 }
             }
         }

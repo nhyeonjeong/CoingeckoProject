@@ -28,7 +28,7 @@ enum CoinAPi_Request {
         case .search(let query):
             return baseUrlString + "search?query=\(query)"
         case .coinMarket(let ids):
-            return baseUrlString + "coins/markets?vs_currency=krw&ids=\(ids)"
+            return baseUrlString + "coins/markets?vs_currency=krw&ids=\(ids)&sparkline=true"
         }
     }
 }

@@ -50,7 +50,6 @@ final class SearchTableViewCell: UITableViewCell {
 
     func configureCell(coinData: Coin, row: Int) {
 
-        coinView.coinTitleLabel.text = coinData.name
         coinView.coinSymbolLabel.text = coinData.symbol
         coinView.coinImage.kf.setImage(with: URL(string: coinData.thumbImage))
 
