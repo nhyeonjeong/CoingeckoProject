@@ -13,24 +13,16 @@ class RealmRepository {
     
     let realm = try! Realm()
     
-    func createItem(itemId: String, completionHandler: @escaping () -> Void) {
+    func createItem(_ data: CoinFavorite) {
         print(self.realm.configuration.fileURL)
-        // api통신으로 정보 가져오기
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: itemId)) { coinData, error in
-            print(#function)
-            guard let coinData else { return }
-            
-            let data = coinData[0]
-            let coin = CoinFavorite(idString: data.idString, name: data.name, symbolName: data.symbol, thumbImageString: data.image)
-            do {
-                try self.realm.write {
-                    self.realm.add(coin)
-                    print("Realm Create")
-                    completionHandler()
-                }
-            } catch {
-                print(error)
+        // api통신으로 정보 가져오기 -> api통신 왜했지1?!!바보냐
+        do {
+            try realm.write {
+                realm.add(data)
+                print("realm creat")
             }
+        } catch {
+            print(error)
         }
     }
     
@@ -38,11 +30,11 @@ class RealmRepository {
         let result = realm.objects(CoinFavorite.self)
         return Array(result) // 정확한 타입을 써주자
     }
-    func removeItem(_ item: CoinFavorite, completionHandler: @escaping () -> Void) {
+    func removeItem(_ item: CoinFavorite) {
         do {
             try realm.write {
                 realm.delete(item)
-                completionHandler()
+                print("realm delete")
             }
         } catch {
             print(error)

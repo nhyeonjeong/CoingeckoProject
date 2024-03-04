@@ -121,7 +121,7 @@ class ChartViewModel {
     func toggleFavStar() {
         // 해결법)
         inputFetchFavoriteTrigger.value = ()
-        
+        /*
         if outPutFetchFav.value { // 즐겨찾기에 있는 코인이면 삭제
             RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
                 self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
@@ -139,6 +139,7 @@ class ChartViewModel {
                 }
             }
         }
+         */
         print("favoriteList : ", favoriteList.value)
     }
 }
