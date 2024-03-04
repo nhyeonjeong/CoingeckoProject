@@ -19,17 +19,28 @@ final class TrendingViewController: BaseViewController {
         bindData()
         configureTableView()
     }
-    
-    func bindData() {
-        viewModel.outputFetchTrigger.bind { _ in
-            print("즐겨찾기 완료 패치 트리거")
-            self.mainView.tableView.reloadData()
-        }
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.inputFetchTrigger.value = () // api통신
+    }
+    func bindData() {
+        viewModel.outputFetchTrigger.bind { _ in
+            print("outputFetchTrigger didSet - API통신 완료후 테이블 다시 그리기")
+            self.mainView.tableView.reloadData()
+        }
+        viewModel.transitionWithId.bind { idString in
+            let vc = ChartViewController()
+            guard let id = idString else {
+                self.view.makeToast("정보를 불러오지 못했습니다.", duration: 1.0, position: .top)
+                return // 화면전환하지 말기
+            }
+            vc.coinDataId = id
+            vc.popClosure = {
+                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
     }
 }
 
@@ -37,9 +48,8 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 즐겨찾기의 갯수가 0이나 1개라면 숨기기
-        viewModel.checkFavListCount()
-
-        return viewModel.numberOfRow()
+//        viewModel.checkFavListCount()
+        return viewModel.numberOfTableRow()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,14 +99,15 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let row = viewModel.rowList[collectionView.tag]
-        if row == .favorite {
-            return viewModel.favoriteList.value.count
-        } else if row == .coin {
-            return viewModel.coinTrendingList.value.count
-        } else {
-            return viewModel.nftTrendingList.value.count
-        }
+//        let row = viewModel.rowList[collectionView.tag]
+//        if row == .favorite {
+//            return viewModel.favoriteList.value.count
+//        } else if row == .coin {
+//            return viewModel.coinTrendingList.value.count
+//        } else {
+//            return viewModel.nftTrendingList.value.count
+//        }
+        viewModel.numberOfCollectionRow(collectionView.tag)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -106,11 +117,17 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
                 return UICollectionViewCell()
             }
             
-            cell.configureCell(viewModel.favoriteList.value[indexPath.row])
+            let cellData = viewModel.outputFavoriteList.value[indexPath.row]
+            cell.configureCell(cellData)
+            
+            // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
             viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+                
+                // 이 로직은 VC에 하는게 맞나?
                 if let currentPrice, let percent {
                     cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
                     cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
+                    // isUpPercent를 이렇게 쓸거면 굳이 Observable로 할 필요가 있나?
                     cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
                 } else {
                     cell.currentPriceLabel.text = "통신 실패"
@@ -123,7 +140,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            let data = viewModel.coinTrendingList.value[indexPath.row]
+            let data = viewModel.outputCoinTrendingList.value[indexPath.row]
             cell.configureCell(row: indexPath.row, data: data)
             viewModel.checkPercent(data.item.data.price_change_percentage_24h.krw)
             
@@ -135,7 +152,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingNFTCollectionViewCell.identifier, for: indexPath) as? TrendingNFTCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            let data = viewModel.nftTrendingList.value[indexPath.row]
+            let data = viewModel.outputNftTrendingList.value[indexPath.row]
             cell.configureCell(row: indexPath.row, data: data)
             let number = Double(data.data.floor_price_in_usd_24h_percentage_change)
             guard let number else { return cell }
@@ -148,22 +165,14 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             
         }
     }
+    // favorite과 coin만 넘어갈 수 있다.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = viewModel.rowList[collectionView.tag]
+
         if row == .favorite {
-            let vc = ChartViewController()
-            vc.coinDataId = viewModel.favoriteList.value[indexPath.row].idString
-            vc.popClosure = {
-                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top) // 여긴 왜 갑자기 ㅇ안돼,,?
-            }
-            navigationController?.pushViewController(vc, animated: true)
+            viewModel.transitionWithId.value = viewModel.outputFavoriteList.value[indexPath.row].idString
         } else if row == .coin {
-            let vc = ChartViewController()
-            vc.coinDataId = viewModel.coinTrendingList.value[indexPath.row].item.idString
-            vc.popClosure = {
-                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top) // 여긴 왜 갑자기 ㅇ안돼,,?
-            }
-            navigationController?.pushViewController(vc, animated: true)
+            viewModel.transitionWithId.value = viewModel.outputCoinTrendingList.value[indexPath.row].item.idString
         }
     }
 }

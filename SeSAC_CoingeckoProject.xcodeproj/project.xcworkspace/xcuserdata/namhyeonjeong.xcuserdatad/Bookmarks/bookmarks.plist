@@ -237,13 +237,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>51</string>
+					<string>61</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>50</string>
+					<string>60</string>
 					<key>Timestamp</key>
-					<string>731197272.054534</string>
+					<string>731235896.3666199</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -313,6 +313,141 @@
 				<string>.value = false
             }
         } else {
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>126</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>125</string>
+					<key>Timestamp</key>
+					<string>731235896.366858</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                // 이 로직은 VC에 하는게 맞나?
+</string>
+				<key>leading</key>
+				<string>            viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+                
+</string>
+				<key>trailing</key>
+				<string>                if let currentPrice, let percent {
+                    cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
+                    cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>123</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>122</string>
+					<key>Timestamp</key>
+					<string>731235896.366904</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
+</string>
+				<key>leading</key>
+				<string>            cell.configureCell(cellData)
+            
+</string>
+				<key>trailing</key>
+				<string>            viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+                
+                // 이 로직은 VC에 하는게 맞나?
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>130</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>129</string>
+					<key>Timestamp</key>
+					<string>731235896.366881</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>                    // isUpPercent를 이렇게 쓸거면 굳이 Observable로 할 필요가 있나?
+</string>
+				<key>leading</key>
+				<string>                    cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
+                    cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
+</string>
+				<key>trailing</key>
+				<string>                    cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
+                } else {
+                    cell.currentPriceLabel.text = "통신 실패"
 </string>
 			</dict>
 			<key>type</key>
