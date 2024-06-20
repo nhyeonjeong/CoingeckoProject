@@ -80,7 +80,7 @@ class TrendingCoinCollectionViewCell: UICollectionViewCell {
         coinView.coinTitleLabel.text = data.item.name
         coinView.coinSymbolLabel.text = data.item.symbol
         
-        priceLabel.text = data.item.data.price
+        priceLabel.text = "$" + String(format: "%.4f", data.item.data.price)
     }
     
     // 스토리보드로 할 때 실행되는 구문

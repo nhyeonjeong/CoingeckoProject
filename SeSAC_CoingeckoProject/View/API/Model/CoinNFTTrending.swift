@@ -33,7 +33,7 @@ struct Item: Decodable {
 }
 
 struct Price: Decodable {
-    let price: String
+    let price: Double
     let price_change_percentage_24h: Percent
 }
 
