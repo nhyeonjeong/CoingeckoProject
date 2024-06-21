@@ -25,14 +25,14 @@
 ## 🪙기술설명
 - MVVM InputOutput패턴
     - 비즈니스로직 분리를 위해 ViewController과 ViewModel분리 및 Observable 클래스를 사용해 MVVM InputOutput패턴으로 작성
-    - 비동기코드를 핸들링 하기 위해 Observable 클래스 내부 값 변경시 클로저 실행하여 반응형 코드 작성
+    - 비동기코드를 핸들링 하기 위해 Observable 클래스 내부 값 변경시 클로저 실행하여 반응형 코드 작성 
+- Snapkit을 import하는 mainView 분리하여 loadView로 뷰 구현
 - Alamofire을 사용한 NetworkManager Singleton패턴으로 구성
     - Generic을 사용해 Decodable한 타입들로 디코딩
     - 통신 결과에 따른 completionHandler실행
     - Router Pattern으로 baseURL, method, endpoint 관리
 - RealmRepository 싱글톤으로 작성, repository에서 CRD 관리
-- 항상 호출되는 함수를 포함하는 BaseViewController, BaseView를 상속받아 class 구현
-- Snapkit을 import하는 mainView 분리하여 loadView로 뷰 구현
+- 항상 호출되는 함수를 포함하는 BaseViewController, BaseView 상속받아 class 구현
 
 ## 🪙트러블슈팅
 ### `1. completionHandler`
@@ -46,12 +46,30 @@ Trending을 보여주는 뷰에서 @escaping코드를 써주지 않으면 통신
 
 
 <details>
-<summary>변경 후 Row 모델</summary>
+<summary>변경 후 코드</summary>
 <div markdown="1">
 
 
 </div>
 </details>
 
+
+### `2. Decoding`
+
+2-1) 문제
+
+
+
+2-2) 해결
+
+
+
+<details>
+<summary>변경 후 코드</summary>
+<div markdown="1">
+
+
+</div>
+</details>
 
 ## 🪙기술회고
