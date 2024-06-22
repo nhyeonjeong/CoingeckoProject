@@ -49,9 +49,10 @@ final class DeclarationCollectionViewCell: UICollectionViewCell {
         declarationLabel.textColor = Constants.Color.subLabel
     }
     
-    func configureCell(_ data: (title: String, price: Int)) {
+    func configureCell(_ data: (title: String, price: Double)) {
+        print("🏂\(data.title), \(data.price)")
         titleLabel.text = data.title
-        declarationLabel.text = "₩\(NumberFormatManager.shared.calculator(data.price))"
+        declarationLabel.text = "₩\(NumberFormatManager.shared.calculator(Int(data.price)))"
     }
     
     // 스토리보드로 할 때 실행되는 구문

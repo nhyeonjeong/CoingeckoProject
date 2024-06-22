@@ -14,7 +14,7 @@ class RealmRepository {
     let realm = try! Realm()
     
     func createItem(_ data: CoinFavorite) {
-        print(self.realm.configuration.fileURL)
+//        print(self.realm.configuration.fileURL)
         // api통신으로 정보 가져오기 -> api통신 왜했지1?!!바보냐
         do {
             try realm.write {
@@ -31,6 +31,7 @@ class RealmRepository {
         return Array(result) // 정확한 타입을 써주자
     }
     func removeItem(_ item: CoinFavorite) {
+        print(realm.configuration.fileURL!)
         do {
             try realm.write {
                 realm.delete(item)

@@ -21,7 +21,7 @@ enum CoinAPi_Request {
         "https://api.coingecko.com/api/v3/"
     }
     
-    var url:String {
+    var url: String {
         switch self {
         case .trending:
             return baseUrlString + "search/trending"

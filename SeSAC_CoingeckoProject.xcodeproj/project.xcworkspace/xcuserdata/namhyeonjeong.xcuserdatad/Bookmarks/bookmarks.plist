@@ -12,103 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>40</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>39</string>
-					<key>Timestamp</key>
-					<string>731240562.724087</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewModel.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>                    self.outputSearchList.value = value.coins
-</string>
-				<key>leading</key>
-				<string>                CoinAPIManager.shared.fetchCoinData(type: Coingecko.self, api: .search(query: text), completionHandler: { value, error in
-                    guard let value else { return }
-</string>
-				<key>trailing</key>
-				<string>                })
-            } else {
-                print("검색한 단어가 없습니다")
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>32</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>31</string>
-					<key>Timestamp</key>
-					<string>731236428.018201</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewController.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>        self.mainView.tableView.reloadData() // MVVM으로 하려면 어떻ㄱ게,,?
-</string>
-				<key>leading</key>
-				<string>        print("즐겨찾기 목록 가지고 오기")
-        viewModel.inputReadFavListTrigger.value = () // 즐겨찾기목록 패치
-//</string>
-				<key>trailing</key>
-				<string>    }
-    
-    func bindData() {
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
 					<string>37</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
 					<string>36</string>
 					<key>Timestamp</key>
-					<string>731197417.74985</string>
+					<string>740507746.222815</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -153,7 +63,7 @@
 					<key>StartingLineNumber</key>
 					<string>30</string>
 					<key>Timestamp</key>
-					<string>731243203.8243279</string>
+					<string>740732088.534464</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -169,7 +79,7 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -&gt; Void) {
+				<string>    func fetchCoinItem(row: Int, completionHandler: @escaping (Double?, Double?) -&gt; Void) {
 </string>
 				<key>leading</key>
 				<string>    }
@@ -192,13 +102,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>60</string>
+					<string>129</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>59</string>
+					<string>128</string>
 					<key>Timestamp</key>
-					<string>731243511.698653</string>
+					<string>740506830.283242</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -214,16 +124,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>            cell.collectionView.register(TrendingFavCollectionViewCell.self, forCellWithReuseIdentifier: TrendingFavCollectionViewCell.identifier)
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>                return UITableViewCell()
-            }
+				<string>//            }
+
 </string>
 				<key>trailing</key>
-				<string>            cell.collectionView.delegate = self
-            cell.collectionView.dataSource = self
-            cell.collectionView.tag = indexPath.row
+				<string>            return cell
+        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
 </string>
 			</dict>
 			<key>type</key>
@@ -237,58 +146,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
+					<string>126</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
 					<string>125</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>124</string>
 					<key>Timestamp</key>
-					<string>731243511.6986901</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>                // 이 로직은 VC에 하는게 맞나?
-</string>
-				<key>leading</key>
-				<string>            viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
-                
-</string>
-				<key>trailing</key>
-				<string>                if let currentPrice, let percent {
-                    cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
-                    cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>122</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>121</string>
-					<key>Timestamp</key>
-					<string>731243511.698684</string>
+					<string>740506830.2832479</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -311,9 +175,9 @@
             
 </string>
 				<key>trailing</key>
-				<string>            viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+				<string>            viewModel.fetchCoinItem(row: indexPath.row)
                 
-                // 이 로직은 VC에 하는게 맞나?
+            // 이 로직은 VC에 하는게 맞나?
 </string>
 			</dict>
 			<key>type</key>
@@ -333,7 +197,7 @@
 					<key>StartingLineNumber</key>
 					<string>128</string>
 					<key>Timestamp</key>
-					<string>731243511.6986769</string>
+					<string>740506830.283478</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -349,18 +213,155 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>                    // isUpPercent를 이렇게 쓸거면 굳이 Observable로 할 필요가 있나?
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>                    cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
-                    cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
+				<string>//            }
+
 </string>
 				<key>trailing</key>
-				<string>                    cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
-                } else {
-                    cell.currentPriceLabel.text = "통신 실패"
+				<string>            return cell
+        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
 </string>
 			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>93</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>93</string>
+					<key>Timestamp</key>
+					<string>740507065.37545</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    func fetchCoinItem(row: Int/*, completionHandler: @escaping (Int?, Double?) -&gt; Void*/) {
+        // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
+</string>
+				<key>trailing</key>
+				<string>        var data: CoinDetail? = nil
+        /*
+         1. completionHandler을 사용할 때
+</string>
+			</dict>
+			<key>title</key>
+			<string>reusltType -&gt; 2/5</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>117</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>116</string>
+					<key>Timestamp</key>
+					<string>740506843.502565</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>
+</string>
+				<key>leading</key>
+				<string>            }
+            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
+</string>
+				<key>trailing</key>
+				<string>//            completionHandler(data.current_price, data.price_change_percentage_24h)
+            group.leave()
+        }
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>95</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>94</string>
+					<key>Timestamp</key>
+					<string>740506843.502508</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        /*
+</string>
+				<key>leading</key>
+				<string>        // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
+        var data: CoinDetail? = nil
+</string>
+				<key>trailing</key>
+				<string>         1. completionHandler을 사용할 때
+         
+         2. dispatchGroup을 사용할 때
+</string>
+			</dict>
+			<key>title</key>
+			<string>3가지 별로 알아보기,,,</string>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>

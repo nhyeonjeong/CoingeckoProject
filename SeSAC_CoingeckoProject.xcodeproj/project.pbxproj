@@ -19,7 +19,6 @@
 		8B544FDF2B917BF60082A502 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FDE2B917BF60082A502 /* SnapKit */; };
 		8B544FE22B917C1B0082A502 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE12B917C1B0082A502 /* Realm */; };
 		8B544FE42B917C1B0082A502 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE32B917C1B0082A502 /* RealmSwift */; };
-		8B544FE72B917C240082A502 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE62B917C240082A502 /* Alamofire */; };
 		8B544FEA2B917C6A0082A502 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FE92B917C6A0082A502 /* DGCharts */; };
 		8B544FEC2B917C6A0082A502 /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 8B544FEB2B917C6A0082A502 /* DGChartsDynamic */; };
 		8B544FEF2B919BBD0082A502 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B544FEE2B919BBD0082A502 /* SearchTableViewCell.swift */; };
@@ -53,6 +52,7 @@
 		8B5450342B94E1010082A502 /* TrendingNFTCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5450332B94E1010082A502 /* TrendingNFTCollectionViewCell.swift */; };
 		8B5E4A272B95092500315480 /* CoinNFTTrending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E4A262B95092500315480 /* CoinNFTTrending.swift */; };
 		8B5E4A2D2B951E2C00315480 /* NumberFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5E4A2C2B951E2C00315480 /* NumberFormatManager.swift */; };
+		8BB432F42C26ADF600B687F4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BB432F32C26ADF600B687F4 /* Alamofire */; };
 		8BE363072B906A3C00EFC62F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363062B906A3C00EFC62F /* AppDelegate.swift */; };
 		8BE363092B906A3C00EFC62F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE363082B906A3C00EFC62F /* SceneDelegate.swift */; };
 		8BE3630B2B906A3C00EFC62F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3630A2B906A3C00EFC62F /* ViewController.swift */; };
@@ -116,8 +116,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5450142B9240280082A502 /* Toast in Frameworks */,
+				8BB432F42C26ADF600B687F4 /* Alamofire in Frameworks */,
 				8B544FE42B917C1B0082A502 /* RealmSwift in Frameworks */,
-				8B544FE72B917C240082A502 /* Alamofire in Frameworks */,
 				8B5450042B91E4840082A502 /* Kingfisher in Frameworks */,
 				8B544FEA2B917C6A0082A502 /* DGCharts in Frameworks */,
 				8B544FE22B917C1B0082A502 /* Realm in Frameworks */,
@@ -345,11 +345,11 @@
 				8B544FDE2B917BF60082A502 /* SnapKit */,
 				8B544FE12B917C1B0082A502 /* Realm */,
 				8B544FE32B917C1B0082A502 /* RealmSwift */,
-				8B544FE62B917C240082A502 /* Alamofire */,
 				8B544FE92B917C6A0082A502 /* DGCharts */,
 				8B544FEB2B917C6A0082A502 /* DGChartsDynamic */,
 				8B5450032B91E4840082A502 /* Kingfisher */,
 				8B5450132B9240280082A502 /* Toast */,
+				8BB432F32C26ADF600B687F4 /* Alamofire */,
 			);
 			productName = SeSAC_CoingeckoProject;
 			productReference = 8BE363032B906A3C00EFC62F /* SeSAC_CoingeckoProject.app */;
@@ -382,10 +382,10 @@
 			packageReferences = (
 				8B544FDD2B917BF60082A502 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */,
 				8B5450022B91E4840082A502 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				8B5450122B9240280082A502 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				8BB432F22C26ADF600B687F4 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8BE363042B906A3C00EFC62F /* Products */;
 			projectDirPath = "";
@@ -701,14 +701,6 @@
 				version = 10.47.0;
 			};
 		};
-		8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
-			};
-		};
 		8B544FE82B917C6A0082A502 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts";
@@ -733,6 +725,14 @@
 				minimumVersion = 5.1.0;
 			};
 		};
+		8BB432F22C26ADF600B687F4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -750,11 +750,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B544FE02B917C1B0082A502 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		8B544FE62B917C240082A502 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8B544FE52B917C240082A502 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
 		};
 		8B544FE92B917C6A0082A502 /* DGCharts */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -775,6 +770,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B5450122B9240280082A502 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		8BB432F32C26ADF600B687F4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BB432F22C26ADF600B687F4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

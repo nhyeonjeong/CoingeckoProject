@@ -37,6 +37,9 @@ class TrendingViewModel {
     var isUpPercent: Observable<Bool> = Observable(false) // ?
     var transitionWithId: Observable<String?> = Observable(nil)
     
+    var coinPrices: (currentPrice: Int, percent: Double) = (0,0)
+    var outputCellApiCoin: Observable<Int?> = Observable(nil)
+    
     init() {
         bindData()
     }
@@ -86,17 +89,39 @@ class TrendingViewModel {
         isUpPercent.value = percent > 0 ? true : false
     }
     
-    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
+    func fetchCoinItem(row: Int/*, completionHandler: @escaping (Int?, Double?) -> Void*/) {
+        // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
         var data: CoinDetail? = nil
+        /*
+         1. completionHandler을 사용할 때
+         
+         2. dispatchGroup을 사용할 때
+         
+         3. 그냥 위에 둘 다 사용안하고 bind써서 받아온 값을 넣어주면 Reload하도록~?
+         
+         */
+        let group = DispatchGroup()
+        group.enter()
         CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
-            guard let value else { return }
+            print("api끝!@!@@!121_@_@____!@_!@_!@_!@_12--12-12")
+            guard let value else {
+//                print(#function, value, error)
+                return
+            }
             data = value[0]
             guard let data else {
-                completionHandler(nil, nil)
+//                completionHandler(nil, nil)
                 return
             }
             self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
-            completionHandler(data.current_price, data.price_change_percentage_24h)
+
+//            completionHandler(data.current_price, data.price_change_percentage_24h)
+            group.leave()
+        }
+
+        group.notify(queue: .main) { // () -> Void로 타입이 이미 지정되어 있다.
+            self.coinPrices = (3,4)
+            self.outputCellApiCoin.value = row
         }
     }
 }

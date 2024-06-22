@@ -28,7 +28,7 @@ class FavoriteViewModel {
         isUpPercent.value = percent > 0 ? true : false
     }
     
-    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
+    func fetchCoinItem(row: Int, completionHandler: @escaping (Double?, Double?) -> Void) {
         var data: CoinDetail? = nil
         CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
             guard let value else { return }

@@ -40,6 +40,10 @@ final class TrendingViewController: BaseViewController {
             }
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        viewModel.outputCellApiCoin.bind { row in
+            print("trending즐겨찾기 table reloadRows")
+            self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        }
     }
 }
 
@@ -120,20 +124,21 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             cell.configureCell(cellData)
             
             // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
-            viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+            viewModel.fetchCoinItem(row: indexPath.row)
                 
-                // 이 로직은 VC에 하는게 맞나?
-                if let currentPrice, let percent {
-                    cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
-                    cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(percent)%" : "\(percent)%"
-                    // isUpPercent를 이렇게 쓸거면 굳이 Observable로 할 필요가 있나?
-                    cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
-                } else {
-                    cell.currentPriceLabel.text = "통신 실패"
-                    cell.percentLabel.text = "통신 실패"
-                    cell.percentLabel.textColor = Constants.Color.titleLabel
-                }
-            }
+            // 이 로직은 VC에 하는게 맞나?
+//            if let currentPrice, let percent {
+            let prices = viewModel.coinPrices
+            cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(prices.currentPrice))"
+            cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(prices.percent)%" : "\(prices.percent)%"
+                // isUpPercent를 이렇게 쓸거면 굳이 Observable로 할 필요가 있나?
+                cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
+//            } else {
+//                cell.currentPriceLabel.text = "통신 실패"
+//                cell.percentLabel.text = "통신 실패"
+//                cell.percentLabel.textColor = Constants.Color.titleLabel
+//            }
+
             return cell
         } else if row == .coin {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {

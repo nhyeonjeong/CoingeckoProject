@@ -42,6 +42,10 @@ final class ChartViewController: BaseViewController {
     func bindData() {
         viewModel.coinData.bind { data in
             // UI그리기
+//            guard let data else {
+//                return
+//            }
+            print("🌎RELOADVIEW")
             self.reloadView(data)
         }
         viewModel.outPutFetchFav.bind { value in
@@ -79,10 +83,10 @@ final class ChartViewController: BaseViewController {
         mainView.collectionView.reloadData()
         mainView.titleLabel.text = data.name
         mainView.thumbImage.kf.setImage(with: URL(string: data.image))
-        mainView.priceLabel.text = "₩\(NumberFormatManager.shared.calculator(data.current_price))"
+        mainView.priceLabel.text = "₩\(NumberFormatManager.shared.calculator(Int(data.current_price)))"
         mainView.updateDate.text = "\(data.last_updated) 업데이트"
         // 차트도 그리기
-        mainView.settingChartView(data.sparkline_in_7d)
+//        mainView.settingChartView(data.sparkline_in_7d.price)
     }
 }
 

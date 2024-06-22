@@ -29,7 +29,6 @@ final class SearchViewController: BaseViewController {
         super.viewWillAppear(animated)
         print("즐겨찾기 목록 가지고 오기")
         viewModel.inputReadFavListTrigger.value = () // 즐겨찾기목록 패치
-//        self.mainView.tableView.reloadData() // MVVM으로 하려면 어떻ㄱ게,,?
     }
     
     func bindData() {

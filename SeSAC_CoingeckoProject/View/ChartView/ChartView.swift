@@ -93,11 +93,11 @@ final class ChartView: BaseView {
         }
     }
     // 다시 하기
-    func settingChartView(_ data: [Spark]) {
+    func settingChartView(_ data: [SparkLine]) {
         chartView.backgroundColor = Constants.Color.lightBackground
         var entry: [ChartDataEntry] = []
         for i in 0..<data.count {
-            entry.append(ChartDataEntry(x:Double(i), y: data[i].sparkNumber))
+            entry.append(ChartDataEntry(x:Double(i), y: data[i].price[i]))
         }
         let dataset = LineChartDataSet(entries: entry, label: "datasetLabel")
 //        dataset.drawCircleHoleEnabled = false // 점 없도록
