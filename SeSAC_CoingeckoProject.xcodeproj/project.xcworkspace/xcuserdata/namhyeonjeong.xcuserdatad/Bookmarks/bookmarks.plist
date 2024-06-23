@@ -57,13 +57,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>31</string>
+					<string>37</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>30</string>
+					<string>36</string>
 					<key>Timestamp</key>
-					<string>740732088.534464</string>
+					<string>740846791.58857</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -79,16 +79,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>    func fetchCoinItem(row: Int, completionHandler: @escaping (Double?, Double?) -&gt; Void) {
+				<string>    func fetchCoinItem(completionHandler: @escaping ([(Double?, Double?)]) -&gt; Void) {
 </string>
 				<key>leading</key>
 				<string>    }
     
 </string>
 				<key>trailing</key>
-				<string>        var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
-            guard let value else { return }
+				<string>        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: outputFavoriteList.value.map({ favoriteCoin in
+            favoriteCoin.idString
+        }))) { value, error in
 </string>
 			</dict>
 			<key>type</key>
@@ -102,13 +102,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>129</string>
+					<string>141</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>128</string>
+					<string>141</string>
 					<key>Timestamp</key>
-					<string>740506830.283242</string>
+					<string>740847005.493251</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -175,7 +175,7 @@
             
 </string>
 				<key>trailing</key>
-				<string>            viewModel.fetchCoinItem(row: indexPath.row)
+				<string>//            viewModel.fetchCoinItem(row: indexPath.row)
                 
             // 이 로직은 VC에 하는게 맞나?
 </string>
@@ -191,13 +191,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>129</string>
+					<string>141</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>128</string>
+					<string>141</string>
 					<key>Timestamp</key>
-					<string>740506830.283478</string>
+					<string>740847005.493261</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -362,6 +362,228 @@
 			</dict>
 			<key>title</key>
 			<string>3가지 별로 알아보기,,,</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>64</string>
+					<key>EndingLineNumber</key>
+					<string>47</string>
+					<key>StartingColumnNumber</key>
+					<string>37</string>
+					<key>StartingLineNumber</key>
+					<string>47</string>
+					<key>Timestamp</key>
+					<string>740847156.279273</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/FavoriteView/FavoriteViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>price_change_percentage_24h</string>
+				<key>leading</key>
+				<string>//                return
+//            }
+//            self.checkPercent(data.</string>
+				<key>trailing</key>
+				<string>) // 양수음수 확인
+//            completionHandler(data.current_price, data.price_change_percentage_24h)
+            completionHandler(value.map({ coin in
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>54</string>
+					<key>EndingLineNumber</key>
+					<string>65</string>
+					<key>LocationEncoding</key>
+					<string>1</string>
+					<key>StartingColumnNumber</key>
+					<string>53</string>
+					<key>StartingLineNumber</key>
+					<string>65</string>
+					<key>Timestamp</key>
+					<string>740847162.337522</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/FavoriteView/FavoriteViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string> </string>
+				<key>leading</key>
+				<string>        // 셀마다 api통신해서 실시간 가격, 퍼센트 가져오기
+        /*
+        viewModel.fetchCoinItem(row: indexPath.row) {</string>
+				<key>trailing</key>
+				<string>(currentPrice, percent) in
+            if let currentPrice, let percent {
+                print("currentPrice, percent잘 받아옴")
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>39</string>
+					<key>EndingLineNumber</key>
+					<string>25</string>
+					<key>StartingColumnNumber</key>
+					<string>33</string>
+					<key>StartingLineNumber</key>
+					<string>25</string>
+					<key>Timestamp</key>
+					<string>740847167.291701</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/FavoriteView/FavoriteViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>values</string>
+				<key>leading</key>
+				<string>        inputReadFavTrigger.bind { _ in
+            self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
+            self.fetchCoinItem { </string>
+				<key>trailing</key>
+				<string> in
+                  print("🚨 \(values)")
+            }
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>52</string>
+					<key>EndingLineNumber</key>
+					<string>126</string>
+					<key>StartingColumnNumber</key>
+					<string>43</string>
+					<key>StartingLineNumber</key>
+					<string>126</string>
+					<key>Timestamp</key>
+					<string>740847184.08962</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>indexPath</string>
+				<key>leading</key>
+				<string>            
+            // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
+//            viewModel.fetchCoinItem(row: </string>
+				<key>trailing</key>
+				<string>.row)
+                
+            // 이 로직은 VC에 하는게 맞나?
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>32</string>
+					<key>EndingLineNumber</key>
+					<string>91</string>
+					<key>StartingColumnNumber</key>
+					<string>31</string>
+					<key>StartingLineNumber</key>
+					<string>91</string>
+					<key>Timestamp</key>
+					<string>740847195.365442</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>/</string>
+				<key>leading</key>
+				<string>    }
+    /*
+    func fetchCoinItem(row: Int</string>
+				<key>trailing</key>
+				<string>*, completionHandler: @escaping (Int?, Double?) -&gt; Void*/) {
+        // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
+        var data: CoinDetail? = nil
+</string>
+			</dict>
 			<key>type</key>
 			<string>bookmark</string>
 		</dict>

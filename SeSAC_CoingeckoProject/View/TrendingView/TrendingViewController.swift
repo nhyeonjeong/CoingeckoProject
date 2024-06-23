@@ -124,7 +124,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             cell.configureCell(cellData)
             
             // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
-            viewModel.fetchCoinItem(row: indexPath.row)
+//            viewModel.fetchCoinItem(row: indexPath.row)
                 
             // 이 로직은 VC에 하는게 맞나?
 //            if let currentPrice, let percent {

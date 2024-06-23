@@ -14,6 +14,8 @@ class FavoriteViewModel {
     var isUpPercent: Observable<Bool> = Observable(false)
     var transitionWithId: Observable<String?> = Observable(nil)
     
+    var fetchCurrentPriceAndPercentList: [(currentPrice: String, percent: String)] = []
+    
     init() {
         bindData()
     }
@@ -21,6 +23,10 @@ class FavoriteViewModel {
     private func bindData() {
         inputReadFavTrigger.bind { _ in
             self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
+            self.fetchCoinItem { values in
+                  print("🚨 \(values)")
+            }
+            
         }
     }
     
@@ -28,19 +34,22 @@ class FavoriteViewModel {
         isUpPercent.value = percent > 0 ? true : false
     }
     
-    func fetchCoinItem(row: Int, completionHandler: @escaping (Double?, Double?) -> Void) {
-        var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
+    func fetchCoinItem(completionHandler: @escaping ([(Double?, Double?)]) -> Void) {
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: outputFavoriteList.value.map({ favoriteCoin in
+            favoriteCoin.idString
+        }))) { value, error in
             guard let value else { return }
             
-            data = value[0]
-            guard let data else {
-                print(#function, "nil, nil")
-                completionHandler(nil, nil)
-                return
-            }
-            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
-            completionHandler(data.current_price, data.price_change_percentage_24h)
+//            guard let data else {
+//                print(#function, "nil, nil")
+//                completionHandler((nil, nil))
+//                return
+//            }
+//            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
+//            completionHandler(data.current_price, data.price_change_percentage_24h)
+            completionHandler(value.map({ coin in
+                (coin.current_price, coin.price_change_percentage_24h)
+            }))
         }
     }
 }

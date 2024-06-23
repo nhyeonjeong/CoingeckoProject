@@ -88,7 +88,7 @@ class TrendingViewModel {
     func checkPercent(_ percent: Double) {
         isUpPercent.value = percent > 0 ? true : false
     }
-    
+    /*
     func fetchCoinItem(row: Int/*, completionHandler: @escaping (Int?, Double?) -> Void*/) {
         // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
         var data: CoinDetail? = nil
@@ -102,7 +102,7 @@ class TrendingViewModel {
          */
         let group = DispatchGroup()
         group.enter()
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: outputFavoriteList.value[row].idString)) { value, error in
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: outputFavoriteList.value[row].idString)) { value, error in
             print("api끝!@!@@!121_@_@____!@_!@_!@_!@_12--12-12")
             guard let value else {
 //                print(#function, value, error)
@@ -124,4 +124,5 @@ class TrendingViewModel {
             self.outputCellApiCoin.value = row
         }
     }
+     */
 }

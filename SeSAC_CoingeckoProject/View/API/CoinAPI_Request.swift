@@ -11,7 +11,7 @@ import Alamofire
 enum CoinAPi_Request {
     case trending
     case search(query: String)
-    case coinMarket(ids: String)
+    case coinMarket(idList: [String])
     
     var getMethod: HTTPMethod {
         return .get
@@ -27,8 +27,13 @@ enum CoinAPi_Request {
             return baseUrlString + "search/trending"
         case .search(let query):
             return baseUrlString + "search?query=\(query)"
-        case .coinMarket(let ids):
-            return baseUrlString + "coins/markets?vs_currency=krw&ids=\(ids)&sparkline=true"
+        case .coinMarket(let idList):
+            var idsString = ""
+            for id in idList {
+                idsString += "\(id),"
+            }
+            print("🍕", idsString)
+            return baseUrlString + "coins/markets?vs_currency=krw&ids=\(idsString.removeLast())&sparkline=true"
         }
     }
 }

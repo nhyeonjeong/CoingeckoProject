@@ -57,7 +57,7 @@ class ChartViewModel {
     func bindDataLater() {
         inputCoinId.bind { id in
             print("inputcoinId bind, coinid: \(id)")
-            CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: id)) { coinData, error in
+            CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: [id])) { coinData, error in
                 guard let coinData else {
                     print("😎")
 //                    self.outputFetchError.value = true // api통신 오류 발생
