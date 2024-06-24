@@ -52,7 +52,7 @@ final class DeclarationCollectionViewCell: UICollectionViewCell {
     func configureCell(_ data: (title: String, price: Double)) {
         print("🏂\(data.title), \(data.price)")
         titleLabel.text = data.title
-        declarationLabel.text = "₩\(NumberFormatManager.shared.calculator(Int(data.price)))"
+        declarationLabel.text = "₩\(NumberFormatManager.shared.calculator(data.price))"
     }
     
     // 스토리보드로 할 때 실행되는 구문

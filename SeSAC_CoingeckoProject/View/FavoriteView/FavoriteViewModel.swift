@@ -14,7 +14,7 @@ class FavoriteViewModel {
     var isUpPercent: Observable<Bool> = Observable(false)
     var transitionWithId: Observable<String?> = Observable(nil)
     
-    var fetchCurrentPriceAndPercentList: [(currentPrice: String, percent: String)] = []
+    var fetchCurrentPriceAndPercentList: Observable<[(currentPrice: Double?, percent: Double?)]> = Observable([])
     
     init() {
         bindData()
@@ -25,8 +25,9 @@ class FavoriteViewModel {
             self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
             self.fetchCoinItem { values in
                   print("🚨 \(values)")
+                self.fetchCurrentPriceAndPercentList.value = values
+                
             }
-            
         }
     }
     

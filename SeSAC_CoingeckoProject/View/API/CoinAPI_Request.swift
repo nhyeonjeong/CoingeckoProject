@@ -29,11 +29,11 @@ enum CoinAPi_Request {
             return baseUrlString + "search?query=\(query)"
         case .coinMarket(let idList):
             var idsString = ""
-            for id in idList {
-                idsString += "\(id),"
+            for i in 0..<idList.count {
+                if i == 0 { idsString += idList[i]}
+                else { idsString += ",\(idList[i])"}
             }
-            print("🍕", idsString)
-            return baseUrlString + "coins/markets?vs_currency=krw&ids=\(idsString.removeLast())&sparkline=true"
+            return baseUrlString + "coins/markets?vs_currency=krw&ids=\(idsString)&sparkline=true"
         }
     }
 }

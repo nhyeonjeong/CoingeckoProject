@@ -57,13 +57,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>37</string>
+					<string>38</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>36</string>
+					<string>37</string>
 					<key>Timestamp</key>
-					<string>740846791.58857</string>
+					<string>740914481.565919</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -371,15 +371,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>64</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>47</string>
+					<string>49</string>
 					<key>StartingColumnNumber</key>
-					<string>37</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>47</string>
+					<string>48</string>
 					<key>Timestamp</key>
-					<string>740847156.279273</string>
+					<string>740914481.565887</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -395,15 +395,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>price_change_percentage_24h</string>
+				<string>//            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
+</string>
 				<key>leading</key>
 				<string>//                return
 //            }
-//            self.checkPercent(data.</string>
+</string>
 				<key>trailing</key>
-				<string>) // 양수음수 확인
-//            completionHandler(data.current_price, data.price_change_percentage_24h)
+				<string>//            completionHandler(data.current_price, data.price_change_percentage_24h)
             completionHandler(value.map({ coin in
+                (coin.current_price, coin.price_change_percentage_24h)
 </string>
 			</dict>
 			<key>type</key>
@@ -415,17 +416,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>54</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>65</string>
-					<key>LocationEncoding</key>
-					<string>1</string>
+					<string>69</string>
 					<key>StartingColumnNumber</key>
-					<string>53</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>65</string>
+					<string>68</string>
 					<key>Timestamp</key>
-					<string>740847162.337522</string>
+					<string>740914541.609954</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -441,15 +440,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string> </string>
+				<string>        viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+</string>
 				<key>leading</key>
 				<string>        // 셀마다 api통신해서 실시간 가격, 퍼센트 가져오기
         /*
-        viewModel.fetchCoinItem(row: indexPath.row) {</string>
+</string>
 				<key>trailing</key>
-				<string>(currentPrice, percent) in
-            if let currentPrice, let percent {
+				<string>            if let currentPrice, let percent {
                 print("currentPrice, percent잘 받아옴")
+                cell.currentPrice.text = "₩\(NumberFormatManager.shared.calculator(Int(currentPrice)))"
 </string>
 			</dict>
 			<key>type</key>
@@ -493,7 +493,7 @@
 				<key>trailing</key>
 				<string> in
                   print("🚨 \(values)")
-            }
+                self.fetchCurrentPriceAndPercentList.value = values
 </string>
 			</dict>
 			<key>type</key>

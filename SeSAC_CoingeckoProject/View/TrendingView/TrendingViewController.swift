@@ -129,7 +129,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             // 이 로직은 VC에 하는게 맞나?
 //            if let currentPrice, let percent {
             let prices = viewModel.coinPrices
-            cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(prices.currentPrice))"
+            cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(Double(prices.currentPrice)))"
             cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(prices.percent)%" : "\(prices.percent)%"
                 // isUpPercent를 이렇게 쓸거면 굳이 Observable로 할 필요가 있나?
                 cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel

@@ -22,7 +22,7 @@ class CoinAPIManager {
                    encoding: URLEncoding(destination: .queryString)).responseDecodable(of: T.self) { response in
             switch response.result {
             case .success(let success):
-                print(success)
+                dump("🍕api result \(success)")
                 completionHandler(success, nil)
             case .failure(let failure):
                 print("alamofie failure", failure)

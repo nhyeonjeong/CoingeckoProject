@@ -14,7 +14,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     
     let coinView = CoinView()
     
-    let currentPrice: UILabel = {
+    let currentPriceLabel: UILabel = {
         let view = UILabel()
         view.font = Constants.Font.favBoldNumber
         view.textColor = Constants.Color.subLabel
@@ -45,7 +45,7 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     }
     func configureHierarchy() {
         contentView.addSubview(coinView)
-        contentView.addSubview(currentPrice)
+        contentView.addSubview(currentPriceLabel)
         contentView.addSubview(percentLabel)
     }
     
@@ -54,14 +54,14 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             make.top.horizontalEdges.equalTo(contentView).inset(Constants.layout.areaLayout)
         }
         
-        currentPrice.snp.makeConstraints { make in
+        currentPriceLabel.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(contentView).inset(Constants.layout.areaLayout)
             make.height.equalTo(20)
 
         }
         
         percentLabel.snp.makeConstraints { make in
-            make.top.equalTo(currentPrice.snp.bottom).offset(4)
+            make.top.equalTo(currentPriceLabel.snp.bottom).offset(4)
             make.height.equalTo(28)
             make.trailing.bottom.equalTo(contentView).inset(Constants.layout.areaLayout)
         }
@@ -83,12 +83,24 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
             self.percentLabel.backgroundColor = value ? Constants.Color.upPercentBackground : Constants.Color.downPercentBackground
         }
     }
-    func configureCell(_ data: CoinFavorite) {
+    func configureCell(_ data: CoinFavorite, priceAndPercent: (currentPrice: Double?, percent: Double?)) {
         
         // textColor, backgroundColor
         coinView.coinImage.kf.setImage(with: URL(string: data.thumbImageString))
         coinView.coinTitleLabel.text = data.name
         coinView.coinSymbolLabel.text = data.symbolName
-
+        if let currentPrice = priceAndPercent.currentPrice, let percent = priceAndPercent.percent {
+            print("currentPrice, percent잘 받아옴")
+            currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
+            percentLabel.text = self.viewModel.isUpPercent.value ? "  +\(percent)%  " : "  \(percent)%  "
+            percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
+            percentLabel.backgroundColor = self.viewModel.isUpPercent.value ? Constants.Color.upPercentBackground : Constants.Color.downPercentBackground
+        } else {
+            print("nil, nil")
+           currentPriceLabel.text = "통신 실패"
+           percentLabel.text = "통신 실패"
+           percentLabel.textColor = Constants.Color.titleLabel
+           percentLabel.backgroundColor = Constants.Color.lightBackground
+        }
     }
 }

@@ -28,9 +28,12 @@ final class FavoriteViewController: BaseViewController {
     }
     
     func bindData() {
-        viewModel.outputFavoriteList.bind { [weak self] _ in
-            guard let self else {return}
-            mainView.collectionView.reloadData()
+//        viewModel.outputFavoriteList.bind { [weak self] _ in
+//            guard let self else {return}
+//            mainView.collectionView.reloadData()
+//        }
+        viewModel.fetchCurrentPriceAndPercentList.bind { value in
+            self.mainView.collectionView.reloadData()
         }
         viewModel.transitionWithId.bind { idString in
             let vc = ChartViewController()
@@ -60,7 +63,7 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteCollectionViewCell.identifier, for: indexPath) as? FavoriteCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configureCell(viewModel.outputFavoriteList.value[indexPath.row])
+        cell.configureCell(viewModel.outputFavoriteList.value[indexPath.row], priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
         // 셀마다 api통신해서 실시간 가격, 퍼센트 가져오기
         /*
         viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
