@@ -57,13 +57,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>38</string>
+					<string>36</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>37</string>
+					<string>35</string>
 					<key>Timestamp</key>
-					<string>740914481.565919</string>
+					<string>740935737.381902</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -102,13 +102,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>141</string>
+					<string>120</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>141</string>
+					<string>119</string>
 					<key>Timestamp</key>
-					<string>740847005.493251</string>
+					<string>740935690.352262</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -124,15 +124,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
-				<key>leading</key>
-				<string>//            }
-
-</string>
-				<key>trailing</key>
 				<string>            return cell
-        } else if row == .coin {
+</string>
+				<key>leading</key>
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+            }
+</string>
+				<key>trailing</key>
+				<string>        } else if row == .coin {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
 </string>
 			</dict>
 			<key>type</key>
@@ -146,13 +147,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>126</string>
+					<string>120</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>125</string>
+					<string>119</string>
 					<key>Timestamp</key>
-					<string>740506830.2832479</string>
+					<string>740935690.352339</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -168,60 +169,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>            // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
-</string>
-				<key>leading</key>
-				<string>            cell.configureCell(cellData)
-            
-</string>
-				<key>trailing</key>
-				<string>//            viewModel.fetchCoinItem(row: indexPath.row)
-                
-            // 이 로직은 VC에 하는게 맞나?
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>141</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>141</string>
-					<key>Timestamp</key>
-					<string>740847005.493261</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string></string>
-				<key>leading</key>
-				<string>//            }
-
-</string>
-				<key>trailing</key>
 				<string>            return cell
-        } else if row == .coin {
+</string>
+				<key>leading</key>
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+            }
+</string>
+				<key>trailing</key>
+				<string>        } else if row == .coin {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
 </string>
 			</dict>
 			<key>type</key>
@@ -235,13 +192,58 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>93</string>
+					<string>120</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>93</string>
+					<string>119</string>
 					<key>Timestamp</key>
-					<string>740507065.37545</string>
+					<string>740935690.3517981</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            return cell
+</string>
+				<key>leading</key>
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+            }
+</string>
+				<key>trailing</key>
+				<string>        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>106</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>106</string>
+					<key>Timestamp</key>
+					<string>740935707.576726</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -259,13 +261,12 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    func fetchCoinItem(row: Int/*, completionHandler: @escaping (Int?, Double?) -&gt; Void*/) {
-        // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
-</string>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
 				<key>trailing</key>
-				<string>        var data: CoinDetail? = nil
-        /*
-         1. completionHandler을 사용할 때
+				<string>
+}
 </string>
 			</dict>
 			<key>title</key>
@@ -279,15 +280,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>0</string>
+					<string>5</string>
 					<key>EndingLineNumber</key>
-					<string>117</string>
+					<string>106</string>
 					<key>StartingColumnNumber</key>
-					<string>0</string>
+					<string>5</string>
 					<key>StartingLineNumber</key>
-					<string>116</string>
+					<string>106</string>
 					<key>Timestamp</key>
-					<string>740506843.502565</string>
+					<string>740935707.576194</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -303,16 +304,14 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>            }
-            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
-</string>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
 				<key>trailing</key>
-				<string>//            completionHandler(data.current_price, data.price_change_percentage_24h)
-            group.leave()
-        }
+				<string>
+}
 </string>
 			</dict>
 			<key>type</key>
@@ -324,15 +323,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>0</string>
+					<string>5</string>
 					<key>EndingLineNumber</key>
-					<string>95</string>
+					<string>106</string>
 					<key>StartingColumnNumber</key>
-					<string>0</string>
+					<string>5</string>
 					<key>StartingLineNumber</key>
-					<string>94</string>
+					<string>106</string>
 					<key>Timestamp</key>
-					<string>740506843.502508</string>
+					<string>740935707.576834</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -348,16 +347,14 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>        /*
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>        // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
-        var data: CoinDetail? = nil
-</string>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
 				<key>trailing</key>
-				<string>         1. completionHandler을 사용할 때
-         
-         2. dispatchGroup을 사용할 때
+				<string>
+}
 </string>
 			</dict>
 			<key>title</key>
@@ -373,13 +370,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>49</string>
+					<string>40</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>48</string>
+					<string>39</string>
 					<key>Timestamp</key>
-					<string>740914481.565887</string>
+					<string>740935737.3819129</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -395,16 +392,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>//            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
+				<string>            guard let value else { return }
 </string>
 				<key>leading</key>
-				<string>//                return
-//            }
+				<string>            favoriteCoin.idString
+        }))) { value, error in
 </string>
 				<key>trailing</key>
-				<string>//            completionHandler(data.current_price, data.price_change_percentage_24h)
-            completionHandler(value.map({ coin in
+				<string>            completionHandler(value.map({ coin in
                 (coin.current_price, coin.price_change_percentage_24h)
+            }))
 </string>
 			</dict>
 			<key>type</key>
@@ -418,13 +415,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>69</string>
+					<string>62</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>68</string>
+					<string>61</string>
 					<key>Timestamp</key>
-					<string>740914541.609954</string>
+					<string>740915366.0549411</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -440,16 +437,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>        viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
+				<string>        cell.configureCell(viewModel.outputFavoriteList.value[indexPath.row], priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
 </string>
 				<key>leading</key>
-				<string>        // 셀마다 api통신해서 실시간 가격, 퍼센트 가져오기
-        /*
+				<string>            return UICollectionViewCell()
+        }
 </string>
 				<key>trailing</key>
-				<string>            if let currentPrice, let percent {
-                print("currentPrice, percent잘 받아옴")
-                cell.currentPrice.text = "₩\(NumberFormatManager.shared.calculator(Int(currentPrice)))"
+				<string>        return cell
+    }
+    
 </string>
 			</dict>
 			<key>type</key>
@@ -461,15 +458,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>39</string>
+					<string>42</string>
 					<key>EndingLineNumber</key>
-					<string>25</string>
+					<string>24</string>
 					<key>StartingColumnNumber</key>
-					<string>33</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>25</string>
+					<string>24</string>
 					<key>Timestamp</key>
-					<string>740847167.291701</string>
+					<string>740935786.233004</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -485,15 +482,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>values</string>
+				<string>            self.fetchCoinItem { values in</string>
 				<key>leading</key>
 				<string>        inputReadFavTrigger.bind { _ in
             self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
-            self.fetchCoinItem { </string>
+</string>
 				<key>trailing</key>
-				<string> in
-                  print("🚨 \(values)")
+				<string>
                 self.fetchCurrentPriceAndPercentList.value = values
+                
 </string>
 			</dict>
 			<key>type</key>
@@ -505,15 +502,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>52</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>126</string>
+					<string>120</string>
 					<key>StartingColumnNumber</key>
-					<string>43</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>126</string>
+					<string>119</string>
 					<key>Timestamp</key>
-					<string>740847184.08962</string>
+					<string>740935690.352185</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -529,15 +526,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>indexPath</string>
+				<string>            return cell
+</string>
 				<key>leading</key>
-				<string>            
-            // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
-//            viewModel.fetchCoinItem(row: </string>
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+            }
+</string>
 				<key>trailing</key>
-				<string>.row)
-                
-            // 이 로직은 VC에 하는게 맞나?
+				<string>        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
 </string>
 			</dict>
 			<key>type</key>
@@ -549,15 +547,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>32</string>
+					<string>5</string>
 					<key>EndingLineNumber</key>
-					<string>91</string>
+					<string>106</string>
 					<key>StartingColumnNumber</key>
-					<string>31</string>
+					<string>5</string>
 					<key>StartingLineNumber</key>
-					<string>91</string>
+					<string>106</string>
 					<key>Timestamp</key>
-					<string>740847195.365442</string>
+					<string>740935707.576786</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -573,15 +571,14 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>/</string>
+				<string></string>
 				<key>leading</key>
-				<string>    }
-    /*
-    func fetchCoinItem(row: Int</string>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
 				<key>trailing</key>
-				<string>*, completionHandler: @escaping (Int?, Double?) -&gt; Void*/) {
-        // completionHandler사용하면 api통신이 끝날떄까지 table이 그려지는동안 계속 기다려야 하니까 좋은 방법은 아닌듯,,?
-        var data: CoinDetail? = nil
+				<string>
+}
 </string>
 			</dict>
 			<key>type</key>

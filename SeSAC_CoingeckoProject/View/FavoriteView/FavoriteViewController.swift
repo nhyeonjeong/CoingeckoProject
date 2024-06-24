@@ -28,10 +28,6 @@ final class FavoriteViewController: BaseViewController {
     }
     
     func bindData() {
-//        viewModel.outputFavoriteList.bind { [weak self] _ in
-//            guard let self else {return}
-//            mainView.collectionView.reloadData()
-//        }
         viewModel.fetchCurrentPriceAndPercentList.bind { value in
             self.mainView.collectionView.reloadData()
         }
@@ -64,24 +60,6 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
             return UICollectionViewCell()
         }
         cell.configureCell(viewModel.outputFavoriteList.value[indexPath.row], priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
-        // 셀마다 api통신해서 실시간 가격, 퍼센트 가져오기
-        /*
-        viewModel.fetchCoinItem(row: indexPath.row) { (currentPrice, percent) in
-            if let currentPrice, let percent {
-                print("currentPrice, percent잘 받아옴")
-                cell.currentPrice.text = "₩\(NumberFormatManager.shared.calculator(Int(currentPrice)))"
-                cell.percentLabel.text = self.viewModel.isUpPercent.value ? "  +\(percent)%  " : "  \(percent)%  "
-                cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
-                cell.percentLabel.backgroundColor = self.viewModel.isUpPercent.value ? Constants.Color.upPercentBackground : Constants.Color.downPercentBackground
-            } else {
-                print("nil, nil")
-                cell.currentPrice.text = "통신 실패"
-                cell.percentLabel.text = "통신 실패"
-                cell.percentLabel.textColor = Constants.Color.titleLabel
-                cell.percentLabel.backgroundColor = Constants.Color.lightBackground
-            }
-        }
-         */
         return cell
     }
     

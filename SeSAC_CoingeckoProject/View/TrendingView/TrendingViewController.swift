@@ -24,9 +24,13 @@ final class TrendingViewController: BaseViewController {
         viewModel.inputFetchTrigger.value = () // api통신
     }
     func bindData() {
+        viewModel.fetchCurrentPriceAndPercentList.bind { _ in
+            print("fetchCurrentPriceAndPercentList didSet - API통신 완료 후 즐겨찾기 다시 그리기")
+            self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        }
         viewModel.outputFetchTrigger.bind { _ in
-            print("outputFetchTrigger didSet - API통신 완료후 테이블 다시 그리기")
-            self.mainView.tableView.reloadData()
+            print("outputFetchTrigger didSet - API통신 완료후 Top, NFT 테이블 다시 그리기")
+            self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
         }
         viewModel.transitionWithId.bind { idString in
             let vc = ChartViewController()
@@ -39,10 +43,6 @@ final class TrendingViewController: BaseViewController {
                 self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
             }
             self.navigationController?.pushViewController(vc, animated: true)
-        }
-        viewModel.outputCellApiCoin.bind { row in
-            print("trending즐겨찾기 table reloadRows")
-            self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
         }
     }
 }
@@ -102,14 +102,6 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        let row = viewModel.rowList[collectionView.tag]
-//        if row == .favorite {
-//            return viewModel.favoriteList.value.count
-//        } else if row == .coin {
-//            return viewModel.coinTrendingList.value.count
-//        } else {
-//            return viewModel.nftTrendingList.value.count
-//        }
         viewModel.numberOfCollectionRow(collectionView.tag)
     }
     
@@ -119,26 +111,12 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingFavCollectionViewCell.identifier, for: indexPath) as? TrendingFavCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            
             let cellData = viewModel.outputFavoriteList.value[indexPath.row]
-            cell.configureCell(cellData)
-            
-            // fetchCoinItem을 @escaping을 써주지 않으면 통신을 마치기도 전에 코드가 진행되어서 제대로된 currentPrice와 percent를 가져올 수 없었다.
-//            viewModel.fetchCoinItem(row: indexPath.row)
-                
-            // 이 로직은 VC에 하는게 맞나?
-//            if let currentPrice, let percent {
-            let prices = viewModel.coinPrices
-            cell.currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(Double(prices.currentPrice)))"
-            cell.percentLabel.text = self.viewModel.isUpPercent.value ? "+\(prices.percent)%" : "\(prices.percent)%"
-                // isUpPercent를 이렇게 쓸거면 굳이 Observable로 할 필요가 있나?
-                cell.percentLabel.textColor = self.viewModel.isUpPercent.value ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
-//            } else {
-//                cell.currentPriceLabel.text = "통신 실패"
-//                cell.percentLabel.text = "통신 실패"
-//                cell.percentLabel.textColor = Constants.Color.titleLabel
-//            }
-
+            if viewModel.fetchCurrentPriceAndPercentList.value.isEmpty {
+                cell.configureCell(cellData, priceAndPercent: (0.0, 0.0))
+            } else {
+                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+            }
             return cell
         } else if row == .coin {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
