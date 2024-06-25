@@ -122,7 +122,7 @@ extension ChartViewController {
     func settingBarButton() {
         print(#function)
         let button = UIBarButtonItem(image: Constants.Image.favInactiveStar, style: .plain, target: self, action: #selector(rightBarButtonItemClicked))
-//        viewModel.isFavoriteItem() // 즐겨찾기에 들어있는지 확인
+        viewModel.isFavoriteItem() // 즐겨찾기에 들어있는지 확인
         button.tintColor = Constants.Color.pointColor
         navigationItem.rightBarButtonItem = button
         

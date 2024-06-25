@@ -109,9 +109,6 @@ class ChartViewModel {
     
     // 즐겨찾기 유무에 대한 별 바꾸기
     func isFavoriteItem() {
-//        guard let coinData = coinData.value else {
-//            return
-//        }
         print("isFavoriteItem")
         var isFavorite: Bool = false
         // 즐겨찾기에 있는지 확인 후 유무에 따라 별 바꾸기
@@ -129,25 +126,24 @@ class ChartViewModel {
     func toggleFavStar() {
         // 해결법)
         inputFetchFavoriteTrigger.value = ()
-        /*
+        
         if outPutFetchFav.value { // 즐겨찾기에 있는 코인이면 삭제
-            RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
-                self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
-                self.outPutFetchFav.value = false // 즐겨찾기 이미지 다시 그리기
-                self.outputStarClicked.value = false
-            }
+            RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx])
+            self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
+            self.outPutFetchFav.value = false // 즐겨찾기 이미지 다시 그리기
+            self.outputStarClicked.value = false
         } else {
             // 즐겨찾기 목록이 9개 이하일떄만 추가
             if favoriteList.value.count < 10 {
                 print("즐겨찾기에 없으니까 추가")
-                RealmRepository.shared.createItem(itemId: coinData.value.idString) {
-                    self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
-                    self.outPutFetchFav.value = true
-                    self.outputStarClicked.value = true
-                }
+                let data = CoinFavorite(idString: coinData.value.id, name: coinData.value.name, symbolName: coinData.value.symbol, thumbImageString: coinData.value.image)
+                RealmRepository.shared.createItem(data)
+                self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
+                self.outPutFetchFav.value = true
+                self.outputStarClicked.value = true
             }
         }
-         */
+         
         print("favoriteList : ", favoriteList.value)
     }
 }

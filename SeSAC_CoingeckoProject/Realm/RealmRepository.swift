@@ -14,8 +14,6 @@ class RealmRepository {
     let realm = try! Realm()
     
     func createItem(_ data: CoinFavorite) {
-//        print(self.realm.configuration.fileURL)
-        // api통신으로 정보 가져오기 -> api통신 왜했지1?!!바보냐
         do {
             try realm.write {
                 realm.add(data)

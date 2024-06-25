@@ -15,9 +15,18 @@ class TrendingNFTCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let coinView = CoinView()
+    let coinView = {
+        let view = CoinView()
+        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        return view
+    }()
     
-    let numberBackView = UIView()
+    let numberBackView = {
+        let view = UIView()
+        view.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        return view
+
+    }()
     
     let floorPriceLabel: UILabel = {
         let view = UILabel()
@@ -66,6 +75,7 @@ class TrendingNFTCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(floorPriceLabel.snp.bottom)
         }
         numberBackView.snp.makeConstraints { make in
+            make.leading.equalTo(coinView.snp.trailing).offset(10)
             make.centerY.equalTo(contentView)
             make.trailing.equalTo(contentView).inset(20)
         }

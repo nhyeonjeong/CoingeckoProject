@@ -235,15 +235,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>StartingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>Timestamp</key>
-					<string>740935707.576726</string>
+					<string>741005317.052511</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -261,12 +261,13 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    func checkPercent(_ percent: Double) {
-        isUpPercent.value = percent &gt; 0 ? true : false
-    }</string>
+				<string>        let favListCount = outputFavoriteList.value.count
+        if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
+</string>
 				<key>trailing</key>
-				<string>
-}
+				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
+        } else {
+            rowList = RowEnum.allCases
 </string>
 			</dict>
 			<key>title</key>
@@ -280,15 +281,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>StartingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>Timestamp</key>
-					<string>740935707.576194</string>
+					<string>741005317.052524</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -306,12 +307,13 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    func checkPercent(_ percent: Double) {
-        isUpPercent.value = percent &gt; 0 ? true : false
-    }</string>
+				<string>        let favListCount = outputFavoriteList.value.count
+        if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
+</string>
 				<key>trailing</key>
-				<string>
-}
+				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
+        } else {
+            rowList = RowEnum.allCases
 </string>
 			</dict>
 			<key>type</key>
@@ -323,15 +325,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>StartingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>Timestamp</key>
-					<string>740935707.576834</string>
+					<string>741005317.052541</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -349,12 +351,13 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    func checkPercent(_ percent: Double) {
-        isUpPercent.value = percent &gt; 0 ? true : false
-    }</string>
+				<string>        let favListCount = outputFavoriteList.value.count
+        if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
+</string>
 				<key>trailing</key>
-				<string>
-}
+				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
+        } else {
+            rowList = RowEnum.allCases
 </string>
 			</dict>
 			<key>title</key>
@@ -412,16 +415,12 @@
 			<dict>
 				<key>location-parameters</key>
 				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>62</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
+					<string>61</string>
 					<key>StartingLineNumber</key>
 					<string>61</string>
 					<key>Timestamp</key>
-					<string>740915366.0549411</string>
+					<string>741008417.91249</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -547,15 +546,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>StartingColumnNumber</key>
-					<string>5</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>106</string>
+					<string>87</string>
 					<key>Timestamp</key>
-					<string>740935707.576786</string>
+					<string>741005317.052412</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -573,12 +572,13 @@
 				<key>focused</key>
 				<string></string>
 				<key>leading</key>
-				<string>    func checkPercent(_ percent: Double) {
-        isUpPercent.value = percent &gt; 0 ? true : false
-    }</string>
+				<string>        let favListCount = outputFavoriteList.value.count
+        if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
+</string>
 				<key>trailing</key>
-				<string>
-}
+				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
+        } else {
+            rowList = RowEnum.allCases
 </string>
 			</dict>
 			<key>type</key>

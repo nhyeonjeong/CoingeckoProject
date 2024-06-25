@@ -18,21 +18,32 @@ class TrendingCoinCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    let coinView = CoinView()
+    let coinView = {
+        let view = CoinView()
+        view.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        return view
+    }()
     
-    let numberBackView = UIView()
+    let numberBackView = {
+        let view = UIView()
+        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        return view
+    }()
     
     let priceLabel: UILabel = {
         let view = UILabel()
         view.textColor = Constants.Color.subLabel
         view.font = Constants.Font.subMain
         view.textAlignment = .right
+//        view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return view
+        
     }()
     let percentLabel: UILabel = {
         let view = UILabel()
         view.font = Constants.Font.small
         view.textAlignment = .right
+//        view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         return view
     }()
     
@@ -59,7 +70,6 @@ class TrendingCoinCollectionViewCell: UICollectionViewCell {
         coinView.snp.makeConstraints { make in
             make.leading.equalTo(numberLabel.snp.trailing).offset(15)
             make.centerY.equalTo(contentView)
-            
         }
         priceLabel.snp.makeConstraints { make in
             make.top.horizontalEdges.equalTo(numberBackView)
@@ -69,6 +79,7 @@ class TrendingCoinCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(priceLabel.snp.bottom)
         }
         numberBackView.snp.makeConstraints { make in
+            make.leading.equalTo(coinView.snp.trailing).offset(10)
             make.centerY.equalTo(contentView)
             make.trailing.equalTo(contentView).inset(20)
         }

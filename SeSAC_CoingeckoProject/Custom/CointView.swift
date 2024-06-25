@@ -23,6 +23,7 @@ class CoinView: BaseView {
         view.textColor = Constants.Color.titleLabel
         view.font = Constants.Font.boldMain
         view.text = "testTitle"
+//        view.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         return view
     }()
     
@@ -31,6 +32,7 @@ class CoinView: BaseView {
         view.textColor = Constants.Color.smallLabel
         view.font = Constants.Font.main
         view.text = "testSubTitle"
+//        view.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
         return view
     }()
 
