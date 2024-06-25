@@ -8,6 +8,7 @@
 import Foundation
 
 class TrendingViewModel {
+    // 트랜딩 화면 3분류
     enum RowEnum: Int, CaseIterable {
         case favorite = 0
         case coin
@@ -26,12 +27,20 @@ class TrendingViewModel {
     }
     var rowList = RowEnum.allCases
     
-    var inputFetchTrigger: Observable<Void?> = Observable(nil)
-    var outputFetchTrigger: Observable<Void?> = Observable(nil)
-    var favoriteList: Observable<[CoinFavorite]> = Observable([])
-    var coinTrendingList: Observable<[CoinItem]> = Observable([])
-    var nftTrendingList: Observable<[NFTItem]> = Observable([])
-    var isUpPercent: Observable<Bool> = Observable(false)
+    var inputFetchTrigger: Observable<Void?> = Observable(nil) // 트랜딩 화면에 들어갔을 떄 API통신을 일으키는 트리거
+    var outputFetchTrigger: Observable<Void?> = Observable(nil) // api통신이 끝났을 떄 트리거
+    
+    var outputFavoriteList: Observable<[CoinFavorite]> = Observable([]) // 즐겨찾기 리스트
+    var outputCoinTrendingList: Observable<[CoinItem]> = Observable([]) // 코인트랜딩 리스트
+    var outputNftTrendingList: Observable<[NFTItem]> = Observable([]) // nft트랜딩 리스트
+    
+    var isUpPercent: Observable<Bool> = Observable(false) // ?
+    var transitionWithId: Observable<String?> = Observable(nil)
+    
+    var coinPrices: (currentPrice: Int, percent: Double) = (0,0)
+    var outputCellApiCoin: Observable<Int?> = Observable(nil)
+    
+    var fetchCurrentPriceAndPercentList: Observable<[(currentPrice: Double?, percent: Double?)]> = Observable([])
     
     init() {
         bindData()
@@ -39,49 +48,61 @@ class TrendingViewModel {
     
     func bindData() {
         inputFetchTrigger.bind { _ in
-            print("즐겨찾기 패치 트리거")
-            // 즐겨찾기
-            self.favoriteList.value = RealmRepository.shared.fetchItem()
-            CoinAPIManager.shared.fetchCoinData(type: CoinNFTTrending.self, api: .trending) { data, error in
-                guard let data else { return }
-                self.coinTrendingList.value = data.coins
-                self.nftTrendingList.value = data.nfts
-                self.outputFetchTrigger.value = ()
+            print("inputFetchTrigger didSet - API통신")
+            // api통신
+            self.callFavRequest{ values in
+                self.fetchCurrentPriceAndPercentList.value = values
             }
+            self.callRequest()
+        }
+    }
+    func callFavRequest(completionHandler: @escaping ([(Double?, Double?)]) -> Void) {
+        // 즐겨찾기
+        // 즐겨찾기가져오기
+        self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
+        
+        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: outputFavoriteList.value.map({ coin in
+            coin.idString
+        }))) { value, error in
+            guard let value else { return }
+            completionHandler(value.map({ coin in
+                (coin.current_price, coin.price_change_percentage_24h)
+            }))
+        }
+    }
+    func callRequest() {
+        // Top, NFT
+        CoinAPIManager.shared.fetchCoinData(type: CoinNFTTrending.self, api: .trending) { data, error in
+            guard let data else { return }
+            self.outputCoinTrendingList.value = data.coins
+            self.outputNftTrendingList.value = data.nfts
+            
+            // api통신이 끝났다면
+            self.outputFetchTrigger.value = ()
         }
     }
 
-    func numberOfRow() -> Int {
-        return rowList.count
-    }
-    
-    func checkPercent(_ percent: Double) {
-        if percent > 0 {
-            isUpPercent.value = true
-        } else {
-            isUpPercent.value = false
-        }
-    }
-    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -> Void) {
-        var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value, error in
-            guard let value else { return }
-            data = value[0]
-            guard let data else {
-                completionHandler(nil, nil)
-                return
-            }
-            self.checkPercent(data.price_change_percentage_24h) // 양수음수 확인
-            completionHandler(data.current_price, data.price_change_percentage_24h)
-        }
-    }
-    
-    func checkFavListCount() {
-        let favListCount = favoriteList.value.count
+    func numberOfTableRow() -> Int {
+        let favListCount = outputFavoriteList.value.count
         if favListCount >= 0 && favListCount < 2 {
-            rowList = [.coin, .nft]
+            rowList = favListCount >= 0 && favListCount < 2 ? [.coin, .nft] : RowEnum.allCases
         } else {
             rowList = RowEnum.allCases
         }
+        return rowList.count
+    }
+    func numberOfCollectionRow(_ tag: Int) -> Int {
+        let row = rowList[tag]
+        if row == .favorite {
+            return outputFavoriteList.value.count
+        } else if row == .coin {
+            return outputCoinTrendingList.value.count
+        } else {
+            return outputNftTrendingList.value.count
+        }
+    }
+    
+    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent > 0 ? true : false
     }
 }

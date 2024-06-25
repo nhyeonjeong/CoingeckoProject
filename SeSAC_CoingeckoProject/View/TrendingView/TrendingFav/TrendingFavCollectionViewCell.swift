@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 class TrendingFavCollectionViewCell: UICollectionViewCell {
+    let viewModel = FavoriteViewModel()
+    
     let coinView = CoinView()
     let currentPriceLabel: UILabel = {
         let view = UILabel()
@@ -56,12 +58,21 @@ class TrendingFavCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 20
         contentView.backgroundColor = Constants.Color.boxBackground
     }
-    func configureCell(_ data: CoinFavorite) {
-        
+    func configureCell(_ data: CoinFavorite, priceAndPercent: (currentPrice: Double?, percent: Double?)) {
         // textColor, backgroundColor
         coinView.coinImage.kf.setImage(with: URL(string: data.thumbImageString))
         coinView.coinTitleLabel.text = data.name
         coinView.coinSymbolLabel.text = data.symbolName
+        
+        if let currentPrice = priceAndPercent.currentPrice, let percent = priceAndPercent.percent {
+            currentPriceLabel.text = "₩\(NumberFormatManager.shared.calculator(currentPrice))"
+            percentLabel.text = self.viewModel.checkPercent(percent) ? "+\(percent)%" : "\(percent)%"
+            percentLabel.textColor = self.viewModel.checkPercent(percent) ? Constants.Color.upParcentLabel : Constants.Color.downPercentLabel
+        } else {
+            currentPriceLabel.text = "통신 실패"
+            percentLabel.text = "통신 실패"
+            percentLabel.textColor = Constants.Color.titleLabel
+        }
 
     }
     // 스토리보드로 할 때 실행되는 구문

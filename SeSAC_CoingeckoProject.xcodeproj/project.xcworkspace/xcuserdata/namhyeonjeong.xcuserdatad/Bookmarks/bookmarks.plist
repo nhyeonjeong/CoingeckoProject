@@ -12,148 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>80</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>79</string>
-					<key>Timestamp</key>
-					<string>731195527.626366</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewController.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>        // 해결법 )
-</string>
-				<key>leading</key>
-				<string>        cell.configureCell(coinData: data, row: indexPath.row)
-        
-</string>
-				<key>trailing</key>
-				<string>        viewModel.inputFetchFavoriteTrigger.value = ()
-        // 검색한 단어는 보라색으로
-        let attribtuedString = NSMutableAttributedString(string: data.name)
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>33</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>32</string>
-					<key>Timestamp</key>
-					<string>731194394.6734411</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewModel.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>                    self.oupPutSearchCoinData.value = value.coins
-</string>
-				<key>leading</key>
-				<string>                CoinAPIManager.shared.fetchCoinData(type: Coingecko.self, api: .search(query: text), completionHandler: { value, error in
-                    guard let value else { return }
-</string>
-				<key>trailing</key>
-				<string>                    print("oupPutSearchCoinData value", value)
-                })
-            }
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
-					<string>32</string>
-					<key>StartingColumnNumber</key>
-					<string>0</string>
-					<key>StartingLineNumber</key>
-					<string>31</string>
-					<key>Timestamp</key>
-					<string>731195527.626344</string>
-				</dict>
-				<key>rebasable-url</key>
-				<dict>
-					<key>base</key>
-					<string>workspace</string>
-					<key>payload</key>
-					<dict>
-						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewController.swift</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>text-context</key>
-			<dict>
-				<key>focused</key>
-				<string>        self.mainView.tableView.reloadData() // MVVM으로 하려면 어떻ㄱ게,,?
-</string>
-				<key>leading</key>
-				<string>        super.viewWillAppear(animated)
-        viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기목록 패치
-</string>
-				<key>trailing</key>
-				<string>    }
-    
-    func bindData() {
-</string>
-			</dict>
-			<key>type</key>
-			<string>bookmark</string>
-		</dict>
-		<dict>
-			<key>destination</key>
-			<dict>
-				<key>location-parameters</key>
-				<dict>
-					<key>EndingColumnNumber</key>
-					<string>0</string>
-					<key>EndingLineNumber</key>
 					<string>37</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
 					<string>36</string>
 					<key>Timestamp</key>
-					<string>731197417.74985</string>
+					<string>740507746.222815</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -192,13 +57,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>33</string>
+					<string>36</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>32</string>
+					<string>35</string>
 					<key>Timestamp</key>
-					<string>731178667.215747</string>
+					<string>740935737.381902</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -214,16 +79,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>    func fetchCoinItem(row: Int, completionHandler: @escaping (Int?, Double?) -&gt; Void) {
+				<string>    func fetchCoinItem(completionHandler: @escaping ([(Double?, Double?)]) -&gt; Void) {
 </string>
 				<key>leading</key>
-				<string>        }
-    }
+				<string>    }
+    
 </string>
 				<key>trailing</key>
-				<string>        var data: CoinDetail? = nil
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: favoriteList.value[row].idString)) { value, error in
-            guard let value else { return }
+				<string>        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: outputFavoriteList.value.map({ favoriteCoin in
+            favoriteCoin.idString
+        }))) { value, error in
 </string>
 			</dict>
 			<key>type</key>
@@ -237,13 +102,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>51</string>
+					<string>120</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>50</string>
+					<string>119</string>
 					<key>Timestamp</key>
-					<string>731197272.054534</string>
+					<string>740935690.352262</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -259,16 +124,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>            cell.collectionView.register(TrendingFavCollectionViewCell.self, forCellWithReuseIdentifier: TrendingFavCollectionViewCell.identifier)
+				<string>            return cell
 </string>
 				<key>leading</key>
-				<string>                return UITableViewCell()
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
             }
 </string>
 				<key>trailing</key>
-				<string>            cell.collectionView.delegate = self
-            cell.collectionView.dataSource = self
-            cell.collectionView.tag = indexPath.row
+				<string>        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
 </string>
 			</dict>
 			<key>type</key>
@@ -280,15 +145,15 @@
 				<key>location-parameters</key>
 				<dict>
 					<key>EndingColumnNumber</key>
-					<string>38</string>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>70</string>
+					<string>120</string>
 					<key>StartingColumnNumber</key>
-					<string>21</string>
+					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>70</string>
+					<string>119</string>
 					<key>Timestamp</key>
-					<string>731195569.404865</string>
+					<string>740935690.352339</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -297,22 +162,423 @@
 					<key>payload</key>
 					<dict>
 						<key>relative-path</key>
-						<string>SeSAC_CoingeckoProject/View/SearchView/SearchViewModel.swift</string>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
 					</dict>
 				</dict>
 			</dict>
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>outputStarClicked</string>
+				<string>            return cell
+</string>
 				<key>leading</key>
-				<string>                self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
-                self.outPutTableReloadRow.value = tag
-                self.</string>
-				<key>trailing</key>
-				<string>.value = false
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
             }
-        } else {
+</string>
+				<key>trailing</key>
+				<string>        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>120</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>119</string>
+					<key>Timestamp</key>
+					<string>740935690.3517981</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            return cell
+</string>
+				<key>leading</key>
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+            }
+</string>
+				<key>trailing</key>
+				<string>        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>106</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>106</string>
+					<key>Timestamp</key>
+					<string>740935707.576726</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
+				<key>trailing</key>
+				<string>
+}
+</string>
+			</dict>
+			<key>title</key>
+			<string>reusltType -&gt; 2/5</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>106</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>106</string>
+					<key>Timestamp</key>
+					<string>740935707.576194</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
+				<key>trailing</key>
+				<string>
+}
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>106</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>106</string>
+					<key>Timestamp</key>
+					<string>740935707.576834</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
+				<key>trailing</key>
+				<string>
+}
+</string>
+			</dict>
+			<key>title</key>
+			<string>3가지 별로 알아보기,,,</string>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>40</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>39</string>
+					<key>Timestamp</key>
+					<string>740935737.3819129</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/FavoriteView/FavoriteViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            guard let value else { return }
+</string>
+				<key>leading</key>
+				<string>            favoriteCoin.idString
+        }))) { value, error in
+</string>
+				<key>trailing</key>
+				<string>            completionHandler(value.map({ coin in
+                (coin.current_price, coin.price_change_percentage_24h)
+            }))
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>62</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>61</string>
+					<key>Timestamp</key>
+					<string>740915366.0549411</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/FavoriteView/FavoriteViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>        cell.configureCell(viewModel.outputFavoriteList.value[indexPath.row], priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+</string>
+				<key>leading</key>
+				<string>            return UICollectionViewCell()
+        }
+</string>
+				<key>trailing</key>
+				<string>        return cell
+    }
+    
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>42</string>
+					<key>EndingLineNumber</key>
+					<string>24</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>24</string>
+					<key>Timestamp</key>
+					<string>740935786.233004</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/FavoriteView/FavoriteViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            self.fetchCoinItem { values in</string>
+				<key>leading</key>
+				<string>        inputReadFavTrigger.bind { _ in
+            self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
+</string>
+				<key>trailing</key>
+				<string>
+                self.fetchCurrentPriceAndPercentList.value = values
+                
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
+					<key>EndingLineNumber</key>
+					<string>120</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
+					<key>StartingLineNumber</key>
+					<string>119</string>
+					<key>Timestamp</key>
+					<string>740935690.352185</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string>            return cell
+</string>
+				<key>leading</key>
+				<string>                cell.configureCell(cellData, priceAndPercent: viewModel.fetchCurrentPriceAndPercentList.value[indexPath.row])
+            }
+</string>
+				<key>trailing</key>
+				<string>        } else if row == .coin {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingCoinCollectionViewCell.identifier, for: indexPath) as? TrendingCoinCollectionViewCell else {
+                return UICollectionViewCell()
+</string>
+			</dict>
+			<key>type</key>
+			<string>bookmark</string>
+		</dict>
+		<dict>
+			<key>destination</key>
+			<dict>
+				<key>location-parameters</key>
+				<dict>
+					<key>EndingColumnNumber</key>
+					<string>5</string>
+					<key>EndingLineNumber</key>
+					<string>106</string>
+					<key>StartingColumnNumber</key>
+					<string>5</string>
+					<key>StartingLineNumber</key>
+					<string>106</string>
+					<key>Timestamp</key>
+					<string>740935707.576786</string>
+				</dict>
+				<key>rebasable-url</key>
+				<dict>
+					<key>base</key>
+					<string>workspace</string>
+					<key>payload</key>
+					<dict>
+						<key>relative-path</key>
+						<string>SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>text-context</key>
+			<dict>
+				<key>focused</key>
+				<string></string>
+				<key>leading</key>
+				<string>    func checkPercent(_ percent: Double) {
+        isUpPercent.value = percent &gt; 0 ? true : false
+    }</string>
+				<key>trailing</key>
+				<string>
+}
 </string>
 			</dict>
 			<key>type</key>

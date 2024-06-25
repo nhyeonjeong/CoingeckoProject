@@ -81,32 +81,46 @@ final class ChartView: BaseView {
             make.horizontalEdges.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
             make.height.equalTo(110) // 없으면 안됨
         }
+        
+        chartView.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(20)
+            make.horizontalEdges.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(safeAreaLayoutGuide).inset(30)
+        }
         updateDate.snp.makeConstraints { make in
             make.height.equalTo(20)
             make.trailing.equalTo(safeAreaLayoutGuide).inset(Constants.layout.areaLayout)
             make.bottom.equalTo(safeAreaLayoutGuide).inset(15)
         }
-        
-        chartView.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(safeAreaLayoutGuide)
-            make.bottom.equalTo(updateDate.snp.top).inset(8)
-        }
     }
     // 다시 하기
-    func settingChartView(_ data: [Spark]) {
+    func settingChartView(_ data: [Double]) {
         chartView.backgroundColor = Constants.Color.lightBackground
+        chartView.xAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.drawGridLinesEnabled = false
+        chartView.rightAxis.drawGridLinesEnabled = false
+        chartView.leftAxis.enabled = false
+        chartView.xAxis.enabled = false
+
         var entry: [ChartDataEntry] = []
         for i in 0..<data.count {
-            entry.append(ChartDataEntry(x:Double(i), y: data[i].sparkNumber))
+            entry.append(ChartDataEntry(x: Double(i), y: data[i]))
         }
-        let dataset = LineChartDataSet(entries: entry, label: "datasetLabel")
-//        dataset.drawCircleHoleEnabled = false // 점 없도록
-//        dataset.circleRadius = 5
-//        dataset.circleHoleColor = Constants.Color.pointColor
-//        dataset.lineWidth = 10
+
+        let dataset = LineChartDataSet(entries: entry)
+        dataset.mode = .cubicBezier
+        dataset.colors = [NSUIColor.systemOrange]
         
+        dataset.drawFilledEnabled = true
+        dataset.fillColor = .systemOrange
+        dataset.fillAlpha = 1
+        dataset.fill = LinearGradientFill(gradient: CGGradient(colorsSpace: nil, colors: [NSUIColor.systemOrange.cgColor, NSUIColor.systemOrange.withAlphaComponent(0).cgColor] as CFArray, locations: [1, 0])!, angle: 90)
+
+        dataset.drawFilledEnabled = true
+        dataset.drawCirclesEnabled = false
+        dataset.lineWidth = 2
+        dataset.lineDashPhase = 0
         chartView.data = LineChartData(dataSet: dataset)
-        
     }
 }
 

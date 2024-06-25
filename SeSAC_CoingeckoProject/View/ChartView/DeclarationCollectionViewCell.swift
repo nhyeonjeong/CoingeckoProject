@@ -49,7 +49,8 @@ final class DeclarationCollectionViewCell: UICollectionViewCell {
         declarationLabel.textColor = Constants.Color.subLabel
     }
     
-    func configureCell(_ data: (title: String, price: Int)) {
+    func configureCell(_ data: (title: String, price: Double)) {
+        print("🏂\(data.title), \(data.price)")
         titleLabel.text = data.title
         declarationLabel.text = "₩\(NumberFormatManager.shared.calculator(data.price))"
     }

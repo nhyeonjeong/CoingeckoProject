@@ -17,6 +17,7 @@ class CoinView: BaseView {
         view.contentMode = .scaleAspectFill
         return view
     }()
+    
     let coinTitleLabel: UILabel = {
         let view = UILabel()
         view.textColor = Constants.Color.titleLabel

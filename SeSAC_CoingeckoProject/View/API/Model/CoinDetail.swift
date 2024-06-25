@@ -6,42 +6,23 @@
 //
 
 import Foundation
-//struct No: Decodable {
-//    let no: [CoinDetail]
-//}
-//struct CoinDetail: Decodable {
-//    let coinData:
-//}
+
 struct CoinDetail: Decodable {
-    let idString: String
+    let id: String
     let symbol: String // 코인 통화 단위
     let name: String
     let image: String
-    let current_price: Int
+    let current_price: Double
     let price_change_percentage_24h: Double
-    let high_24h: Int
-    let low_24h: Int
-    let ath: Int
-    let atl: Int
+    let high_24h: Double
+    let low_24h: Double
+    let ath: Double
+    let atl: Double
     let last_updated: String
-    let sparkline_in_7d: [Spark]
-    enum CodingKeys: String, CodingKey {
-        case idString = "id"
-        case symbol
-        case name
-        case image
-        case current_price
-        case price_change_percentage_24h
-        case high_24h
-        case low_24h
-        case ath
-        case atl
-        case last_updated
-        case sparkline_in_7d
-    }
-    
-}
+    let sparkline_in_7d: SparkLine
 
-struct Spark: Decodable {
-    let sparkNumber: Double
+
+}
+struct SparkLine: Decodable {
+    let price: [Double]
 }

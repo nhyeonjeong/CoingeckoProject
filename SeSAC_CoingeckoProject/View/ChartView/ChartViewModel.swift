@@ -34,7 +34,7 @@ class ChartViewModel {
     var favoriteList: Observable<[CoinFavorite]> = Observable([])
     
     var inputCoinId: Observable<String> = Observable("") // 받아온 코인 id
-    var coinData: Observable<CoinDetail> = Observable(CoinDetail(idString: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: "", sparkline_in_7d: []))
+    var coinData: Observable<CoinDetail> = Observable(CoinDetail(id: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: "", sparkline_in_7d: SparkLine(price: [])))
     var outPutCurrentPricePositive: Observable<Bool> = Observable(false)
     var outputFetchError: Observable<Bool> = Observable(false)
     var outputStarClicked: Observable<Bool> = Observable(false)
@@ -56,10 +56,11 @@ class ChartViewModel {
     // 처음부터 api통신하지 말고 VC에서 coinDataId를 받아왔을 떄 api통신
     func bindDataLater() {
         inputCoinId.bind { id in
-            print("inputcoinId bind")
-            CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(ids: id)) { coinData, error in
+            print("inputcoinId bind, coinid: \(id)")
+            CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: [id])) { coinData, error in
                 guard let coinData else {
-                    self.outputFetchError.value = true // api통신 오류 발생
+                    print("😎")
+//                    self.outputFetchError.value = true // api통신 오류 발생
                     return
                 }
                 let data = coinData[0]
@@ -67,7 +68,8 @@ class ChartViewModel {
                 self.coinData.value = data
                 self.checkUpdown(data)
                 self.isFavoriteItem()
-                self.outputFetchError.value = false
+//                self.outputFetchError.value = false
+                
             }
         }
     }
@@ -82,18 +84,21 @@ class ChartViewModel {
         }
     }
     /// collectionview의 셀마다 어떤 값이 나와야 하는지
-    func getCellData(row: Int) -> (title: String, price: Int) {
-        var price = 0
+    func getCellData(row: Int) -> (title: String, price: Double) {
+        var price = 0.0
         var color = Constants.Color.pointColor
+//        guard let coinData = coinData.value else {
+//            return (title: "-", price: 0.0)
+//        }
         switch declaration[row] {
         case .highPrice:
             price = coinData.value.high_24h
         case .lowPrice:
-            price = coinData.value.high_24h
+            price = coinData.value.low_24h
         case .ath:
-            price = coinData.value.high_24h
+            price = coinData.value.ath
         case .atl:
-            price = coinData.value.high_24h
+            price = coinData.value.ath
         }
         return (declaration[row].title, price)
     }
@@ -104,12 +109,15 @@ class ChartViewModel {
     
     // 즐겨찾기 유무에 대한 별 바꾸기
     func isFavoriteItem() {
+//        guard let coinData = coinData.value else {
+//            return
+//        }
         print("isFavoriteItem")
         var isFavorite: Bool = false
         // 즐겨찾기에 있는지 확인 후 유무에 따라 별 바꾸기
         for i in 0..<favoriteList.value.count {
-            print("\(favoriteList.value[i].idString) == \(coinData.value.idString)")
-            if favoriteList.value[i].idString == coinData.value.idString {
+            print("\(favoriteList.value[i].idString) == \(coinData.value.id)")
+            if favoriteList.value[i].idString == coinData.value.id {
                 print("즐겨찾기에 있대!!")
                 deleteItemIdx = i
                 isFavorite = true //
@@ -121,7 +129,7 @@ class ChartViewModel {
     func toggleFavStar() {
         // 해결법)
         inputFetchFavoriteTrigger.value = ()
-        
+        /*
         if outPutFetchFav.value { // 즐겨찾기에 있는 코인이면 삭제
             RealmRepository.shared.removeItem(favoriteList.value[deleteItemIdx]) {
                 self.inputFetchFavoriteTrigger.value = () // 즐겨찾기 목록 다시 가져오기(즐겨찾기에 넣어주는것보다 빠름,,)
@@ -139,6 +147,7 @@ class ChartViewModel {
                 }
             }
         }
+         */
         print("favoriteList : ", favoriteList.value)
     }
 }
