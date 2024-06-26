@@ -102,13 +102,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>120</string>
+					<string>158</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>119</string>
+					<string>157</string>
 					<key>Timestamp</key>
-					<string>740935690.352262</string>
+					<string>741090875.120375</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -147,13 +147,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>120</string>
+					<string>158</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>119</string>
+					<string>157</string>
 					<key>Timestamp</key>
-					<string>740935690.352339</string>
+					<string>741090875.120357</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -192,13 +192,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>120</string>
+					<string>158</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>119</string>
+					<string>157</string>
 					<key>Timestamp</key>
-					<string>740935690.3517981</string>
+					<string>741090875.120368</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -237,13 +237,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>87</string>
+					<string>97</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>87</string>
+					<string>96</string>
 					<key>Timestamp</key>
-					<string>741005317.052511</string>
+					<string>741087888.041189</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -259,15 +259,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>            rowList = [.coin, .nft]
+</string>
 				<key>leading</key>
-				<string>        let favListCount = outputFavoriteList.value.count
+				<string>        let favListCount = favoriteList.value.count
         if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
 </string>
 				<key>trailing</key>
-				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
-        } else {
+				<string>        } else {
             rowList = RowEnum.allCases
+        }
 </string>
 			</dict>
 			<key>title</key>
@@ -283,13 +284,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>87</string>
+					<string>97</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>87</string>
+					<string>96</string>
 					<key>Timestamp</key>
-					<string>741005317.052524</string>
+					<string>741087888.041205</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -305,15 +306,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>            rowList = [.coin, .nft]
+</string>
 				<key>leading</key>
-				<string>        let favListCount = outputFavoriteList.value.count
+				<string>        let favListCount = favoriteList.value.count
         if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
 </string>
 				<key>trailing</key>
-				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
-        } else {
+				<string>        } else {
             rowList = RowEnum.allCases
+        }
 </string>
 			</dict>
 			<key>type</key>
@@ -327,13 +329,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>87</string>
+					<string>97</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>87</string>
+					<string>96</string>
 					<key>Timestamp</key>
-					<string>741005317.052541</string>
+					<string>741087888.041195</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -349,15 +351,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>            rowList = [.coin, .nft]
+</string>
 				<key>leading</key>
-				<string>        let favListCount = outputFavoriteList.value.count
+				<string>        let favListCount = favoriteList.value.count
         if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
 </string>
 				<key>trailing</key>
-				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
-        } else {
+				<string>        } else {
             rowList = RowEnum.allCases
+        }
 </string>
 			</dict>
 			<key>title</key>
@@ -415,12 +418,16 @@
 			<dict>
 				<key>location-parameters</key>
 				<dict>
+					<key>EndingColumnNumber</key>
+					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>61</string>
+					<string>62</string>
+					<key>StartingColumnNumber</key>
+					<string>0</string>
 					<key>StartingLineNumber</key>
 					<string>61</string>
 					<key>Timestamp</key>
-					<string>741008417.91249</string>
+					<string>741013948.784629</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -503,13 +510,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>120</string>
+					<string>158</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>119</string>
+					<string>157</string>
 					<key>Timestamp</key>
-					<string>740935690.352185</string>
+					<string>741090875.120326</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -548,13 +555,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>87</string>
+					<string>97</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>87</string>
+					<string>96</string>
 					<key>Timestamp</key>
-					<string>741005317.052412</string>
+					<string>741087888.04117</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -570,15 +577,16 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string></string>
+				<string>            rowList = [.coin, .nft]
+</string>
 				<key>leading</key>
-				<string>        let favListCount = outputFavoriteList.value.count
+				<string>        let favListCount = favoriteList.value.count
         if favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 {
 </string>
 				<key>trailing</key>
-				<string>            rowList = favListCount &gt;= 0 &amp;&amp; favListCount &lt; 2 ? [.coin, .nft] : RowEnum.allCases
-        } else {
+				<string>        } else {
             rowList = RowEnum.allCases
+        }
 </string>
 			</dict>
 			<key>type</key>

@@ -3,4 +3,277 @@
    uuid = "C7685FBD-9A7C-4197-8D65-3C223253996A"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63B501B8-DFDB-4A4B-8B9D-B22675FDFE5E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B17A589-295E-46C8-B42F-6A529A356437"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "callFavRequest(completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2B17A589-295E-46C8-B42F-6A529A356437 - 66b46365d540f9e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SeSAC_CoingeckoProject.TrendingViewModel.callFavRequest(completionHandler: (Swift.Array&lt;(Swift.Optional&lt;Swift.Double&gt;, Swift.Optional&lt;Swift.Double&gt;)&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SeSAC_CoingeckoProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/namhyeonjeong/Documents/SeSAC/10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%202%E1%84%8E%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8F%E1%85%A2%E1%86%B8/SeSAC_CoingeckoProject/SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "2B17A589-295E-46C8-B42F-6A529A356437 - 66b46365d540f9e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SeSAC_CoingeckoProject.TrendingViewModel.callFavRequest(completionHandler: (Swift.Array&lt;(Swift.Optional&lt;Swift.Double&gt;, Swift.Optional&lt;Swift.Double&gt;)&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SeSAC_CoingeckoProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/namhyeonjeong/Documents/SeSAC/10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%202%E1%84%8E%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8F%E1%85%A2%E1%86%B8/SeSAC_CoingeckoProject/SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  uuid = "2B17A589-295E-46C8-B42F-6A529A356437 - ae45c25c39e39ad0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SeSAC_CoingeckoProject.CoinFavorite) -&gt; Swift.String in SeSAC_CoingeckoProject.TrendingViewModel.callFavRequest(completionHandler: (Swift.Array&lt;(Swift.Optional&lt;Swift.Double&gt;, Swift.Optional&lt;Swift.Double&gt;)&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SeSAC_CoingeckoProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/namhyeonjeong/Documents/SeSAC/10%E1%84%8C%E1%85%AE%E1%84%8E%E1%85%A1%202%E1%84%8E%E1%85%A1%E1%84%85%E1%85%B5%E1%84%8F%E1%85%A2%E1%86%B8/SeSAC_CoingeckoProject/SeSAC_CoingeckoProject/View/TrendingView/TrendingViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E2FD272-C14C-4947-AF27-9D2F2D7B644F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46CFC702-900E-467D-929F-74D96A0ED485"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C961121-0BA9-4A86-8D26-0DADB1A8786C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB08F736-3B30-4E0C-8A9F-6A6215ABAA07"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6666FAB8-69F0-4730-875D-D051830AB674"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B66B8A4-115F-47CD-B482-B168C9801A6A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54AE7277-96A2-4621-BE9C-40F1BCD304FE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7944DF81-1C7D-453F-8E50-BC50B0A8EB9D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "528E1709-E028-4285-B3FC-324A17C05EB3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F909BD53-4BBD-4423-9140-E35562722C23"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B8DA8DB-7643-4A09-B6D8-65798AA6AB32"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F9184AF-2D31-4DFE-921E-DF28C30700FD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SeSAC_CoingeckoProject/View/TrendingView/TrendingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -52,7 +52,7 @@ extension FavoriteViewController: UICollectionViewDelegate, UICollectionViewData
         mainView.collectionView.dataSource = self
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.outputFavoriteList.value.count
+        return viewModel.fetchCurrentPriceAndPercentList.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

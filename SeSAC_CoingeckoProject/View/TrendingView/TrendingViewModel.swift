@@ -30,7 +30,8 @@ class TrendingViewModel {
     var inputFetchTrigger: Observable<Void?> = Observable(nil) // 트랜딩 화면에 들어갔을 떄 API통신을 일으키는 트리거
     var outputFetchTrigger: Observable<Void?> = Observable(nil) // api통신이 끝났을 떄 트리거
     
-    var outputFavoriteList: Observable<[CoinFavorite]> = Observable([]) // 즐겨찾기 리스트
+    var favoriteList: Observable<[CoinFavorite]> = Observable([]) // 즐겨찾기 리스트
+    var outputDrawFavoriteList: Observable<Bool> = Observable(false)
     var outputCoinTrendingList: Observable<[CoinItem]> = Observable([]) // 코인트랜딩 리스트
     var outputNftTrendingList: Observable<[NFTItem]> = Observable([]) // nft트랜딩 리스트
     
@@ -42,32 +43,40 @@ class TrendingViewModel {
     
     var fetchCurrentPriceAndPercentList: Observable<[(currentPrice: Double?, percent: Double?)]> = Observable([])
     
+    var tableRowCountbeforeFetchFavorite = 0
+    var tableRowCountAfterFetchFavorite = 0
+    
     init() {
         bindData()
     }
     
     func bindData() {
         inputFetchTrigger.bind { _ in
-            print("inputFetchTrigger didSet - API통신")
+            // 즐겨찾기가져오기
+            self.tableRowCountbeforeFetchFavorite = self.rowList.count
+            self.favoriteList.value = RealmRepository.shared.fetchItem()
+            self.numberOfTableRow()
             // api통신
             self.callFavRequest{ values in
                 self.fetchCurrentPriceAndPercentList.value = values
+                self.outputDrawFavoriteList.value = true
             }
             self.callRequest()
         }
     }
     func callFavRequest(completionHandler: @escaping ([(Double?, Double?)]) -> Void) {
-        // 즐겨찾기
-        // 즐겨찾기가져오기
-        self.outputFavoriteList.value = RealmRepository.shared.fetchItem()
-        
-        CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: outputFavoriteList.value.map({ coin in
-            coin.idString
-        }))) { value, error in
-            guard let value else { return }
-            completionHandler(value.map({ coin in
-                (coin.current_price, coin.price_change_percentage_24h)
-            }))
+
+        // 즐겨찾기갯수가 2 이상일때만 api통신하면 됨.
+        if rowList.count > 2 {
+            print("⭐️callFavRequest: \(rowList.count)")
+            CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: favoriteList.value.map({ coin in
+                coin.idString
+            }))) { value, error in
+                guard let value else { return }
+                completionHandler(value.map({ coin in
+                    (coin.current_price, coin.price_change_percentage_24h)
+                }))
+            }
         }
     }
     func callRequest() {
@@ -82,19 +91,20 @@ class TrendingViewModel {
         }
     }
 
-    func numberOfTableRow() -> Int {
-        let favListCount = outputFavoriteList.value.count
+    func numberOfTableRow() {
+        let favListCount = favoriteList.value.count
         if favListCount >= 0 && favListCount < 2 {
-            rowList = favListCount >= 0 && favListCount < 2 ? [.coin, .nft] : RowEnum.allCases
+            rowList = [.coin, .nft]
         } else {
             rowList = RowEnum.allCases
         }
-        return rowList.count
+        tableRowCountAfterFetchFavorite = rowList.count
+//        return rowList.count
     }
     func numberOfCollectionRow(_ tag: Int) -> Int {
         let row = rowList[tag]
         if row == .favorite {
-            return outputFavoriteList.value.count
+            return favoriteList.value.count
         } else if row == .coin {
             return outputCoinTrendingList.value.count
         } else {

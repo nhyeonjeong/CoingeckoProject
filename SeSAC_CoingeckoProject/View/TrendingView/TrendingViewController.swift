@@ -24,13 +24,50 @@ final class TrendingViewController: BaseViewController {
         viewModel.inputFetchTrigger.value = () // api통신
     }
     func bindData() {
-        viewModel.fetchCurrentPriceAndPercentList.bind { _ in
-            print("fetchCurrentPriceAndPercentList didSet - API통신 완료 후 즐겨찾기 다시 그리기")
-            self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+        viewModel.outputDrawFavoriteList.bind { value in
+            print("⭐️outputDrawFavoriteList.bind: \(self.viewModel.rowList.count)")
+            if self.viewModel.tableRowCountbeforeFetchFavorite == 2 && self.viewModel.tableRowCountAfterFetchFavorite == 3 {
+                if self.mainView.tableView.numberOfRows(inSection: 0) == 3 { return }
+                print("⭐️1. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
+                self.mainView.tableView.beginUpdates()
+                let newIndexPath = IndexPath(row: 0, section: 0)
+                self.mainView.tableView.insertRows(at: [newIndexPath], with: .automatic)
+                self.mainView.tableView.endUpdates()
+                self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+            } else { // 둘 다 3일 때나 0->3 이면 reload
+                print("⭐️1. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
+                self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+            }
+                
         }
         viewModel.outputFetchTrigger.bind { _ in
-            print("outputFetchTrigger didSet - API통신 완료후 Top, NFT 테이블 다시 그리기")
-            self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
+            print("⭐️outputFetchTrigger.bind: \(self.viewModel.rowList.count)")
+            // 2->3
+            if self.viewModel.tableRowCountbeforeFetchFavorite == 2 && self.viewModel.tableRowCountAfterFetchFavorite == 3 {
+                print("⭐️2. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
+
+                if self.mainView.tableView.numberOfRows(inSection: 0) == 3 { return }
+                self.mainView.tableView.beginUpdates()
+                let newIndexPath = IndexPath(row: 0, section: 0)
+                self.mainView.tableView.insertRows(at: [newIndexPath], with: .automatic)
+                self.mainView.tableView.endUpdates()
+//                self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
+                self.mainView.tableView.reloadData()
+            } else if self.viewModel.tableRowCountAfterFetchFavorite == 2 { //0->2 3->2 or 2->2
+                print("⭐️2. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
+                self.mainView.tableView.reloadData()
+            } else { //3->3, 0->3
+                print("⭐️2. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
+                self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
+            }
+  
+            /*
+            if self.viewModel.rowList.count == 2 {
+                self.mainView.tableView.reloadData()
+            } else { // 지금 2->3으로 가는 과정에서 오류가 나고 있음ㅋㄹ
+                self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
+            }
+             */
         }
         viewModel.transitionWithId.bind { idString in
             let vc = ChartViewController()
@@ -51,8 +88,8 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 즐겨찾기의 갯수가 0이나 1개라면 숨기기
-//        viewModel.checkFavListCount()
-        return viewModel.numberOfTableRow()
+        print("⭐️tableView - numberOfRowsInsection: \(viewModel.rowList.count)")
+        return viewModel.rowList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,6 +131,7 @@ extension TrendingViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    
     func configureTableView() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
@@ -111,7 +149,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendingFavCollectionViewCell.identifier, for: indexPath) as? TrendingFavCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            let cellData = viewModel.outputFavoriteList.value[indexPath.row]
+            let cellData = viewModel.favoriteList.value[indexPath.row]
             if viewModel.fetchCurrentPriceAndPercentList.value.isEmpty {
                 cell.configureCell(cellData, priceAndPercent: (0.0, 0.0))
             } else {
@@ -152,7 +190,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         let row = viewModel.rowList[collectionView.tag]
 
         if row == .favorite {
-            viewModel.transitionWithId.value = viewModel.outputFavoriteList.value[indexPath.row].idString
+            viewModel.transitionWithId.value = viewModel.favoriteList.value[indexPath.row].idString
         } else if row == .coin {
             viewModel.transitionWithId.value = viewModel.outputCoinTrendingList.value[indexPath.row].item.idString
         }
