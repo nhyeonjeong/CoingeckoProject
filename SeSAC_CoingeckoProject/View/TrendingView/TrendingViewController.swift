@@ -24,40 +24,42 @@ final class TrendingViewController: BaseViewController {
         viewModel.inputFetchTrigger.value = () // api통신
     }
     func bindData() {
+        // 즐겨찾기 코인의 갯수가 2개 이상일때 0번 행
         viewModel.outputDrawFavoriteList.bind { value in
-            print("⭐️outputDrawFavoriteList.bind: \(self.viewModel.rowList.count)")
             if self.viewModel.tableRowCountbeforeFetchFavorite == 2 && self.viewModel.tableRowCountAfterFetchFavorite == 3 {
                 if self.mainView.tableView.numberOfRows(inSection: 0) == 3 { return }
-                print("⭐️1. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
+                
                 self.mainView.tableView.beginUpdates()
                 let newIndexPath = IndexPath(row: 0, section: 0)
                 self.mainView.tableView.insertRows(at: [newIndexPath], with: .automatic)
                 self.mainView.tableView.endUpdates()
+                
                 self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+                
             } else { // 둘 다 3일 때나 0->3 이면 reload
-                print("⭐️1. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
                 self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
             }
                 
         }
+        // 1,2번 행 데이터 패치
         viewModel.outputFetchTrigger.bind { _ in
-            print("⭐️outputFetchTrigger.bind: \(self.viewModel.rowList.count)")
             // 2->3
             if self.viewModel.tableRowCountbeforeFetchFavorite == 2 && self.viewModel.tableRowCountAfterFetchFavorite == 3 {
-                print("⭐️2. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
-
-                if self.mainView.tableView.numberOfRows(inSection: 0) == 3 { return }
+                if self.mainView.tableView.numberOfRows(inSection: 0) == 3 {
+                    self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
+                    return
+                }
                 self.mainView.tableView.beginUpdates()
                 let newIndexPath = IndexPath(row: 0, section: 0)
                 self.mainView.tableView.insertRows(at: [newIndexPath], with: .automatic)
                 self.mainView.tableView.endUpdates()
-//                self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
+                
                 self.mainView.tableView.reloadData()
+                
             } else if self.viewModel.tableRowCountAfterFetchFavorite == 2 { //0->2 3->2 or 2->2
-                print("⭐️2. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
                 self.mainView.tableView.reloadData()
+                
             } else { //3->3, 0->3
-                print("⭐️2. before : \(self.viewModel.tableRowCountbeforeFetchFavorite)")
                 self.mainView.tableView.reloadRows(at: [IndexPath(row: 1, section: 0), IndexPath(row: 2, section: 0)], with: .fade)
             }
   

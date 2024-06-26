@@ -13,9 +13,11 @@ class CoinAPIManager {
     static let shared = CoinAPIManager()
     
     func fetchCoinData<T: Decodable>(type: T.Type, api: CoinAPi_Request, completionHandler: @escaping (T?, Error?) -> Void) {
-//
-//        AF.request(api.url).responseString { value in
-//            print("responseString: \(value)")
+
+//        AF.request(api.url,
+//                   method: api.getMethod,
+//                   encoding: URLEncoding(destination: .queryString)).responseString { value in
+//            print("😱responseString: \(value)")
 //        }
         AF.request(api.url,
                    method: api.getMethod,
@@ -25,7 +27,7 @@ class CoinAPIManager {
                 dump("🍕api result \(success)")
                 completionHandler(success, nil)
             case .failure(let failure):
-                print("alamofie failure", failure)
+                print("😱alamofie failure", failure)
                 completionHandler(nil, failure)
                 
             }
@@ -34,4 +36,3 @@ class CoinAPIManager {
     }
     
 }
-

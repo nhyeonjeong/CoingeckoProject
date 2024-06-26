@@ -12,13 +12,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>37</string>
+					<string>39</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>36</string>
+					<string>39</string>
 					<key>Timestamp</key>
-					<string>740507746.222815</string>
+					<string>741109738.4423521</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -34,16 +34,15 @@
 			<key>text-context</key>
 			<dict>
 				<key>focused</key>
-				<string>//        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
-</string>
+				<string></string>
 				<key>leading</key>
-				<string>        viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기 다시 가져오기
-        //만약 다시 들어왔는데 즐겨찾기에서 해제되어있다면 화면 나가기
-</string>
-				<key>trailing</key>
 				<string>//            navigationController?.popViewController(animated: true)
 //        }
-    }
+</string>
+				<key>trailing</key>
+				<string>    }
+    
+    func bindData() {
 </string>
 			</dict>
 			<key>type</key>
@@ -102,13 +101,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>158</string>
+					<string>160</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>157</string>
+					<string>159</string>
 					<key>Timestamp</key>
-					<string>741090875.120375</string>
+					<string>741108008.358802</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -147,13 +146,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>158</string>
+					<string>160</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>157</string>
+					<string>159</string>
 					<key>Timestamp</key>
-					<string>741090875.120357</string>
+					<string>741108008.358851</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -192,13 +191,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>158</string>
+					<string>160</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>157</string>
+					<string>159</string>
 					<key>Timestamp</key>
-					<string>741090875.120368</string>
+					<string>741108008.358873</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>
@@ -510,13 +509,13 @@
 					<key>EndingColumnNumber</key>
 					<string>0</string>
 					<key>EndingLineNumber</key>
-					<string>158</string>
+					<string>160</string>
 					<key>StartingColumnNumber</key>
 					<string>0</string>
 					<key>StartingLineNumber</key>
-					<string>157</string>
+					<string>159</string>
 					<key>Timestamp</key>
-					<string>741090875.120326</string>
+					<string>741108008.3588639</string>
 				</dict>
 				<key>rebasable-url</key>
 				<dict>

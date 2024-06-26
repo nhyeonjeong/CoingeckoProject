@@ -31,7 +31,7 @@ final class ChartViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        viewModel.inputCoinId.value = coinDataId // 다시 데이터 가져오기
+        viewModel.inputCoinId.value = coinDataId // 다시 데이터 가져오기
         viewModel.inputFetchFavoriteTrigger.value = () // 즐겨찾기 다시 가져오기
         //만약 다시 들어왔는데 즐겨찾기에서 해제되어있다면 화면 나가기
 //        if !viewModel.outPutFetchFav.value { // 왜 작동안됨!?!
