@@ -63,7 +63,7 @@ final class SearchViewController: BaseViewController {
             }
             vc.coinDataId = id
             vc.popClosure = {
-                self.view.makeToast("통신상태가 좋지 않습니다.", duration: 2.0, position: .top)
+                self.view.makeToast("콜수를 초과했습니다.", duration: 2.0, position: .top)
             }
             self.navigationController?.pushViewController(vc, animated: true)
         }

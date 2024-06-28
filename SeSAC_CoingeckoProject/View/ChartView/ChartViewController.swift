@@ -41,10 +41,6 @@ final class ChartViewController: BaseViewController {
     
     func bindData() {
         viewModel.coinData.bind { data in
-            // UI그리기
-//            guard let data else {
-//                return
-//            }
             print("🌎RELOADVIEW")
             self.reloadView(data)
         }
@@ -63,12 +59,8 @@ final class ChartViewController: BaseViewController {
             self.mainView.todayPercent.text = number > 0 ? "+\(numberString)% Today" : "\(numberString)% Today"
         }
         viewModel.outputFetchError.bind { value in
-            print("outputFetchError", value)
-            if value {
-                print("pop")
-                self.navigationController?.popViewController(animated: true)
-                self.popClosure?() // 뒤로가서 toast띄우기
-            }
+            self.navigationController?.popViewController(animated: true)
+            self.popClosure?() // 뒤로가서 toast띄우기
         }
         viewModel.outputStarClicked.bind { value in
             if value {

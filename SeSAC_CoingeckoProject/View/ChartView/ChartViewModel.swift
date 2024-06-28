@@ -36,7 +36,7 @@ class ChartViewModel {
     var inputCoinId: Observable<String> = Observable("") // 받아온 코인 id
     var coinData: Observable<CoinDetail> = Observable(CoinDetail(id: "", symbol: "", name: "", image: "", current_price: 0, price_change_percentage_24h: 0, high_24h: 0, low_24h: 0, ath: 0, atl: 0, last_updated: "", sparkline_in_7d: SparkLine(price: [])))
     var outPutCurrentPricePositive: Observable<Bool> = Observable(false)
-    var outputFetchError: Observable<Bool> = Observable(false)
+    var outputFetchError: Observable<Void> = Observable(())
     var outputStarClicked: Observable<Bool> = Observable(false)
     var deleteItemIdx = 0 // 즐겨찾기에서 살젝해야ㅎㄹ 인덱스
     
@@ -60,7 +60,10 @@ class ChartViewModel {
             CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: [id])) { coinData, error in
                 guard let coinData else {
                     print("😎")
-//                    self.outputFetchError.value = true // api통신 오류 발생
+                    if error as? APIError == APIError.overLimit {
+                        print("🚨429에러임!!!!")
+                        self.outputFetchError.value = ()
+                    }
                     return
                 }
                 let data = coinData[0]
@@ -68,8 +71,6 @@ class ChartViewModel {
                 self.coinData.value = data
                 self.checkUpdown(data)
                 self.isFavoriteItem()
-//                self.outputFetchError.value = false
-                
             }
         }
     }
@@ -87,9 +88,7 @@ class ChartViewModel {
     func getCellData(row: Int) -> (title: String, price: Double) {
         var price = 0.0
         var color = Constants.Color.pointColor
-//        guard let coinData = coinData.value else {
-//            return (title: "-", price: 0.0)
-//        }
+
         switch declaration[row] {
         case .highPrice:
             price = coinData.value.high_24h
