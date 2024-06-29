@@ -26,14 +26,11 @@ class CoinAPIManager {
         AF.request(api.url,
                    method: api.getMethod,
                    encoding: URLEncoding(destination: .queryString), interceptor: APIRequestInterceptor()).responseDecodable(of: T.self) { response in
-            print("ds;lkga;ldskja")
             switch response.result {
             case .success(let success):
-                
-                dump("🍕api result \(success)")
                 completionHandler(success, nil)
+                
             case .failure(let failure):
-                print("😱alamofie failure", failure)
                 if let afError = failure.asAFError, case .requestRetryFailed(let retryError, let originalError) = afError {
                     if let error = retryError as? APIError, error == .overLimit {
                         completionHandler(nil, error)
@@ -42,20 +39,14 @@ class CoinAPIManager {
                     }
                 }
                 completionHandler(nil, failure)
-            
             }
         }
-
     }
-    
 }
-
 
 class APIRequestInterceptor: RequestInterceptor {
     
     func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
-        print("🧑🏼‍🍳retry 들어왔다!!!!!\(request.response?.statusCode)")
-//        return
         guard let status = request.response?.statusCode else {
             completion(.doNotRetry)
             return
