@@ -31,7 +31,7 @@ class CoinAPIManager {
                 completionHandler(success, nil)
                 
             case .failure(let failure):
-                if let afError = failure.asAFError, case .requestRetryFailed(let retryError, let originalError) = afError {
+                if let afError = failure.asAFError, case .requestRetryFailed(let retryError, _) = afError {
                     if let error = retryError as? APIError, error == .overLimit {
                         completionHandler(nil, error)
                     } else {

@@ -59,9 +59,7 @@ class ChartViewModel {
             print("inputcoinId bind, coinid: \(id)")
             CoinAPIManager.shared.fetchCoinData(type: [CoinDetail].self, api: .coinMarket(idList: [id])) { coinData, error in
                 guard let coinData else {
-                    print("😎")
                     if error as? APIError == APIError.overLimit {
-                        print("🚨429에러임!!!!")
                         self.outputFetchError.value = ()
                     }
                     return
