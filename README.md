@@ -62,7 +62,7 @@ reload하기 전에는 아직 2개의 행만 있는 상태인데 2번 행을 업
 </details>
 
 
-### `2. API통신횟수 rimit 초과시 대응`
+### `2. API통신횟수 limit 초과시 대응`
 
 2-1) 문제
 
@@ -81,9 +81,9 @@ Alamofire의 Interceptor을 사용하여 통신에 실패하면 429에러인지 
 <img width="633" alt="스크린샷 2024-06-30 오후 11 57 57" src="https://github.com/nhyeonjeong/CoingeckoProject/assets/102401977/87ae5244-91f8-4237-9b3d-9c2e2561d804">
 <img width="666" alt="스크린샷 2024-06-30 오후 11 58 22" src="https://github.com/nhyeonjeong/CoingeckoProject/assets/102401977/3749f41c-9ec7-4bb6-b799-209039e1c673">
 
-
 </div>
 </details>
 
 ## 🪙기술회고
-
+Observable클래스를 직접 만들어 MVVM으로 비동기 코드를 작성함으로서 데이터의 흐름을 더 정확하게 파악할 수 있었고, 코드실행 순서를 파악하는 데에 도움이 되었습니다. 
+또한 API통신 후의 결과를 올바른 타입으로 디코딩 해볼 수 있었고, 통신 오류를 겪으며 결과에 대한 상태코드나 오류메세지등에 대해서 생각해볼 수 있었습니다.
