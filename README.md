@@ -67,7 +67,7 @@ reload하기 전에는 아직 2개의 행만 있는 상태인데 2번 행을 업
 2-1) 문제
 
 api통신이 실패할 때마다 "Expected to decode Array<Any> but found a dictionary instead." 오류 발생.
-통신횟수 초과됐을 때 받는 메세지가 Decoding하려는 타입과 맞지 않아 나는 상태코드 429오류인 것으로 확인.
+통신횟수 초과됐을 때 받는 메세지가 Decoding하려는 타입과 맞지 않아 발생한 상태코드 429오류인 것으로 확인.
 
 2-2) 해결
 
