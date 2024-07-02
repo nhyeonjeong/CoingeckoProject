@@ -23,16 +23,16 @@
 - Alamofire, Realm, Snapkit, Toast, Kingfisher, DGCharts
 - Decoder, Singleton, Access Control, Router Pattern
 
-## 🪙기술설명
+## 🪙기술설명 
 - MVVM InputOutput패턴
     - 비즈니스로직 분리를 위해 ViewController과 ViewModel분리 및 Observable 클래스를 사용해 MVVM InputOutput패턴으로 작성
     - 비동기코드를 핸들링 하기 위해 Observable 클래스 내부 값 변경시 클로저 실행하여 반응형 코드 작성 
 - Snapkit을 import하는 mainView 분리하여 loadView로 뷰 구현
-- Alamofire을 사용한 NetworkManager Singleton패턴으로 구성
+- Alamofire 기반 Networkmanager 구조 구현
     - Generic을 사용해 Decodable한 타입들로 디코딩
     - 통신 결과에 따른 completionHandler실행
     - Router Pattern으로 baseURL, method, endpoint 관리
-- RealmRepository 싱글톤으로 작성, repository에서 CRD 관리
+- Repository Pattern 을 통해 Realm CRUD Interface 구성
 - 항상 호출되는 함수를 포함하는 BaseViewController, BaseView 상속받아 class 구현
 
 ## 🪙트러블슈팅
