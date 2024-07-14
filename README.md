@@ -21,7 +21,7 @@
 ## 🪙사용한 기술스택
 - UIKit, CodeBaseUI, MVVM
 - Alamofire, Realm, Snapkit, Toast, Kingfisher, DGCharts
-- Decoder, Singleton, Access Control, Router Pattern
+- Decoder, Singleton, Access Control, Router Pattern, RequestInterceptor
 
 ## 🪙기술설명 
 - MVVM InputOutput패턴
