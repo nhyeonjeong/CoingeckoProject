@@ -72,17 +72,7 @@ api통신이 실패할 때마다 "Expected to decode Array<Any> but found a dict
 2-2) 해결
 
 Alamofire의 Interceptor을 사용하여 통신에 실패하면 429에러인지 확인.
-429에러라면 retry하지 않고 이외의 에러라면 retry하도록 하여 재통신한 결과로 예외처리
-
-<details>
-<summary>변경 후 코드</summary>
-<div markdown="1">
-    
-<img width="633" alt="스크린샷 2024-06-30 오후 11 57 57" src="https://github.com/nhyeonjeong/CoingeckoProject/assets/102401977/87ae5244-91f8-4237-9b3d-9c2e2561d804">
-<img width="666" alt="스크린샷 2024-06-30 오후 11 58 22" src="https://github.com/nhyeonjeong/CoingeckoProject/assets/102401977/3749f41c-9ec7-4bb6-b799-209039e1c673">
-
-</div>
-</details>
+429에러라면 retry하고 이외의 에러라면 그만두는 것으로 처리
 
 ## 🪙기술회고
 Observable클래스를 직접 만들어 MVVM으로 비동기 코드를 작성함으로서 데이터의 흐름을 더 정확하게 파악할 수 있었고, 코드실행 순서를 파악하는 데에 도움이 되었습니다. 
